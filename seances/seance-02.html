@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Séance 2 (à distance) : installation de l'environnement, balises de contenu (titres, paragraphes, listes, emphase) et lancement du projet 1.">
+  <title>Séance 2 — Mise en place</title>
+  <!-- Fontawesome (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/site.css">
+  <link rel="icon" type="image/png" href="../logo/favicon.png">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <div class="sidebar">
+      <header class="sidebar-top">
+        <img src="../logo/logo.png" alt="Logo du cours" class="sidebar-logo">
+        <p class="sidebar-titre"><a href="../index.html">Web : principes de base</a></p>
+        <p class="sidebar-sous">BA1 — EAFC Evere</p>
+      </header>
+
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li>
+            <a href="../index.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 11.5 12 5l8 6.5" />
+                <path d="M6 10.5V19h12v-8.5" />
+                <rect x="10" y="13" width="4" height="6" />
+              </svg>
+              Accueil
+              <i class="fa-solid fa-house" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <details class="sous-menu" open>
+              <summary class="actif">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <line x1="5" y1="7" x2="19" y2="7" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <line x1="5" y1="17" x2="12" y2="17" />
+                </svg>
+                Programme
+              </summary>
+              <ul class="sous-liste">
+                <li><a href="../programme.html"><i class="fa-solid fa-map" aria-hidden="true"></i> Vue d'ensemble</a></li>
+                <li class="avec-sommaire">
+                  <a href="seance-01.html"><i class="fa-solid fa-globe" aria-hidden="true"></i> 01 · Le Web et le HTML</a>
+                  <details class="sommaire-menu">
+                    <summary><span class="sr-only">Sommaire de la séance 1</span></summary>
+                    <ol>
+                      <li><a href="seance-01.html#comprendre-le-web">1. Comprendre ce qu'est le Web</a></li>
+                      <li><a href="seance-01.html#page-a-ecran">2. Comment une page arrive à l'écran</a></li>
+                      <li><a href="seance-01.html#le-html">3. Le HTML</a></li>
+                      <li><a href="seance-01.html#lire-page-html">4. Lire et comprendre une page HTML</a></li>
+                      <li><a href="seance-01.html#types-sites">5. Les types de sites web : usages et fonctionnement</a></li>
+                      <li><a href="seance-01.html#normes-validation-securite">6. Normes et validation</a></li>
+                      <li><a href="seance-01.html#securite-de-base">7. La sécurité de base</a></li>
+                      <li><a href="seance-01.html#exercices">8. Exercices</a></li>
+                    </ol>
+                  </details>
+                </li>
+                <li class="avec-sommaire">
+                  <a href="seance-02.html" class="actif"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i> 02 · Mise en place</a>
+                  <details class="sommaire-menu" open>
+                    <summary><span class="sr-only">Sommaire de la séance 2</span></summary>
+                    <ol>
+                      <li><a href="#environnement">1. Installer son environnement</a></li>
+                      <li><a href="#titres-paragraphes">2. Titres et paragraphes</a></li>
+                      <li><a href="#listes">3. Les listes</a></li>
+                      <li><a href="#emphase">4. La mise en emphase</a></li>
+                      <li><a href="#images">5. Les images</a></li>
+                      <li><a href="#exercice">6. Exercice guidé</a></li>
+                      <li><a href="#projet-1">7. Projet 1 — lancement</a></li>
+                      <li><a href="#livrable">8. Le livrable</a></li>
+                      <li><a href="#exercices">9. Exercices</a></li>
+                    </ol>
+                  </details>
+                </li>
+                <li>
+                  <a href="seance-03.html"><i class="fa-solid fa-code" aria-hidden="true"></i> 03 · HTML avancé</a>
+                </li>
+                <li>
+                  <a href="seance-04.html"><i class="fa-solid fa-rotate" aria-hidden="true"></i> 04 · Révision, Projets 1 et 2</a>
+                </li>
+                <li>
+                  <a href="seance-05.html"><i class="fa-solid fa-crosshairs" aria-hidden="true"></i> 05 · CSS, sélecteurs, habillage</a>
+                </li>
+                <li>
+                  <a href="seance-06.html"><i class="fa-solid fa-palette" aria-hidden="true"></i> 06 · CSS du portfolio</a>
+                </li>
+                <li>
+                  <a href="seance-07.html"><i class="fa-solid fa-table-columns" aria-hidden="true"></i> 07 · Mise en page, menus</a>
+                </li>
+                <li>
+                  <a href="seance-08.html"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> 08 · Responsive, a11y</a>
+                </li>
+                <li>
+                  <a href="seance-09.html"><i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i> 09 · Mise en ligne</a>
+                </li>
+                <li><a href="seance-10.html"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> 10 · Examen</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <a href="../ressources/installation.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 4v11" />
+                <path d="M7.5 11 12 15.5 16.5 11" />
+                <line x1="5" y1="19" x2="19" y2="19" />
+              </svg>
+              Installation
+            </a>
+          </li>
+          <li>
+            <a href="../ressources/aide-memoire.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5.5h5.5a2.5 2.5 0 0 1 2.5 2.5v11a2 2 0 0 0-2-2H4z" />
+                <path d="M20 5.5h-5.5A2.5 2.5 0 0 0 12 8v11a2 2 0 0 1 2-2h6z" />
+              </svg>
+              Aide-mémoire
+            </a>
+          </li>
+          <li>
+            <a href="../ressources/exercices.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 20h4L19 9l-4-4L4 16z" />
+                <path d="M13.5 6.5l4 4" />
+              </svg>
+              Exercices
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <p>10 séances · 40 périodes</p>
+      </div>
+    </div>
+
+    <div class="contenu">
+
+      <main>
+
+        <h1>Séance 2 — Mise en place</h1>
+        <p class="chapeau">
+          Cette séance se fait <strong>à distance</strong>. À la fin, votre
+          environnement de travail sera installé, vous saurez structurer un texte
+          avec des titres, des paragraphes et des listes, et vous aurez écrit la
+          première version de votre projet 1 et la page d'accueil de votre
+          portfolio.
+        </p>
+
+        <aside class="encadre">
+          <h2>Déroulement conseillé</h2>
+          <ol>
+            <li>Installer les outils avec le <a href="../ressources/installation.html">guide d'installation</a>.</li>
+            <li>Lire la partie « Balises de contenu » et faire l'exercice guidé.</li>
+            <li>Choisir votre thème et réaliser le projet 1.</li>
+            <li>Créer la page d\'accueil de votre <a href="#portfolio">portfolio</a>.</li>
+            <li>Tester avec Live Server, valider, puis déposer le livrable sur Teams.</li>
+            <li>S'il vous reste du temps : les <a href="#exercices">exercices corrigés</a> (facultatifs, rien à rendre).</li>
+          </ol>
+          <p>
+            Bloqué ? Notez votre question précise (avec une capture d'écran) et
+            postez-la dans le canal Teams du cours : quelqu'un a sans doute le
+            même problème que vous.
+          </p>
+        </aside>
+
+        <section>
+        <h2>Ce que vous savez déjà</h2>
+
+        <p>
+          Un rappel rapide : voici ce que vous avez déjà vu en séance 1, et
+          que vous allez réutiliser directement cette semaine.
+        </p>
+
+        <ul>
+          <li><code>&lt;!DOCTYPE html&gt;</code>, <code>&lt;html&gt;</code>,
+            <code>&lt;head&gt;</code>, <code>&lt;meta&gt;</code>,
+            <code>&lt;title&gt;</code>, <code>&lt;link&gt;</code>,
+            <code>&lt;body&gt;</code> — le squelette complet d'une page.
+          </li>
+          <li><code>&lt;p&gt;</code>, <code>&lt;br&gt;</code>,
+            <code>&lt;img&gt;</code>, <code>&lt;hr&gt;</code> — les
+            premières balises de contenu.
+          </li>
+          <li><code>&lt;strong&gt;</code> / <code>&lt;em&gt;</code> —
+            aperçues en séance 1, vous allez les approfondir aujourd'hui.</li>
+          <li><code>&lt;!-- --&gt;</code> — les commentaires.</li>
+          <li><code>&lt;h1&gt;</code> à <code>&lt;h6&gt;</code> — les six
+            niveaux de titres.</li>
+          <li>Les entités HTML (<code>&amp;amp;</code>,
+            <code>&amp;lt;</code>…).
+          </li>
+        </ul>
+
+        <p>
+          Les hyperliens (<code>&lt;a&gt;</code>) ne sont pas encore au
+          programme : vous les découvrirez en détail à la séance 3.
+        </p>
+
+        </section>
+
+        <section>
+        <h2>Sommaire</h2>
+
+        <nav aria-label="Sommaire de la séance">
+          <ol>
+            <li><a href="#environnement">1. Installer son environnement</a></li>
+            <li><a href="#titres-paragraphes">2. Titres et paragraphes</a></li>
+            <li><a href="#listes">3. Les listes</a></li>
+            <li><a href="#emphase">4. La mise en emphase</a></li>
+            <li><a href="#images">5. Les images</a></li>
+            <li><a href="#exercice">6. Exercice guidé</a></li>
+            <li><a href="#projet-1">7. Projet 1 — lancement</a></li>
+            <li><a href="#livrable">8. Le livrable</a></li>
+            <li><a href="#exercices">9. Exercices</a></li>
+          </ol>
+        </nav>
+
+        </section>
+
+        <section>
+        <h2 id="environnement">1. Installer son environnement</h2>
+
+        <p>
+          Suivez pas à pas le <a href="../ressources/installation.html">guide
+            d'installation</a>. À la fin, vous devez avoir :
+        </p>
+
+        <ul>
+          <li><strong>VS Code</strong> installé, avec l'extension <strong>Live Server</strong> ;</li>
+          <li>au moins <strong>deux navigateurs</strong> (par exemple Chrome et Firefox).</li>
+        </ul>
+
+        <h3>Créer son dossier de travail</h3>
+
+        <p>
+          Créez un dossier pour le cours, puis deux sous-dossiers : un pour votre
+          portfolio, un pour le projet 1.
+        </p>
+
+        <pre><code>web-ba1/
+├── portfolio/
+│   └── index.html
+└── projet-1/
+    └── index.html</code></pre>
+
+        <img src="../images/creer_dossier.png" alt="Arborescence du projet 1" class="image-arborescence">
+        <p>
+          Dans VS Code, ouvrez le <strong>dossier</strong> <code>web-ba1</code>
+          (<em>Fichier → Ouvrir le dossier</em>), et non un fichier seul. Live
+          Server a besoin de connaître le dossier du site, et vous aurez ainsi
+          le portfolio et le projet 1 sous la main.
+        </p>
+
+        <aside class="encadre encadre-attention">
+          <h3>Rappel de la séance 1</h3>
+          <p>
+            Noms de fichiers et de dossiers <strong>en minuscules, sans espaces,
+              sans accents</strong>. <code>projet-1</code> : oui.
+            <code>Projet 1 (final)</code> : non.
+          </p>
+        </aside>
+
+        <h3>Live Server : votre premier serveur</h3>
+
+        <p>
+          Faites un clic droit sur <code>index.html</code> puis
+          <em>Open with Live Server</em> (ou le bouton <em>Go Live</em> en bas à
+          droite). Le navigateur s'ouvre sur une adresse du type :
+        </p>
+
+        <img src="../images/live_server_open.png" alt="Ouvrir Extension Live Server dans VS Code"
+          class="image-extension">
+
+        <pre><code>http://127.0.0.1:5500/projet-1/index.html</code></pre>
+        <img src="../images/exemple_live_server_navigateur.png" alt="Ouvrir avec Live Server dans le navigateur"
+          class="image-extension">
+        <p> Chez moi, j'ai plusieurs instances de Live Server en cours. C'est pour cela que l'adresse du serveur est
+          différente.</p>
+        <p>
+          Vous reconnaissez le modèle client / serveur de la séance 1 :
+          <code>127.0.0.1</code> désigne <strong>votre propre machine</strong>,
+          qui joue ici le rôle du serveur, et <code>5500</code> est le port sur
+          lequel Live Server écoute. À chaque enregistrement
+          (<code>Ctrl+S</code>), la page se recharge toute seule.
+        </p>
+
+        <aside class="encadre">
+          <h3>Astuce VS Code</h3>
+          <p>
+            Dans un fichier <code>.html</code> vide, tapez <code>!</code> puis
+            <code>Tab</code> : VS Code génère un squelette de page. Vérifiez-le
+            quand même : remplacez <code>lang="en"</code> par
+            <code>lang="fr"</code> et complétez le <code>&lt;title&gt;</code>.
+          </p>
+        </aside>
+
+        </section>
+
+        <section>
+        <h2 id="titres-paragraphes">2. Titres et paragraphes</h2>
+
+        <h3>Les six niveaux de titres</h3>
+
+        <p>
+          Le HTML propose six niveaux de titres, de <code>&lt;h1&gt;</code> (le
+          plus important) à <code>&lt;h6&gt;</code>. Ensemble, ils forment le
+          <strong>plan</strong> de la page, comme la table des matières d'un livre.
+        </p>
+        <p><strong class="etiquette">Exemple en HTML</strong> :</p>
+        <pre><code>&lt;h1&gt;Le Japon&lt;/h1&gt;
+&lt;h2&gt;Géographie&lt;/h2&gt;
+&lt;h3&gt;Les îles principales&lt;/h3&gt;
+&lt;h3&gt;Le climat&lt;/h3&gt;
+&lt;h2&gt;Culture&lt;/h2&gt;
+&lt;h3&gt;La cuisine&lt;/h3&gt;
+&lt;h4&gt;Les sushis&lt;/h4&gt;</code></pre>
+
+        <p><strong class="etiquette">Exemple en rendu navigateur</strong> :</p>
+        <img src="../images/exemple_titres.png" alt="Exemple de titres imbriqués" class="image-centrale">
+        <p>
+          L'indentation ci-dessus sert seulement à montrer la hiérarchie : le
+          navigateur ne s'en préoccupe pas. Dans la pratique, on dépasse rarement
+          le <code>&lt;h4&gt;</code>.
+        </p>
+
+        <aside class="encadre encadre-attention">
+          <h3>Les deux règles, encore</h3>
+          <ul>
+            <li>Un seul <code>&lt;h1&gt;</code> par page.</li>
+            <li>Pas de saut de niveau : après un <code>&lt;h2&gt;</code>, on
+              trouve un autre <code>&lt;h2&gt;</code> ou un
+              <code>&lt;h3&gt;</code>, jamais directement un
+              <code>&lt;h4&gt;</code>.
+            </li>
+          </ul>
+          <p>
+            Et toujours : on choisit le niveau pour le <strong>sens</strong>,
+            pas pour la taille.
+          </p>
+        </aside>
+
+        <h3>Les paragraphes</h3>
+
+        <p>
+          Chaque bloc de texte va dans sa propre balise <code>&lt;p&gt;</code>.
+          Le navigateur <strong>ignore les retours à la ligne et les espaces
+            multiples</strong> de votre code : il les remplace par un seul espace.
+        </p>
+        <p><strong class="etiquette">Exemple en HTML</strong> :</p>
+        <pre><code>&lt;p&gt;Ces deux lignes
+seront affichées      sur une seule ligne.&lt;/p&gt;
+
+&lt;p&gt;Ceci est un deuxième paragraphe, séparé du premier.&lt;/p&gt;</code></pre>
+        <p><strong class="etiquette">Exemple en rendu navigateur</strong> :</p>
+
+        <img src="../images/exemple_paragraphes.png" alt="Exemple de paragraphes" class="image-centrale">
+        <p>
+          Pour forcer un retour à la ligne <em>à l'intérieur</em> d'un paragraphe
+          (une adresse postale, un poème), on utilise <code>&lt;br&gt;</code>.
+          Mais on ne l'utilise <strong>jamais</strong> pour créer de l'espace
+          entre deux paragraphes : c'est le travail du CSS.
+        </p>
+        <p><strong class="etiquette">Exemple en HTML</strong> :</p>
+
+        <pre><code>&lt;!-- Correct --&gt;
+&lt;p&gt;Rue de l'Exemple 12&lt;br&gt;1140 Evere&lt;/p&gt;
+
+&lt;!-- Incorrect : &lt;br&gt; utilisé pour espacer --&gt;
+&lt;p&gt;Premier texte.&lt;br&gt;&lt;br&gt;&lt;br&gt;Deuxième texte.&lt;/p&gt;</code></pre>
+
+        <p><strong class="etiquette">Exemple en rendu navigateur</strong> :</p>
+
+        <img src="../images/exemple_br.png" alt="Exemple de retour à la ligne avec br" class="image-centrale">
+        </section>
+
+        <section>
+        <h2 id="listes">3. Les listes</h2>
+
+        <h3 id="liste-ul">Liste à puces : <code>&lt;ul&gt;</code></h3>
+
+        <p>
+          <code>&lt;ul&gt;</code> (<em>unordered list</em>) sert quand
+          <strong>l'ordre n'a pas d'importance</strong>. Chaque élément est
+          dans un <code>&lt;li&gt;</code> (<em>list item</em>).
+        </p>
+        <p><strong class="etiquette">Exemple en HTML</strong> :</p>
+
+        <pre><code>&lt;ul&gt;
+  &lt;li&gt;Farine&lt;/li&gt;
+  &lt;li&gt;Oeufs&lt;/li&gt;
+  &lt;li&gt;Lait&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        <p><strong class="etiquette">Exemple en rendu navigateur</strong> :</p>
+        <img src="../images/liste_ul.png" alt="Exemple de liste à puces" class="image-centrale">
+
+        <h3 id="liste-ol">Liste numérotée : <code>&lt;ol&gt;</code></h3>
+
+        <p>
+          <code>&lt;ol&gt;</code> (<em>ordered list</em>) sert quand
+          <strong>l'ordre compte</strong> : les étapes d'une recette, un
+          classement, un mode d'emploi.
+        </p>
+        <p><strong class="etiquette">Exemple en HTML</strong> :</p>
+
+        <pre><code>&lt;ol&gt;
+  &lt;li&gt;Mélanger la farine et les œufs.&lt;/li&gt;
+  &lt;li&gt;Ajouter le lait petit à petit.&lt;/li&gt;
+  &lt;li&gt;Laisser reposer une heure.&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+        <p><strong class="etiquette">Exemple en rendu navigateur</strong> :</p>
+        <img src="../images/liste_ol.png" alt="Exemple de liste numérotée" class="image-centrale">
+
+        <p>Quelques attributs utiles de <code>&lt;ol&gt;</code> :</p>
+
+        <table>
+          <caption>Attributs de la liste numérotée</caption>
+          <thead>
+            <tr>
+              <th scope="col">Attribut</th>
+              <th scope="col">Effet</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><code>start="5"</code></th>
+              <td>Commence la numérotation à 5.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>reversed</code></th>
+              <td>Numérote à rebours (un « top 10 »).</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>type="a"</code></th>
+              <td>Numérote avec des lettres (aussi <code>A</code>, <code>i</code>, <code>I</code>).</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>value="5"</code> (sur un <code>&lt;li&gt;</code>)</th>
+              <td>Force le numéro de <strong>cet</strong> élément précis, sans toucher aux autres.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Ces attributs sont un peu datés : pour changer l'apparence des
+          puces ou des numéros sans logique particulière (une étape à
+          sauter, par exemple), on préfère aujourd'hui le CSS
+          (<code>list-style-type</code>). Gardez-les pour les cas où ils ont
+          un vrai sens, comme ci-dessus.
+        </p>
+
+        <aside class="encadre encadre-attention">
+          <h3>Une liste, c'est du contenu — pas une mise en page</h3>
+          <p>
+            Ne prenez pas <code>&lt;ul&gt;</code> comme raccourci pour
+            aligner des éléments côte à côte (un menu, des boutons) si ce
+            ne sont pas réellement <strong>des éléments d'une même
+              collection</strong>. Un lecteur d'écran annonce « liste de
+            5 éléments » : si ça ne correspond à rien de réel pour
+            l'utilisateur, la sémantique induit en erreur plutôt qu'elle
+            n'aide. L'alignement visuel, lui, reste le travail du CSS.
+          </p>
+        </aside>
+
+        <h3 id="listes-imbriquees">Listes imbriquées</h3>
+
+        <p>
+          Une sous-liste se place <strong>à l'intérieur</strong> d'un
+          <code>&lt;li&gt;</code>, jamais directement dans le
+          <code>&lt;ul&gt;</code> :
+        </p>
+        <p><strong class="etiquette">Exemple en HTML</strong> :</p>
+
+        <pre><code>&lt;!-- Correct --&gt;
+&lt;ul&gt;
+  &lt;li&gt;Fruits
+    &lt;ul&gt;
+      &lt;li&gt;Pomme&lt;/li&gt;
+      &lt;li&gt;Poire&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Légumes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Incorrect : le &lt;ul&gt; est un enfant direct du &lt;ul&gt; --&gt;
+&lt;ul&gt;
+  &lt;li&gt;Fruits&lt;/li&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Pomme&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;</code></pre>
+
+        <p><strong class="etiquette">Exemple en rendu navigateur</strong> :</p>
+        <img src="../images/liste_imbriquee.png" alt="Exemple de liste imbriquée" class="image-centrale">
+        <aside class="encadre">
+          <h3>À retenir</h3>
+          <p>
+            Un <code>&lt;ul&gt;</code> ou un <code>&lt;ol&gt;</code> ne peut
+            contenir <strong>que</strong> des <code>&lt;li&gt;</code>. Tout le
+            reste (texte, sous-liste, lien) va dans un <code>&lt;li&gt;</code>.
+            Le validateur du W3C signale immédiatement cette erreur.
+          </p>
+        </aside>
+
+        <h3 id="liste-description">Liste de description : <code>&lt;dl&gt;</code></h3>
+
+        <p>
+          Un troisième type de liste, moins courant mais utile pour des
+          paires <strong>terme / définition</strong> : un glossaire, une
+          FAQ, les caractéristiques d'un produit.
+        </p>
+        <p><strong class="etiquette">Exemple en HTML</strong> :</p>
+
+        <pre><code>&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Le langage qui structure le contenu d'une page.&lt;/dd&gt;
+
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Le langage qui définit son apparence.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+
+        <p><strong class="etiquette">Exemple en rendu navigateur</strong> :</p>
+
+        <img src="../images/liste_description.png" alt="Exemple de liste de description" class="image-centrale">
+        <p>
+          <code>&lt;dl&gt;</code> (<em>description list</em>) contient des
+          paires de <code>&lt;dt&gt;</code> (<em>description term</em>, le
+          terme) et <code>&lt;dd&gt;</code> (<em>description details</em>,
+          sa définition).
+        </p>
+
+        </section>
+
+        <section>
+        <h2 id="emphase">4. La mise en emphase</h2>
+
+        <p>
+          Deux balises permettent de faire ressortir une partie d'un texte. Comme
+          pour les titres, on les choisit pour le <strong>sens</strong>.
+        </p>
+
+        <table>
+          <caption>Les balises d'emphase</caption>
+          <thead>
+            <tr>
+              <th scope="col">Balise</th>
+              <th scope="col">Sens</th>
+              <th scope="col">Exemple</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><code>&lt;strong&gt;</code></th>
+              <td>Importance forte : un avertissement, une information à ne pas manquer.</td>
+              <td><code>&lt;strong&gt;Ne pas dépasser 180 °C.&lt;/strong&gt;</code></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;em&gt;</code></th>
+              <td>Accent d'insistance : le mot sur lequel on appuierait à l'oral.</td>
+              <td><code>Je n'ai &lt;em&gt;jamais&lt;/em&gt; dit ça.</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><strong class="etiquette">Exemple en HTML</strong> :</p>
+
+        <pre><code>&lt;p&gt;&lt;strong&gt;Ne pas dépasser 180 °C.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Je n'ai &lt;em&gt;jamais&lt;/em&gt; dit ça.&lt;/p&gt;</code></pre>
+
+        <p><strong class="etiquette">Exemple en rendu navigateur</strong> :</p>
+
+        <img src="../images/strong_em_rendu.png" alt="Exemple de strong et em dans le navigateur"
+          class="image-centrale">
+
+        <p>
+          Par défaut, le navigateur affiche <code>&lt;strong&gt;</code> en gras
+          et <code>&lt;em&gt;</code> en italique. Mais un lecteur d'écran, lui,
+          peut changer d'intonation : c'est la différence avec un simple style
+          visuel.
+        </p>
+
+        <h3 id="autres-emphases">Et quand ce n'est pas une question d'importance ?</h3>
+
+        <p>
+          <code>&lt;b&gt;</code>, <code>&lt;i&gt;</code> et
+          <code>&lt;u&gt;</code> existent aussi. Ce sont d'anciennes balises
+          de présentation, héritées d'une époque où le CSS n'existait pas
+          encore : elles n'ont <strong>pas</strong> de notion d'importance
+          ou d'insistance. La règle : on ne les utilise que s'il n'existe
+          vraiment aucune balise plus adaptée — ce qui est rare.
+        </p>
+
+        <table>
+          <caption>Les balises de présentation restantes</caption>
+          <thead>
+            <tr>
+              <th scope="col">Balise</th>
+              <th scope="col">À utiliser pour</th>
+              <th scope="col">Exemple</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><code>&lt;b&gt;</code></th>
+              <td>Attirer l'œil sans notion d'importance : un mot-clé, un
+                nom de produit.</td>
+              <td><code>&lt;b&gt;sémantique&lt;/b&gt;</code></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;i&gt;</code></th>
+              <td>Un texte d'une autre nature : un mot étranger, un nom
+                scientifique, une pensée.</td>
+              <td><code>&lt;i&gt;Felis catus&lt;/i&gt;</code></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;u&gt;</code></th>
+              <td>Un nom propre, ou signaler une faute connue (dans un
+                correcteur, par exemple).</td>
+              <td><code>&lt;u&gt;orthografe&lt;/u&gt;</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><strong class="etiquette">Exemple en HTML</strong> :</p>
+
+        <pre><code>&lt;p&gt;&lt;b&gt;Offre limitée&lt;/b&gt; : plus que 3 exemplaires en stock.&lt;/p&gt;
+&lt;p&gt;&lt;i&gt;Felis catus&lt;/i&gt;, le nom scientifique du chat domestique.&lt;/p&gt;
+&lt;p&gt;Votre nom : &lt;u&gt;Dupont&lt;/u&gt;&lt;/p&gt;</code></pre>
+
+        <p><strong class="etiquette">Exemple en rendu navigateur</strong> :</p>
+
+        <img src="../images/b_i_u_rendu.png" alt="Exemple de b, i et u dans le navigateur" class="image-centrale">
+
+        <aside class="encadre encadre-attention">
+          <h3>Pourquoi éviter <code>&lt;u&gt;</code> sur le Web</h3>
+          <p>
+            Sur un site, un texte souligné est lu comme <strong>un
+              lien</strong> par la plupart des visiteurs — c'est une
+            convention bien ancrée. Souligner autre chose qu'un lien les
+            induit en erreur. Si vous avez besoin d'un soulignement pour une
+            autre raison, préférez le CSS (<code>text-decoration</code>), et
+            gardez <code>&lt;u&gt;</code> pour les rares cas vraiment
+            sémantiques comme ci-dessus.
+          </p>
+        </aside>
+
+        <p>
+          En cas de doute, dans ce cours, utilisez <code>&lt;strong&gt;</code>
+          et <code>&lt;em&gt;</code> plutôt que ces trois balises.
+        </p>
+
+        <h3 id="texte-barre">Texte barré : <code>&lt;s&gt;</code></h3>
+
+        <p>
+          Une dernière balise, différente des trois précédentes :
+          <code>&lt;s&gt;</code> (<em>strike</em>) a bien un sens propre —
+          elle marque un contenu <strong>qui n'est plus exact ou plus
+            valable</strong>. C'est le cas typique d'un prix barré en
+          promotion.
+        </p>
+        <p><strong class="etiquette">Exemple en HTML</strong> :</p>
+
+        <pre><code>&lt;p&gt;Prix : &lt;s&gt;25 €&lt;/s&gt; 18 €&lt;/p&gt;</code></pre>
+        <p><strong class="etiquette">Exemple en rendu navigateur</strong> :</p>
+
+        <img src="../images/s_rendu.png" alt="Exemple de s dans le navigateur" class="image-centrale">
+
+        <p>
+          Si vous voulez un simple effet visuel de barré, sans que le
+          contenu soit réellement obsolète, c'est à nouveau le CSS
+          (<code>text-decoration: line-through</code>) qu'il faut utiliser,
+          pas <code>&lt;s&gt;</code>.
+        </p>
+
+        <h3 id="citer-code">Citer et montrer du code</h3>
+
+        <p>Deux autres balises de texte reviendront souvent dans vos pages :</p>
+
+        <table>
+          <caption>Citation et code</caption>
+          <thead>
+            <tr>
+              <th scope="col">Balise</th>
+              <th scope="col">Usage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><code>&lt;blockquote&gt;</code></th>
+              <td>Une citation longue, reprise d'une autre source.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;code&gt;</code></th>
+              <td>Un extrait de code informatique, en ligne ou dans un bloc
+                <code>&lt;pre&gt;</code>.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p><strong class="etiquette">Exemple en HTML</strong> :</p>
+
+        <pre><code>&lt;blockquote cite="https://exemple.be/source"&gt;
+  &lt;p&gt;Le web est fait pour être lu par tous, humains et machines.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Pour afficher un message, utilisez &lt;code&gt;console.log()&lt;/code&gt;.&lt;/p&gt;</code></pre>
+
+        <p><strong class="etiquette">Exemple en rendu navigateur</strong> :</p>
+
+        <img src="../images/blockquote_code_rendu.png" alt="Exemple de blockquote et code dans le navigateur"
+          class="image-centrale">
+        <p>
+          Vous avez d'ailleurs déjà croisé <code>&lt;pre&gt;</code> et
+          <code>&lt;code&gt;</code> ensemble : c'est exactement ce que cette
+          séance utilise pour vous montrer ses exemples de code.
+        </p>
+
+        </section>
+
+        <section>
+        <h2 id="images">5. Les images</h2>
+
+        <p>
+          Vous avez vu l'essentiel en séance 1 : <code>&lt;img&gt;</code> est
+          une balise orpheline, avec deux attributs indispensables. Un petit
+          rappel, avant de les utiliser pour de vrai dans l'exercice puis le
+          projet.
+        </p>
+
+        <pre><code>&lt;img src="crepes.jpg" alt="Une pile de crêpes garnies de sucre et de confiture"&gt;</code></pre>
+
+        <table>
+          <caption>Les attributs d'une image</caption>
+          <thead>
+            <tr>
+              <th scope="col">Attribut</th>
+              <th scope="col">Rôle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><code>src</code></th>
+              <td>Le chemin vers le fichier image (relatif, comme vu en
+                séance 1).</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>alt</code></th>
+              <td>Le texte de remplacement : lu par les lecteurs d'écran,
+                affiché si l'image ne charge pas. <strong>Jamais
+                vide</strong> si l'image porte une information.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>width</code> / <code>height</code>
+                (facultatifs)</th>
+              <td>Les dimensions en pixels. Les préciser évite que la page
+                « saute » pendant le chargement de l'image.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <aside class="encadre encadre-attention">
+          <h3>Un bon <code>alt</code>, un mauvais <code>alt</code></h3>
+          <p>
+            <code>alt="image1.jpg"</code> ou <code>alt="photo"</code> ne
+            décrivent rien : inutiles pour quelqu'un qui ne voit pas l'image.
+            Décrivez ce qu'elle montre, en une phrase courte, comme dans
+            l'exemple ci-dessus.
+          </p>
+        </aside>
+
+        </section>
+
+        <section>
+        <h2 id="exercice">6. Exercice guidé</h2>
+
+        <p>
+          Avant le projet, un échauffement. Dans votre dossier
+          <code>web-ba1</code>, créez un dossier <code>exercice-02</code> avec un
+          fichier <code>index.html</code>, et reproduisez cette page :
+        </p>
+        <p><strong class="etiquette">Exemple en HTML</strong> :</p>
+
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;meta name="description" content="Recette des crêpes, exercice de la séance 2."&gt;
+  &lt;title&gt;Recette des crêpes&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;!-- Exercice 02 : recette des crêpes --&gt;
+
+  &lt;h1&gt;Les crêpes&lt;/h1&gt;
+
+  &lt;img src="../images/crepes.png" alt="Une pile de crêpes garnies de sucre et de confiture" width="280" height="250"&gt;
+
+  &lt;p&gt;
+    Une recette &lt;em&gt;très&lt;/em&gt; simple, pour environ 15 crêpes.
+  &lt;/p&gt;
+
+  &lt;h2&gt;Ingrédients&lt;/h2&gt;
+  &lt;ul&gt;
+    &lt;li&gt;250 g de farine&lt;/li&gt;
+    &lt;li&gt;4 œufs&lt;/li&gt;
+    &lt;li&gt;50 cl de lait&lt;/li&gt;
+    &lt;li&gt;Pour la garniture :
+      &lt;ul&gt;
+        &lt;li&gt;sucre&lt;/li&gt;
+        &lt;li&gt;confiture&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;hr&gt;
+
+  &lt;h2&gt;Préparation&lt;/h2&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Mélanger la farine et les œufs.&lt;/li&gt;
+    &lt;li&gt;Ajouter le lait petit à petit.&lt;/li&gt;
+    &lt;li&gt;Laisser reposer &lt;strong&gt;au moins une heure&lt;/strong&gt;.&lt;/li&gt;
+  &lt;/ol&gt;
+
+  &lt;p&gt;Bon appétit !&lt;br&gt;Et n'oubliez pas la confiture.&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+
+        <p>Voici le rendu attendu dans le navigateur, sans aucun CSS :</p>
+        <p><strong class="etiquette">Exemple en rendu navigateur</strong> :</p>
+
+        <img src="../images/exercice_02_rendu.png"
+          alt="Rendu attendu de l'exercice : la recette des crêpes affichée sans mise en forme" class="image-centrale">
+
+        <p>Ensuite, testez-vous :</p>
+
+        <ol>
+          <li>Ouvrez la page avec Live Server.</li>
+          <li>Supprimez la ligne <code>&lt;meta charset="UTF-8"&gt;</code>,
+            enregistrez, puis ouvrez directement le fichier (double-clic dans
+            l'explorateur). Que deviennent les accents ? Remettez la ligne.</li>
+          <li>Remplacez le <code>&lt;ol&gt;</code> par un
+            <code>&lt;ul&gt;</code> : qu'est-ce qui change à l'écran ? Et dans
+            le <strong>sens</strong> ?
+          </li>
+          <li>Passez la page au <a href="https://validator.w3.org/#validate_by_input" target="_blank"
+              rel="noopener noreferrer">validateur du W3C</a> (onglet
+            <em>Validate by Direct Input</em>, collez le code).
+          </li>
+        </ol>
+
+        </section>
+
+        <section>
+        <h2 id="projet-1">7. Projet 1 — lancement</h2>
+
+        <h3>Le thème</h3>
+
+        <p>Choisissez <strong>un seul</strong> thème dans la liste suivante :</p>
+
+        <ul>
+          <li><i class="fa-solid fa-paw" aria-hidden="true"></i> Votre animal préféré</li>
+          <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Un lieu que vous aimez</li>
+          <li><i class="fa-solid fa-utensils" aria-hidden="true"></i> Un plat que vous savez cuisiner</li>
+          <li><i class="fa-solid fa-book" aria-hidden="true"></i> Un livre ou un film marquant</li>
+          <li><i class="fa-solid fa-guitar" aria-hidden="true"></i> Un passe-temps</li>
+        </ul>
+
+        <p>
+          Le thème est libre dans cette liste, mais la <strong>structure est
+            imposée</strong> : tout le monde construit la même charpente. Ce
+          projet évoluera au fil des séances (liens en séance 3, CSS
+          ensuite) : choisissez un sujet dont vous aurez envie de parler.
+        </p>
+
+        <h3>La structure imposée</h3>
+
+        <table>
+          <caption>Contenu minimum du projet 1</caption>
+          <thead>
+            <tr>
+              <th scope="col">Élément</th>
+              <th scope="col">Balise</th>
+              <th scope="col">Contenu attendu</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Titre</th>
+              <td><code>&lt;h1&gt;</code></td>
+              <td>Le nom de votre sujet (un seul <code>&lt;h1&gt;</code>).</td>
+            </tr>
+            <tr>
+              <th scope="row">Image</th>
+              <td><code>&lt;img&gt;</code></td>
+              <td>Une image qui illustre le sujet, avec un <code>alt</code>
+                qui décrit vraiment ce qu'elle montre.</td>
+            </tr>
+            <tr>
+              <th scope="row">Présentation</th>
+              <td><code>&lt;h2&gt;</code> + 2 à 3 <code>&lt;p&gt;</code></td>
+              <td>Présentation du sujet et pourquoi vous l'avez choisi, rédigée
+                par vous.</td>
+            </tr>
+            <tr>
+              <th scope="row">Séparation</th>
+              <td><code>&lt;hr&gt;</code></td>
+              <td>Entre la présentation et les caractéristiques.</td>
+            </tr>
+            <tr>
+              <th scope="row">Caractéristiques — les essentiels</th>
+              <td><code>&lt;h2&gt;</code> Caractéristiques, puis
+                <code>&lt;h3&gt;</code> + <code>&lt;ul&gt;</code> +
+                <code>&lt;li&gt;</code></td>
+              <td>Au moins 4 éléments, dans n'importe quel ordre.</td>
+            </tr>
+            <tr>
+              <th scope="row">Caractéristiques — dans l'ordre</th>
+              <td><code>&lt;h3&gt;</code> + <code>&lt;ol&gt;</code> +
+                <code>&lt;li&gt;</code></td>
+              <td>Au moins 3 étapes liées au sujet, où l'ordre compte
+                vraiment.</td>
+            </tr>
+            <tr>
+              <th scope="row">Un conseil</th>
+              <td><code>&lt;h4&gt;</code> + <code>&lt;p&gt;</code> avec
+                <code>&lt;br&gt;</code></td>
+              <td>Une remarque ou une astuce liée au sujet, sur deux lignes
+                dans le même paragraphe.</td>
+            </tr>
+            <tr>
+              <th scope="row">Emphase</th>
+              <td><code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code></td>
+              <td>Au moins une utilisation de chaque, justifiée par le sens.</td>
+            </tr>
+            <tr>
+              <th scope="row">Note personnelle</th>
+              <td><code>&lt;!-- --&gt;</code></td>
+              <td>Un commentaire qui vous identifie, en haut du fichier (déjà
+                dans le modèle).</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Avec quatre niveaux de titres (<code>&lt;h1&gt;</code> à
+          <code>&lt;h4&gt;</code>), la règle de la séance 1 s'applique plus
+          que jamais : chaque niveau suit le précédent, sans en sauter aucun.
+        </p>
+
+
+        <aside class="encadre">
+          <h3>Des idées pour chaque partie</h3>
+          <ul>
+            <li><strong>Animal</strong> — Les essentiels : habitat,
+              alimentation, taille, espérance de vie. Dans l'ordre : les
+              étapes pour bien s'en occuper.</li>
+            <li><strong>Lieu</strong> — Les essentiels : pays, climat, ce
+              qu'il faut y voir. Dans l'ordre : l'itinéraire pour y aller.</li>
+            <li><strong>Plat</strong> — Les essentiels : les ingrédients.
+              Dans l'ordre : les étapes de la recette.</li>
+            <li><strong>Livre ou film</strong> — Les essentiels : auteur ou
+              réalisateur, année, genre. Dans l'ordre : les grandes étapes
+              de l'histoire, sans tout dévoiler.</li>
+            <li><strong>Passe-temps</strong> — Les essentiels : matériel
+              nécessaire, coût, fréquence. Dans l'ordre : comment débuter,
+              étape par étape.</li>
+          </ul>
+        </aside>
+
+        <aside class="encadre encadre-attention">
+          <h3>Votre texte, vos mots</h3>
+          <p>
+            Les paragraphes doivent être <strong>rédigés par vous</strong>.
+            Un texte copié depuis Wikipédia ou généré par une IA n'apprend rien
+            et se repère facilement (souvenez-vous du point sur la copie de
+            contenu en séance 1).
+          </p>
+        </aside>
+
+        <h3>Avant de déposer : la check-list</h3>
+
+        <ul>
+          <li>Le fichier s'appelle <code>index.html</code>, en minuscules.</li>
+          <li>Le squelette est complet : <code>DOCTYPE</code>, <code>lang="fr"</code>,
+            <code>charset</code>, <code>viewport</code>, <code>title</code>,
+            <code>description</code>.
+          </li>
+          <li>Un seul <code>&lt;h1&gt;</code>, hiérarchie complète jusqu'à
+            <code>&lt;h4&gt;</code>, sans saut de niveau.</li>
+          <li><code>&lt;br&gt;</code> utilisé seulement à l'intérieur du
+            conseil, jamais pour espacer deux paragraphes.</li>
+          <li>Les listes ne contiennent que des <code>&lt;li&gt;</code>.</li>
+          <li>L'image a un <code>alt</code> qui décrit vraiment son contenu.</li>
+          <li>Le code est indenté proprement (VS Code : clic droit →
+            <em>Formater le document</em>).
+          </li>
+          <li>Le validateur du W3C n'affiche <strong>aucune erreur</strong>.</li>
+        </ul>
+
+        </section>
+
+        <section>
+        <h2 id="portfolio">8. Votre portfolio : la page d'accueil</h2>
+
+        <p>
+          Un <strong>portfolio</strong> est une vitrine personnelle : il présente
+          qui vous êtes et ce que vous savez faire. Vous pourrez le montrer pour un
+          stage ou un emploi. Vous allez le construire tout au long du cours :
+        </p>
+
+        <ul>
+          <li><strong>aujourd'hui</strong> : sa page d'accueil, en HTML, avec les
+            balises que vous connaissez ;</li>
+          <li><strong>en séance 6</strong> : sa feuille de style ;</li>
+          <li><strong>des séances 7 à 9</strong> : le projet 3, qui en fera un vrai
+            portfolio — vos projets 1 et 2 viendront s'y ranger en séance 7 —, mis
+            en ligne en séance 9.</li>
+        </ul>
+
+        <p>
+          Dans le dossier <code>web-ba1/portfolio/</code>, créez un fichier
+          <code>index.html</code> avec le squelette habituel.
+        </p>
+
+        <h3>La structure imposée</h3>
+
+        <table>
+          <caption>Contenu minimum de la page d'accueil du portfolio</caption>
+          <thead>
+            <tr>
+              <th scope="col">Élément</th>
+              <th scope="col">Balise</th>
+              <th scope="col">Contenu attendu</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Votre nom</th>
+              <td><code>&lt;h1&gt;</code></td>
+              <td>Votre prénom et votre nom (un seul <code>&lt;h1&gt;</code>).</td>
+            </tr>
+            <tr>
+              <th scope="row">Accroche</th>
+              <td><code>&lt;p&gt;</code></td>
+              <td>Une phrase qui vous présente, par exemple « Étudiant en
+                informatique à l'EAFC Evere ».</td>
+            </tr>
+            <tr>
+              <th scope="row">Image</th>
+              <td><code>&lt;img&gt;</code></td>
+              <td>Une photo de vous <strong>ou</strong> une image qui vous
+                représente (un avatar, un dessin, un objet que vous aimez), avec
+                un <code>alt</code> qui la décrit.</td>
+            </tr>
+            <tr>
+              <th scope="row">À propos de moi</th>
+              <td><code>&lt;h2&gt;</code> + 2 <code>&lt;p&gt;</code></td>
+              <td>Votre parcours, ce qui vous intéresse, ce que vous attendez de ce
+                cours. Au moins un <code>&lt;strong&gt;</code> ou un
+                <code>&lt;em&gt;</code>, justifié par le sens.</td>
+            </tr>
+            <tr>
+              <th scope="row">Mes compétences</th>
+              <td><code>&lt;h2&gt;</code> + <code>&lt;ul&gt;</code></td>
+              <td>Au moins 4 éléments : langues, logiciels, qualités...</td>
+            </tr>
+            <tr>
+              <th scope="row">Mes projets</th>
+              <td><code>&lt;h2&gt;</code> + <code>&lt;ol&gt;</code></td>
+              <td>Les projets du cours, dans l'ordre : le projet 1 avec son thème en
+                une phrase, puis « Projet 2 — à venir » et « Projet 3 — à
+                venir ».</td>
+            </tr>
+            <tr>
+              <th scope="row">Contact</th>
+              <td><code>&lt;h2&gt;</code> + <code>&lt;p&gt;</code></td>
+              <td>Votre adresse e-mail, écrite en texte (les liens arrivent en
+                séance 3).</td>
+            </tr>
+            <tr>
+              <th scope="row">Note personnelle</th>
+              <td><code>&lt;!-- --&gt;</code></td>
+              <td>Un commentaire qui vous identifie, en haut du fichier.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <aside class="encadre encadre-attention">
+          <h3>Ce que vous rendez public</h3>
+          <p>
+            Ce portfolio sera mis en ligne en séance 9. N'y mettez ni votre
+            adresse, ni votre numéro de téléphone, ni votre date de naissance.
+            Utilisez une adresse e-mail que vous acceptez de montrer (celle de
+            l'école, par exemple). La photo de vous est <strong>facultative</strong> :
+            une image qui vous représente fait tout aussi bien l'affaire.
+            Souvenez-vous des bons réflexes de sécurité de la
+            <a href="seance-01.html#securite-de-base">séance 1</a>.
+          </p>
+        </aside>
+
+        <p>
+          La même check-list que pour le projet 1 s'applique : squelette complet,
+          un seul <code>&lt;h1&gt;</code>, pas de saut de niveau, listes qui ne
+          contiennent que des <code>&lt;li&gt;</code>, <code>alt</code> pertinent,
+          et <strong>aucune erreur</strong> au validateur du W3C.
+        </p>
+
+        </section>
+
+        <section>
+        <h2 id="livrable">9. Le livrable</h2>
+
+        <p>À déposer dans le devoir Teams de la séance 2 :</p>
+
+        <ol>
+          <li><strong>Une capture d'écran</strong> de votre environnement : VS Code
+            ouvert sur votre projet, et à côté le navigateur affichant la page
+            via Live Server (l'adresse <code>127.0.0.1:5500</code> doit être
+            visible).</li>
+          <li><strong>Vos dossiers <code>projet-1</code> et <code>portfolio</code>,
+              compressés ensemble en un seul <code>.zip</code></strong> (sélectionnez
+            les deux dossiers, puis clic droit → <em>Compresser vers</em> →
+            <em>Fichier ZIP</em>). Les deux fichiers s'appellent
+            <code>index.html</code> : l'archive évite de les confondre, et garde
+            l'image avec sa page.</li>
+        </ol>
+
+        <p>
+          Ce dépôt <strong>n'est pas noté</strong> : il valide votre présence.
+        </p>
+
+        <aside class="encadre">
+          <h3>Et ensuite ?</h3>
+          <p>
+            À la <a href="seance-03.html">séance 3</a>, on enrichira ce même
+            projet avec des balises sémantiques et un lien externe, avant de
+            le finaliser et le déposer en séance 4. Gardez bien vos dossiers
+            <code>projet-1</code> et <code>portfolio</code> : votre
+            portfolio sera habillé en CSS en séance 6, puis deviendra votre projet 3,
+            qui accueillera vos projets en séance 7.
+          </p>
+        </aside>
+
+        </section>
+
+        <section>
+        <h2 id="exercices">10. Exercices</h2>
+
+        <p>
+          Des exercices <strong>corrigés</strong> pour pratiquer ce que vous avez vu
+          dans cette séance, du plus simple au plus complet. Ils sont
+          <strong>facultatifs et ne sont pas à rendre</strong> : faites-les en
+          autonomie, pendant les séances à distance ou chez vous. Les seuls travaux
+          à déposer dans Teams sont ceux décrits dans les séances 2, 4 et 6.
+          Créez un dossier <code>exercice-02/</code> et un fichier par exercice
+          (<code>ex1.html</code>, <code>ex2.html</code>...).
+        </p>
+
+        <aside class="encadre encadre-attention">
+          <h3>Essayez d'abord, vérifiez ensuite</h3>
+          <p>
+            Chaque exercice propose un <strong>indice</strong> et une
+            <strong>solution</strong>, cachés : cliquez dessus pour les afficher.
+            Écrivez d'abord votre propre code dans VS Code, testez-le avec Live
+            Server, et n'ouvrez la solution qu'ensuite pour <strong>comparer</strong>.
+            À l'examen écrit, vous devrez écrire du code sans aide : c'est en
+            cherchant par vous-même que vous vous y préparez.
+          </p>
+        </aside>
+
+        <p>
+          <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
+          Envie de vous entraîner encore ? Des exercices courts pour chaque balise
+          vous attendent dans les
+          <a href="../ressources/exercices.html#s2">exercices supplémentaires de la séance 2</a>.
+        </p>
+
+        <!-- ========== Exercice 1 ========== -->
+
+        <h3 id="ex-recette">Exercice 1 — Une recette en listes</h3>
+
+        <p><em>Partie concernée : <a href="#listes">les listes</a>.</em></p>
+
+        <p>
+          Écrivez la recette des crêpes avec un titre principal, une partie
+          « Ingrédients » (farine, œufs, lait, une pincée de sel) et une partie
+          « Préparation » en quatre étapes : mélanger la farine et le sel, ajouter
+          les œufs, verser le lait petit à petit, laisser reposer une heure.
+        </p>
+
+        <details class="exercice-aide">
+          <summary><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Indice</summary>
+          <p>
+            L'ordre des ingrédients a-t-il de l'importance ? Et celui des étapes ?
+            La réponse vous dit quelle liste utiliser pour chacun.
+          </p>
+        </details>
+
+        <details class="exercice-aide solution">
+          <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la solution</summary>
+
+          <p><strong class="etiquette">Solution en HTML (contenu du body)</strong> :</p>
+
+          <pre><code>&lt;h1&gt;Les crêpes&lt;/h1&gt;
+
+&lt;h2&gt;Ingrédients&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;250 g de farine&lt;/li&gt;
+  &lt;li&gt;4 œufs&lt;/li&gt;
+  &lt;li&gt;50 cl de lait&lt;/li&gt;
+  &lt;li&gt;Une pincée de sel&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Préparation&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Mélanger la farine et le sel.&lt;/li&gt;
+  &lt;li&gt;Ajouter les œufs.&lt;/li&gt;
+  &lt;li&gt;Verser le lait petit à petit.&lt;/li&gt;
+  &lt;li&gt;Laisser reposer une heure.&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+          <p><strong class="etiquette">Rendu dans le navigateur</strong> :</p>
+
+          <div class="navigateur">
+              <p class="navigateur-barre" aria-hidden="true">exercice-02/ex1.html</p>
+              <iframe sandbox loading="lazy" height="400"
+                  title="Aperçu de l&#x27;exemple dans le navigateur"
+                  srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;fr&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;Aperçu&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Les crêpes&lt;/h1&gt;
+
+&lt;h2&gt;Ingrédients&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;250 g de farine&lt;/li&gt;
+  &lt;li&gt;4 œufs&lt;/li&gt;
+  &lt;li&gt;50 cl de lait&lt;/li&gt;
+  &lt;li&gt;Une pincée de sel&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Préparation&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Mélanger la farine et le sel.&lt;/li&gt;
+  &lt;li&gt;Ajouter les œufs.&lt;/li&gt;
+  &lt;li&gt;Verser le lait petit à petit.&lt;/li&gt;
+  &lt;li&gt;Laisser reposer une heure.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/body&gt;
+&lt;/html&gt;"></iframe>
+          </div>
+
+          <p>
+            <strong>Pourquoi ?</strong> Les ingrédients peuvent être lus dans
+            n'importe quel ordre : <code>&lt;ul&gt;</code>. Les étapes doivent être
+            suivies dans l'ordre : <code>&lt;ol&gt;</code>, qui les numérote
+            automatiquement.
+          </p>
+        </details>
+
+        <!-- ========== Exercice 2 ========== -->
+
+        <h3 id="ex-imbriquee">Exercice 2 — Une carte avec des listes imbriquées</h3>
+
+        <p><em>Partie concernée : <a href="#listes-imbriquees">les listes imbriquées</a>.</em></p>
+
+        <p>
+          Écrivez la carte d'une crêperie sous forme de liste à puces à deux
+          niveaux : « Crêpes sucrées » (sucre, chocolat, confiture) et « Galettes
+          salées » (complète, fromage).
+        </p>
+
+        <details class="exercice-aide">
+          <summary><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Indice</summary>
+          <p>
+            La sous-liste se place <strong>à l'intérieur</strong> du
+            <code>&lt;li&gt;</code> « Crêpes sucrées », juste avant son
+            <code>&lt;/li&gt;</code>.
+          </p>
+        </details>
+
+        <details class="exercice-aide solution">
+          <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la solution</summary>
+
+          <p><strong class="etiquette">Solution en HTML (contenu du body)</strong> :</p>
+
+          <pre><code>&lt;ul&gt;
+  &lt;li&gt;Crêpes sucrées
+    &lt;ul&gt;
+      &lt;li&gt;Sucre&lt;/li&gt;
+      &lt;li&gt;Chocolat&lt;/li&gt;
+      &lt;li&gt;Confiture&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Galettes salées
+    &lt;ul&gt;
+      &lt;li&gt;Complète&lt;/li&gt;
+      &lt;li&gt;Fromage&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+          <p><strong class="etiquette">Rendu dans le navigateur</strong> :</p>
+
+          <div class="navigateur">
+              <p class="navigateur-barre" aria-hidden="true">exercice-02/ex2.html</p>
+              <iframe sandbox loading="lazy" height="200"
+                  title="Aperçu de l&#x27;exemple dans le navigateur"
+                  srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;fr&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;Aperçu&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;ul&gt;
+  &lt;li&gt;Crêpes sucrées
+    &lt;ul&gt;
+      &lt;li&gt;Sucre&lt;/li&gt;
+      &lt;li&gt;Chocolat&lt;/li&gt;
+      &lt;li&gt;Confiture&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Galettes salées
+    &lt;ul&gt;
+      &lt;li&gt;Complète&lt;/li&gt;
+      &lt;li&gt;Fromage&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;"></iframe>
+          </div>
+
+          <p>
+            <strong>Pourquoi ?</strong> Un <code>&lt;ul&gt;</code> ne peut contenir
+            que des <code>&lt;li&gt;</code> : la sous-liste doit donc vivre dans un
+            <code>&lt;li&gt;</code>. Le navigateur change automatiquement la forme
+            des puces au deuxième niveau.
+          </p>
+        </details>
+
+        <!-- ========== Exercice 3 ========== -->
+
+        <h3 id="ex-glossaire">Exercice 3 — Un petit glossaire</h3>
+
+        <p><em>Partie concernée : <a href="#liste-description">la liste de description</a>.</em></p>
+
+        <p>
+          Créez un glossaire avec trois termes et leur définition : <strong>HTML</strong>
+          (le langage qui structure le contenu d'une page), <strong>CSS</strong> (le
+          langage qui met en forme une page) et <strong>URL</strong> (l'adresse d'une
+          ressource sur le Web).
+        </p>
+
+        <details class="exercice-aide">
+          <summary><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Indice</summary>
+          <p>
+            Une liste de description utilise trois balises : une pour la liste, une
+            pour le terme, une pour la définition.
+          </p>
+        </details>
+
+        <details class="exercice-aide solution">
+          <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la solution</summary>
+
+          <p><strong class="etiquette">Solution en HTML (contenu du body)</strong> :</p>
+
+          <pre><code>&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Le langage qui structure le contenu d'une page.&lt;/dd&gt;
+
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Le langage qui met en forme une page.&lt;/dd&gt;
+
+  &lt;dt&gt;URL&lt;/dt&gt;
+  &lt;dd&gt;L'adresse d'une ressource sur le Web.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+
+          <p><strong class="etiquette">Rendu dans le navigateur</strong> :</p>
+
+          <div class="navigateur">
+              <p class="navigateur-barre" aria-hidden="true">exercice-02/ex3.html</p>
+              <iframe sandbox loading="lazy" height="200"
+                  title="Aperçu de l&#x27;exemple dans le navigateur"
+                  srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;fr&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;Aperçu&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Le langage qui structure le contenu d&#x27;une page.&lt;/dd&gt;
+
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Le langage qui met en forme une page.&lt;/dd&gt;
+
+  &lt;dt&gt;URL&lt;/dt&gt;
+  &lt;dd&gt;L&#x27;adresse d&#x27;une ressource sur le Web.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/body&gt;
+&lt;/html&gt;"></iframe>
+          </div>
+
+          <p>
+            <strong>Pourquoi ?</strong> <code>&lt;dl&gt;</code> (<em>description
+              list</em>) contient des paires : un <code>&lt;dt&gt;</code> (le terme)
+            suivi d'un <code>&lt;dd&gt;</code> (sa description), que le navigateur
+            décale vers la droite.
+          </p>
+        </details>
+
+        <!-- ========== Exercice 4 ========== -->
+
+        <h3 id="ex-emphase">Exercice 4 — La bonne balise d'emphase</h3>
+
+        <p><em>Partie concernée : <a href="#emphase">la mise en emphase</a>.</em></p>
+
+        <p>Pour chaque phrase, mettez le mot en gras dans l'énoncé dans la balise qui convient :</p>
+
+        <ol>
+          <li>« <strong>Attention</strong> : le four est très chaud. » (un avertissement)</li>
+          <li>« Je t'avais dit <strong>samedi</strong>, pas dimanche ! » (le mot sur lequel on appuie à l'oral)</li>
+          <li>« Le nom latin du sarrasin est <strong>Fagopyrum esculentum</strong>. »</li>
+          <li>« Prix : <strong>8 €</strong> 6 € » (l'ancien prix, qui n'est plus valable)</li>
+        </ol>
+
+        <details class="exercice-aide">
+          <summary><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Indice</summary>
+          <p>
+            Quatre balises différentes : <code>&lt;strong&gt;</code>,
+            <code>&lt;em&gt;</code>, <code>&lt;i&gt;</code> et <code>&lt;s&gt;</code>.
+            Demandez-vous à chaque fois quel <strong>sens</strong> a le mot, pas à
+            quoi il doit ressembler.
+          </p>
+        </details>
+
+        <details class="exercice-aide solution">
+          <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la solution</summary>
+
+          <p><strong class="etiquette">Solution en HTML (contenu du body)</strong> :</p>
+
+          <pre><code>&lt;p&gt;&lt;strong&gt;Attention&lt;/strong&gt; : le four est très chaud.&lt;/p&gt;
+&lt;p&gt;Je t'avais dit &lt;em&gt;samedi&lt;/em&gt;, pas dimanche !&lt;/p&gt;
+&lt;p&gt;Le nom latin du sarrasin est &lt;i&gt;Fagopyrum esculentum&lt;/i&gt;.&lt;/p&gt;
+&lt;p&gt;Prix : &lt;s&gt;8 €&lt;/s&gt; 6 €&lt;/p&gt;</code></pre>
+
+          <p><strong class="etiquette">Rendu dans le navigateur</strong> :</p>
+
+          <div class="navigateur">
+              <p class="navigateur-barre" aria-hidden="true">exercice-02/ex4.html</p>
+              <iframe sandbox loading="lazy" height="200"
+                  title="Aperçu de l&#x27;exemple dans le navigateur"
+                  srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;fr&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;Aperçu&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;&lt;strong&gt;Attention&lt;/strong&gt; : le four est très chaud.&lt;/p&gt;
+&lt;p&gt;Je t&#x27;avais dit &lt;em&gt;samedi&lt;/em&gt;, pas dimanche !&lt;/p&gt;
+&lt;p&gt;Le nom latin du sarrasin est &lt;i&gt;Fagopyrum esculentum&lt;/i&gt;.&lt;/p&gt;
+&lt;p&gt;Prix : &lt;s&gt;8 €&lt;/s&gt; 6 €&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;"></iframe>
+          </div>
+
+          <p>
+            <strong>Pourquoi ?</strong> <code>&lt;strong&gt;</code> = importance
+            (avertissement) ; <code>&lt;em&gt;</code> = insistance à l'oral ;
+            <code>&lt;i&gt;</code> = un ton différent, ici un terme dans une autre
+            langue ; <code>&lt;s&gt;</code> = une information qui n'est plus exacte.
+          </p>
+        </details>
+
+        <!-- ========== Exercice 5 ========== -->
+
+        <h3 id="ex-citation">Exercice 5 — Citer et montrer du code</h3>
+
+        <p><em>Partie concernée : <a href="#citer-code">citer et montrer du code</a>.</em></p>
+
+        <ol>
+          <li>Citez en bloc cette phrase de Tim Berners-Lee : « Le Web est plus une
+            création sociale qu'une création technique. », en indiquant comme source
+            <code>https://www.w3.org/People/Berners-Lee/</code>.</li>
+          <li>Écrivez le paragraphe : « Pour créer un paragraphe, on utilise la
+            balise &lt;p&gt;. », où <code>&lt;p&gt;</code> est présenté comme du
+            code.</li>
+        </ol>
+
+        <details class="exercice-aide">
+          <summary><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Indice</summary>
+          <p>
+            La source va dans l'attribut <code>cite</code>. Pour afficher
+            <code>&lt;p&gt;</code> sans créer de paragraphe, souvenez-vous des
+            entités de la séance 1.
+          </p>
+        </details>
+
+        <details class="exercice-aide solution">
+          <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la solution</summary>
+
+          <p><strong class="etiquette">Solution en HTML (contenu du body)</strong> :</p>
+
+          <pre><code>&lt;blockquote cite="https://www.w3.org/People/Berners-Lee/"&gt;
+  &lt;p&gt;Le Web est plus une création sociale qu'une création technique.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Pour créer un paragraphe, on utilise la balise &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt;.&lt;/p&gt;</code></pre>
+
+          <p><strong class="etiquette">Rendu dans le navigateur</strong> :</p>
+
+          <div class="navigateur">
+              <p class="navigateur-barre" aria-hidden="true">exercice-02/ex5.html</p>
+              <iframe sandbox loading="lazy" height="160"
+                  title="Aperçu de l&#x27;exemple dans le navigateur"
+                  srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;fr&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;Aperçu&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;blockquote cite=&quot;https://www.w3.org/People/Berners-Lee/&quot;&gt;
+  &lt;p&gt;Le Web est plus une création sociale qu&#x27;une création technique.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Pour créer un paragraphe, on utilise la balise &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;"></iframe>
+          </div>
+
+          <p>
+            <strong>Pourquoi ?</strong> <code>&lt;blockquote&gt;</code> signale une
+            citation longue (le navigateur la décale), et <code>cite</code> garde la
+            source dans le code. <code>&lt;code&gt;</code> affiche le texte en
+            police à chasse fixe, et les entités <code>&amp;lt;</code> /
+            <code>&amp;gt;</code> évitent que <code>&lt;p&gt;</code> soit compris
+            comme une vraie balise.
+          </p>
+        </details>
+
+        <!-- ========== Exercice 6 ========== -->
+
+        <h3 id="ex-erreurs">Exercice 6 — Trouvez les 5 erreurs</h3>
+
+        <p>
+          <em>Parties concernées : <a href="#listes">les listes</a>,
+            <a href="#emphase">l'emphase</a>, <a href="#images">les images</a>.</em>
+        </p>
+
+        <p>Ce code contient <strong>5 erreurs</strong>. Trouvez-les et corrigez-les :</p>
+
+        <pre><code>&lt;h1&gt;Mon chien&lt;/h1&gt;
+&lt;img src="images/chien.jpg" alt="image"&gt;
+
+&lt;h2&gt;Ce qu'il aime&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;p&gt;Les balades&lt;/p&gt;
+  &lt;li&gt;Les croquettes&lt;/li&gt;
+  &lt;li&gt;Dormir&lt;/li&gt;
+&lt;/ol&gt;
+&lt;li&gt;Le canapé&lt;/li&gt;
+
+&lt;p&gt;Il ne faut &lt;u&gt;jamais&lt;/u&gt; lui donner de chocolat.&lt;/p&gt;</code></pre>
+
+        <details class="exercice-aide">
+          <summary><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Indice</summary>
+          <p>
+            Une erreur dans l'image, trois dans la liste (son type, et deux éléments
+            mal placés), une dans le dernier paragraphe.
+          </p>
+        </details>
+
+        <details class="exercice-aide solution">
+          <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la solution</summary>
+
+          <p><strong class="etiquette">Code corrigé</strong> :</p>
+
+          <pre><code>&lt;h1&gt;Mon chien&lt;/h1&gt;
+&lt;img src="images/chien.jpg" alt="Un labrador noir couché dans l'herbe"&gt;
+
+&lt;h2&gt;Ce qu'il aime&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Les balades&lt;/li&gt;
+  &lt;li&gt;Les croquettes&lt;/li&gt;
+  &lt;li&gt;Dormir&lt;/li&gt;
+  &lt;li&gt;Le canapé&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Il ne faut &lt;strong&gt;jamais&lt;/strong&gt; lui donner de chocolat.&lt;/p&gt;</code></pre>
+
+          <ol>
+            <li><strong><code>alt="image"</code></strong> ne décrit rien : l'alt
+              doit dire ce que montre l'image.</li>
+            <li><strong><code>&lt;ol&gt;</code></strong> pour une liste sans ordre :
+              il faut <code>&lt;ul&gt;</code>.</li>
+            <li><strong>Un <code>&lt;p&gt;</code> directement dans la liste</strong> :
+              une liste ne contient que des <code>&lt;li&gt;</code>.</li>
+            <li><strong>Un <code>&lt;li&gt;</code> hors de la liste</strong> : il
+              doit être à l'intérieur du <code>&lt;ul&gt;</code>.</li>
+            <li><strong><code>&lt;u&gt;</code></strong> pour un avertissement : sur le
+              Web, un texte souligné ressemble à un lien. Ici, c'est une information
+              importante : <code>&lt;strong&gt;</code>.</li>
+          </ol>
+        </details>
+
+        </section>
+
+        <section>
+        <h2>Sources et ressources</h2>
+
+        <ul>
+          <li><a href="https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/Headings_and_paragraphs" target="_blank" rel="noopener noreferrer">Les titres et paragraphes — MDN</a></li>
+          <li><a href="https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/Emphasis_and_importance" target="_blank" rel="noopener noreferrer">L'emphase et l'importance — MDN</a></li>
+          <li><a href="https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/Lists" target="_blank" rel="noopener noreferrer">Les listes — MDN</a></li>
+          <li><a href="https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/HTML_images" target="_blank" rel="noopener noreferrer">Les images — MDN</a></li>
+          <li><a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">Validateur HTML du W3C</a>
+          </li>
+        </ul>
+
+      </section>
+          <!-- TELECHARGER-SEANCE -->
+          <section class="encadre telecharger-seance">
+            <h2><i class="fa-solid fa-download" aria-hidden="true"></i> Télécharger cette séance</h2>
+            <p>
+              Pour lire le cours hors ligne, ou pour étudier son code : le zip contient
+              cette page (<code>index.html</code>), sa feuille de style et ses images.
+              Ouvrez <code>index.html</code> dans VS Code pour voir les balises et le CSS.
+            </p>
+            <ul>
+              <li><a href="../telechargements/seances/seance-02.zip" download><i class="fa-solid fa-file-zipper" aria-hidden="true"></i> Séance 2 : page et fichiers (.zip)</a></li>
+              <li><a href="../telechargements/seances/seance-02.pdf" download><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Séance 2 : version à imprimer (.pdf)</a></li>
+            </ul>
+          </section>
+          <!-- /TELECHARGER-SEANCE -->
+        </main>
+
+      <footer>
+        <p>
+          EAFC Evere — UE Web : principes de base — 40 périodes. Ce site est
+          écrit à la main en HTML et CSS : faites <code>F12</code> pour en
+          inspecter le code.
+        </p>
+        <p>
+          Certains contenus s'appuient sur la documentation de
+          <a href="https://developer.mozilla.org/fr/docs/Learn_web_development/Core" target="_blank"
+            rel="noopener noreferrer">MDN
+            Web Docs</a> et d'autres ressources trouvées en ligne (textes,
+          images), ainsi que sur une assistance de l'IA (Claude, Anthropic)
+          pour la reformulation de certains passages. Certaines images ont été
+          générées par l'IA (ChatGPT, OpenAI).
+        </p>
+      </footer>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Exercices supplémentaires : des exercices courts avec correction pour chaque balise HTML vue en cours, rangés par séance.">
+  <title>Exercices supplémentaires — Web : principes de base</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/site.css">
+  <link rel="icon" type="image/png" href="../logo/favicon.png">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <div class="sidebar">
+      <div class="sidebar-top">
+        <img src="../logo/logo.png" alt="Logo du cours" class="sidebar-logo">
+        <p class="sidebar-titre"><a href="../index.html">Web : principes de base</a></p>
+        <p class="sidebar-sous">BA1 — EAFC Evere</p>
+      </div>
+
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li>
+            <a href="../index.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 11.5 12 5l8 6.5" />
+                <path d="M6 10.5V19h12v-8.5" />
+                <rect x="10" y="13" width="4" height="6" />
+              </svg>
+              Accueil
+            </a>
+          </li>
+          <li>
+            <details class="sous-menu">
+              <summary>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <line x1="5" y1="7" x2="19" y2="7" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <line x1="5" y1="17" x2="12" y2="17" />
+                </svg>
+                Programme
+              </summary>
+              <ul class="sous-liste">
+                <li><a href="../programme.html"><i class="fa-solid fa-map" aria-hidden="true"></i> Vue d'ensemble</a></li>
+                <li class="avec-sommaire">
+                  <a href="../seances/seance-01.html"><i class="fa-solid fa-globe" aria-hidden="true"></i> 01 · Le Web et le HTML</a>
+                  <details class="sommaire-menu">
+                    <summary><span class="sr-only">Sommaire de la séance 1</span></summary>
+                    <ol>
+                      <li><a href="../seances/seance-01.html#comprendre-le-web">1. Comprendre ce qu'est le Web</a></li>
+                      <li><a href="../seances/seance-01.html#page-a-ecran">2. Comment une page arrive à l'écran</a></li>
+                      <li><a href="../seances/seance-01.html#le-html">3. Le HTML</a></li>
+                      <li><a href="../seances/seance-01.html#lire-page-html">4. Lire et comprendre une page HTML</a></li>
+                      <li><a href="../seances/seance-01.html#types-sites">5. Les types de sites web : usages et fonctionnement</a></li>
+                      <li><a href="../seances/seance-01.html#normes-validation-securite">6. Normes et validation</a></li>
+                      <li><a href="../seances/seance-01.html#securite-de-base">7. La sécurité de base</a></li>
+                      <li><a href="../seances/seance-01.html#exercices">8. Exercices</a></li>
+                    </ol>
+                  </details>
+                </li>
+                <li class="avec-sommaire">
+                  <a href="../seances/seance-02.html"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i> 02 · Mise en place</a>
+                  <details class="sommaire-menu">
+                    <summary><span class="sr-only">Sommaire de la séance 2</span></summary>
+                    <ol>
+                      <li><a href="../seances/seance-02.html#environnement">1. Installer son environnement</a></li>
+                      <li><a href="../seances/seance-02.html#titres-paragraphes">2. Titres et paragraphes</a></li>
+                      <li><a href="../seances/seance-02.html#listes">3. Les listes</a></li>
+                      <li><a href="../seances/seance-02.html#emphase">4. La mise en emphase</a></li>
+                      <li><a href="../seances/seance-02.html#images">5. Les images</a></li>
+                      <li><a href="../seances/seance-02.html#exercice">6. Exercice guidé</a></li>
+                      <li><a href="../seances/seance-02.html#projet-1">7. Projet 1 — lancement</a></li>
+                      <li><a href="../seances/seance-02.html#livrable">8. Le livrable</a></li>
+                      <li><a href="../seances/seance-02.html#exercices">9. Exercices</a></li>
+                    </ol>
+                  </details>
+                </li>
+                <li>
+                  <a href="../seances/seance-03.html"><i class="fa-solid fa-code" aria-hidden="true"></i> 03 · HTML avancé</a>
+                </li>
+                <li>
+                  <a href="../seances/seance-04.html"><i class="fa-solid fa-rotate" aria-hidden="true"></i> 04 · Révision, Projets 1 et 2</a>
+                </li>
+                <li>
+                  <a href="../seances/seance-05.html"><i class="fa-solid fa-crosshairs" aria-hidden="true"></i> 05 · CSS, sélecteurs, habillage</a>
+                </li>
+                <li>
+                  <a href="../seances/seance-06.html"><i class="fa-solid fa-palette" aria-hidden="true"></i> 06 · CSS du portfolio</a>
+                </li>
+                <li>
+                  <a href="../seances/seance-07.html"><i class="fa-solid fa-table-columns" aria-hidden="true"></i> 07 · Mise en page, menus</a>
+                </li>
+                <li>
+                  <a href="../seances/seance-08.html"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> 08 · Responsive, a11y</a>
+                </li>
+                <li>
+                  <a href="../seances/seance-09.html"><i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i> 09 · Mise en ligne</a>
+                </li>
+                <li><a href="../seances/seance-10.html"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> 10 · Examen</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <a href="installation.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 4v11" />
+                <path d="M7.5 11 12 15.5 16.5 11" />
+                <line x1="5" y1="19" x2="19" y2="19" />
+              </svg>
+              Installation
+            </a>
+          </li>
+          <li>
+            <a href="aide-memoire.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5.5h5.5a2.5 2.5 0 0 1 2.5 2.5v11a2 2 0 0 0-2-2H4z" />
+                <path d="M20 5.5h-5.5A2.5 2.5 0 0 0 12 8v11a2 2 0 0 1 2-2h6z" />
+              </svg>
+              Aide-mémoire
+            </a>
+          </li>
+          <li>
+            <a href="exercices.html" class="actif">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 20h4L19 9l-4-4L4 16z" />
+                <path d="M13.5 6.5l4 4" />
+              </svg>
+              Exercices
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <p>10 séances · 40 périodes</p>
+      </div>
+    </div>
+
+    <div class="contenu">
+
+      <main>
+
+        <h1>Exercices supplémentaires</h1>
+        <p class="chapeau">
+          Des exercices courts pour chaque balise vue en cours, rangés par séance.
+          Ils complètent les exercices de fin de séance, si vous voulez vous
+          entraîner davantage — 139 exercices au total.
+        </p>
+
+        <aside class="encadre">
+          <h2>Comment ça marche</h2>
+          <ul>
+            <li>Dans chaque code, remplacez les <code>____</code> par ce qui
+              manque. Certains exercices demandent plutôt de corriger une erreur.</li>
+            <li>Écrivez votre réponse dans VS Code et testez-la avec Live Server,
+              puis ouvrez la <strong>correction</strong> pour comparer.</li>
+            <li><strong>Rien à rendre :</strong> ces exercices sont entièrement libres. Les
+              seuls travaux à déposer dans Teams sont ceux des séances 2, 4 et 6.</li>
+            <li>Choisissez la séance que vous venez de suivre dans le sommaire :
+              vous n'y trouverez que des balises déjà vues.</li>
+          </ul>
+        </aside>
+
+        <section>
+        <h2 id="sommaire">Sommaire</h2>
+
+        <nav aria-label="Sommaire des exercices">
+          <ol>
+          <li><a href="#s1">Séance 1 — Le Web et le HTML</a> (17 exercices)
+            <ol>
+              <li><a href="#s1-squelette">Le squelette d'une page</a></li>
+              <li><a href="#s1-texte">Le texte</a></li>
+              <li><a href="#s1-ressources">Images et liens</a></li>
+            </ol>
+          </li>
+          <li><a href="#s2">Séance 2 — Mise en place</a> (17 exercices)
+            <ol>
+              <li><a href="#s2-titres">Titres et paragraphes</a></li>
+              <li><a href="#s2-listes">Les listes</a></li>
+              <li><a href="#s2-emphase">La mise en emphase</a></li>
+              <li><a href="#s2-citer">Citer et montrer du code</a></li>
+              <li><a href="#s2-images">Les images</a></li>
+            </ol>
+          </li>
+          </ol>
+        </nav>
+
+        </section>
+
+        <section>
+        <h2 id="s1">Séance 1 — Le Web et le HTML</h2>
+
+        <p>
+          17 exercices sur les balises de la <a href="../seances/seance-01.html">séance 1</a>.
+          Les exercices de fin de séance, plus complets, sont dans la
+          <a href="../seances/seance-01.html#exercices">partie Exercices de la séance 1</a>.
+        </p>
+
+        <h3 id="s1-squelette">Le squelette d'une page</h3>
+
+        <article class="exo" id="s1-doctype">
+          <h4>1.1 — <code>&lt;!DOCTYPE html&gt;</code></h4>
+          <p>Complétez la toute première ligne d'une page HTML5.</p>
+          <pre><code>____
+&lt;html lang="fr"&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;</code></pre>
+            <p>Cette déclaration annonce au navigateur qu'il s'agit d'une page HTML5. Elle est toujours en première ligne.</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s1-lang">
+          <h4>1.2 — <code>&lt;html lang&gt;</code></h4>
+          <p>Indiquez que le contenu de la page est en français.</p>
+          <pre><code>&lt;html ____="fr"&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;html lang="fr"&gt;</code></pre>
+            <p><code>lang</code> sert aux lecteurs d'écran (pour la prononciation) et aux moteurs de recherche.</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s1-head-body">
+          <h4>1.3 — <code>&lt;head&gt;</code> et <code>&lt;body&gt;</code></h4>
+          <p>Complétez avec les deux grandes parties de la page : l'une invisible, l'autre visible.</p>
+          <pre><code>&lt;html lang="fr"&gt;
+&lt;____&gt;
+  &lt;title&gt;Mon site&lt;/title&gt;
+&lt;/____&gt;
+&lt;____&gt;
+  &lt;h1&gt;Bienvenue&lt;/h1&gt;
+&lt;/____&gt;
+&lt;/html&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;html lang="fr"&gt;
+&lt;head&gt;
+  &lt;title&gt;Mon site&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Bienvenue&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <p>Le <code>&lt;head&gt;</code> contient les informations sur la page (invisibles), le <code>&lt;body&gt;</code> tout ce qui s'affiche.</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s1-meta">
+          <h4>1.4 — <code>&lt;meta charset&gt;</code></h4>
+          <p>Complétez pour que les accents s'affichent correctement.</p>
+          <pre><code>&lt;meta ____="____"&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;meta charset="UTF-8"&gt;</code></pre>
+            <p>UTF-8 est l'encodage qui contient tous les caractères, accents compris.</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s1-title">
+          <h4>1.5 — <code>&lt;title&gt;</code></h4>
+          <p>Le texte « Ma page » doit apparaître dans l'onglet du navigateur.</p>
+          <pre><code>&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;____&gt;Ma page&lt;/____&gt;
+&lt;/head&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Ma page&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+            <p>Le titre ne s'affiche pas dans la page, mais dans l'onglet, les favoris et les résultats de recherche.</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s1-link">
+          <h4>1.6 — <code>&lt;link&gt;</code></h4>
+          <p>Reliez la page à la feuille de style <code>css/style.css</code>.</p>
+          <pre><code>&lt;link rel="____" href="____"&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;link rel="stylesheet" href="css/style.css"&gt;</code></pre>
+            <p><code>rel</code> dit le type de ressource (une feuille de style), <code>href</code> où la trouver.</p>
+          </details>
+        </article>
+
+        <h3 id="s1-texte">Le texte</h3>
+
+        <article class="exo" id="s1-h">
+          <h4>1.7 — <code>&lt;h1&gt;</code> à <code>&lt;h6&gt;</code></h4>
+          <p>« Le Japon » est le titre principal de la page, « La géographie » une grande partie.</p>
+          <pre><code>&lt;____&gt;Le Japon&lt;/____&gt;
+&lt;____&gt;La géographie&lt;/____&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;h1&gt;Le Japon&lt;/h1&gt;
+&lt;h2&gt;La géographie&lt;/h2&gt;</code></pre>
+            <p>Un seul <code>&lt;h1&gt;</code> par page, puis <code>&lt;h2&gt;</code> pour les grandes parties.</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s1-p">
+          <h4>1.8 — <code>&lt;p&gt;</code></h4>
+          <p>Transformez ces deux phrases en deux paragraphes séparés.</p>
+          <pre><code>Le Japon compte plus de 6800 îles.
+Sa capitale est Tokyo.</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;p&gt;Le Japon compte plus de 6800 îles.&lt;/p&gt;
+&lt;p&gt;Sa capitale est Tokyo.&lt;/p&gt;</code></pre>
+            <p>Un retour à la ligne dans le code ne suffit pas : le navigateur l'ignore. Chaque bloc de texte va dans son <code>&lt;p&gt;</code>.</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s1-br">
+          <h4>1.9 — <code>&lt;br&gt;</code></h4>
+          <p>Affichez l'adresse sur deux lignes, dans un seul paragraphe.</p>
+          <pre><code>&lt;p&gt;Rue de l'Exemple 12____1140 Evere&lt;/p&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;p&gt;Rue de l'Exemple 12&lt;br&gt;1140 Evere&lt;/p&gt;</code></pre>
+            <p><code>&lt;br&gt;</code> est une balise orpheline : un retour à la ligne <em>à l'intérieur</em> d'un paragraphe (adresse, poème).</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s1-hr">
+          <h4>1.10 — <code>&lt;hr&gt;</code></h4>
+          <p>Séparez les deux thèmes par une rupture thématique.</p>
+          <pre><code>&lt;p&gt;Fin de la partie sur le climat.&lt;/p&gt;
+____
+&lt;p&gt;Passons à la cuisine.&lt;/p&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;p&gt;Fin de la partie sur le climat.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Passons à la cuisine.&lt;/p&gt;</code></pre>
+            <p><code>&lt;hr&gt;</code> marque un changement de sujet. Le navigateur l'affiche comme une ligne horizontale.</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s1-imbrication">
+          <h4>1.11 — L'imbrication</h4>
+          <p>Corrigez l'ordre de fermeture des balises.</p>
+          <pre><code>&lt;p&gt;&lt;strong&gt;&lt;em&gt;Attention&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;p&gt;&lt;strong&gt;&lt;em&gt;Attention&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</code></pre>
+            <p>La dernière balise ouverte est la première fermée, comme des poupées russes.</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s1-commentaire">
+          <h4>1.12 — Les commentaires <code>&lt;!-- --&gt;</code></h4>
+          <p>Transformez la note en commentaire, pour qu'elle ne s'affiche pas.</p>
+          <pre><code>____ Partie à terminer ____</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;!-- Partie à terminer --&gt;</code></pre>
+            <p>Un commentaire est ignoré par le navigateur, mais reste lisible dans le code (F12).</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s1-entites">
+          <h4>1.13 — Les entités</h4>
+          <p>Complétez pour afficher : « La balise &lt;p&gt; » et « Tom &amp; Jerry ».</p>
+          <pre><code>&lt;p&gt;La balise ____p____&lt;/p&gt;
+&lt;p&gt;Tom ____ Jerry&lt;/p&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;p&gt;La balise &amp;lt;p&amp;gt;&lt;/p&gt;
+&lt;p&gt;Tom &amp;amp; Jerry&lt;/p&gt;</code></pre>
+            <p><code>&amp;lt;</code>, <code>&amp;gt;</code> et <code>&amp;amp;</code> affichent les caractères réservés du HTML.</p>
+          </details>
+        </article>
+
+        <h3 id="s1-ressources">Images et liens</h3>
+
+        <article class="exo" id="s1-img">
+          <h4>1.14 — <code>&lt;img&gt;</code></h4>
+          <p>Affichez l'image <code>images/chat.jpg</code>, qui montre un chat roux endormi.</p>
+          <pre><code>&lt;img ____="images/chat.jpg" ____="Un chat roux endormi"&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;img src="images/chat.jpg" alt="Un chat roux endormi"&gt;</code></pre>
+            <p><code>src</code> indique le fichier, <code>alt</code> le décrit pour ceux qui ne voient pas l'image.</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s1-a">
+          <h4>1.15 — <code>&lt;a&gt;</code></h4>
+          <p>Faites du texte « Contact » un lien vers <code>contact.html</code>.</p>
+          <pre><code>&lt;a ____="contact.html"&gt;Contact&lt;/a&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;a href="contact.html"&gt;Contact&lt;/a&gt;</code></pre>
+            <p><code>href</code> (<em>hypertext reference</em>) contient la destination du lien.</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s1-relatif">
+          <h4>1.16 — Chemin relatif</h4>
+          <p>Vous êtes dans <code>pages/contact.html</code>. Affichez <code>images/logo.png</code> (le dossier <code>images/</code> est à la racine).</p>
+          <pre><code>&lt;img src="____" alt="Logo du site"&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;img src="../images/logo.png" alt="Logo du site"&gt;</code></pre>
+            <p><code>../</code> remonte d'un dossier : de <code>pages/</code> vers la racine, puis on redescend dans <code>images/</code>.</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s1-absolu">
+          <h4>1.17 — Chemin absolu</h4>
+          <p>Créez un lien vers le site du W3C, à l'adresse <code>www.w3.org</code>.</p>
+          <pre><code>&lt;a href="____"&gt;Le W3C&lt;/a&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;a href="https://www.w3.org"&gt;Le W3C&lt;/a&gt;</code></pre>
+            <p>Pour un autre site, l'adresse complète commence par <code>https://</code>. Sans elle, le navigateur chercherait un fichier dans votre site.</p>
+          </details>
+        </article>
+
+        <p class="retour-sommaire"><a href="#sommaire">Retour au sommaire</a></p>
+
+        </section>
+
+        <section>
+        <h2 id="s2">Séance 2 — Mise en place</h2>
+
+        <p>
+          17 exercices sur les balises de la <a href="../seances/seance-02.html">séance 2</a>.
+          Les exercices de fin de séance, plus complets, sont dans la
+          <a href="../seances/seance-02.html#exercices">partie Exercices de la séance 2</a>.
+        </p>
+
+        <h3 id="s2-titres">Titres et paragraphes</h3>
+
+        <article class="exo" id="s2-niveaux">
+          <h4>2.1 — Hiérarchie des titres</h4>
+          <p>Corrigez le niveau du deuxième titre.</p>
+          <pre><code>&lt;h1&gt;Mes recettes&lt;/h1&gt;
+&lt;h3&gt;Les crêpes&lt;/h3&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;h1&gt;Mes recettes&lt;/h1&gt;
+&lt;h2&gt;Les crêpes&lt;/h2&gt;</code></pre>
+            <p>Pas de saut de niveau : après un <code>&lt;h1&gt;</code> vient un <code>&lt;h2&gt;</code>.</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s2-espaces">
+          <h4>2.2 — Espaces et retours à la ligne</h4>
+          <p>Combien de lignes ce code affiche-t-il dans le navigateur ? Corrigez-le pour obtenir deux paragraphes.</p>
+          <pre><code>&lt;p&gt;Première idée.
+
+
+Deuxième idée.&lt;/p&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;p&gt;Première idée.&lt;/p&gt;
+&lt;p&gt;Deuxième idée.&lt;/p&gt;</code></pre>
+            <p>Le navigateur remplace les retours à la ligne et les espaces multiples par un seul espace : le code d'origine affiche une seule ligne.</p>
+          </details>
+        </article>
+
+        <h3 id="s2-listes">Les listes</h3>
+
+        <article class="exo" id="s2-ul">
+          <h4>2.3 — <code>&lt;ul&gt;</code> et <code>&lt;li&gt;</code></h4>
+          <p>Créez une liste à puces des ingrédients.</p>
+          <pre><code>&lt;____&gt;
+  &lt;____&gt;Farine&lt;/____&gt;
+  &lt;____&gt;Œufs&lt;/____&gt;
+  &lt;____&gt;Lait&lt;/____&gt;
+&lt;/____&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;ul&gt;
+  &lt;li&gt;Farine&lt;/li&gt;
+  &lt;li&gt;Œufs&lt;/li&gt;
+  &lt;li&gt;Lait&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            <p><code>&lt;ul&gt;</code> pour une liste sans ordre, un <code>&lt;li&gt;</code> par élément.</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s2-ol">
+          <h4>2.4 — <code>&lt;ol&gt;</code></h4>
+          <p>Ces étapes doivent être suivies dans l'ordre : complétez.</p>
+          <pre><code>&lt;____&gt;
+  &lt;li&gt;Allumer l'ordinateur&lt;/li&gt;
+  &lt;li&gt;Ouvrir VS Code&lt;/li&gt;
+  &lt;li&gt;Créer le fichier index.html&lt;/li&gt;
+&lt;/____&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;ol&gt;
+  &lt;li&gt;Allumer l'ordinateur&lt;/li&gt;
+  &lt;li&gt;Ouvrir VS Code&lt;/li&gt;
+  &lt;li&gt;Créer le fichier index.html&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+            <p><code>&lt;ol&gt;</code> numérote automatiquement : l'ordre a du sens.</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s2-imbriquee">
+          <h4>2.5 — Liste imbriquée</h4>
+          <p>Placez la sous-liste « Sucre, Chocolat » sous « Crêpes sucrées », au bon endroit.</p>
+          <pre><code>&lt;ul&gt;
+  &lt;li&gt;Crêpes sucrées&lt;/li&gt;
+  ____
+  &lt;li&gt;Galettes salées&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;ul&gt;
+  &lt;li&gt;Crêpes sucrées
+    &lt;ul&gt;
+      &lt;li&gt;Sucre&lt;/li&gt;
+      &lt;li&gt;Chocolat&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Galettes salées&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            <p>La sous-liste va <strong>dans</strong> le <code>&lt;li&gt;</code> parent, avant son <code>&lt;/li&gt;</code> : il faut donc déplacer cette balise fermante.</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s2-dl">
+          <h4>2.6 — <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, <code>&lt;dd&gt;</code></h4>
+          <p>Complétez la liste de description.</p>
+          <pre><code>&lt;dl&gt;
+  &lt;____&gt;HTML&lt;/____&gt;
+  &lt;____&gt;Le langage qui structure une page.&lt;/____&gt;
+&lt;/dl&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Le langage qui structure une page.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+            <p><code>&lt;dt&gt;</code> pour le terme, <code>&lt;dd&gt;</code> pour sa description.</p>
+          </details>
+        </article>
+
+        <h3 id="s2-emphase">La mise en emphase</h3>
+
+        <article class="exo" id="s2-strong">
+          <h4>2.7 — <code>&lt;strong&gt;</code></h4>
+          <p>« Ne pas dépasser 180 °C » est un avertissement important.</p>
+          <pre><code>&lt;p&gt;&lt;____&gt;Ne pas dépasser 180 °C.&lt;/____&gt;&lt;/p&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;p&gt;&lt;strong&gt;Ne pas dépasser 180 °C.&lt;/strong&gt;&lt;/p&gt;</code></pre>
+            <p><code>&lt;strong&gt;</code> = importance forte. Affiché en gras par défaut.</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s2-em">
+          <h4>2.8 — <code>&lt;em&gt;</code></h4>
+          <p>On insiste sur « jamais », comme à l'oral.</p>
+          <pre><code>&lt;p&gt;Je n'ai &lt;____&gt;jamais&lt;/____&gt; dit ça.&lt;/p&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;p&gt;Je n'ai &lt;em&gt;jamais&lt;/em&gt; dit ça.&lt;/p&gt;</code></pre>
+            <p><code>&lt;em&gt;</code> = accent d'insistance. Affiché en italique par défaut.</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s2-i">
+          <h4>2.9 — <code>&lt;i&gt;</code></h4>
+          <p>« Felis catus » est le nom latin du chat : un terme dans une autre langue.</p>
+          <pre><code>&lt;p&gt;Le chat (&lt;____&gt;Felis catus&lt;/____&gt;) est un mammifère.&lt;/p&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;p&gt;Le chat (&lt;i&gt;Felis catus&lt;/i&gt;) est un mammifère.&lt;/p&gt;</code></pre>
+            <p><code>&lt;i&gt;</code> = un ton différent, sans insistance : mot étranger, terme technique.</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s2-b">
+          <h4>2.10 — <code>&lt;b&gt;</code></h4>
+          <p>Faites ressortir le mot-clé « sarrasin », sans qu'il soit plus important que le reste.</p>
+          <pre><code>&lt;p&gt;La galette se fait avec de la farine de &lt;____&gt;sarrasin&lt;/____&gt;.&lt;/p&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;p&gt;La galette se fait avec de la farine de &lt;b&gt;sarrasin&lt;/b&gt;.&lt;/p&gt;</code></pre>
+            <p><code>&lt;b&gt;</code> attire l'attention sans notion d'importance (contrairement à <code>&lt;strong&gt;</code>).</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s2-s">
+          <h4>2.11 — <code>&lt;s&gt;</code></h4>
+          <p>Barrez l'ancien prix, qui n'est plus valable.</p>
+          <pre><code>&lt;p&gt;Prix : &lt;____&gt;8 €&lt;/____&gt; 6 €&lt;/p&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;p&gt;Prix : &lt;s&gt;8 €&lt;/s&gt; 6 €&lt;/p&gt;</code></pre>
+            <p><code>&lt;s&gt;</code> marque une information qui n'est plus exacte.</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s2-u">
+          <h4>2.12 — Pourquoi éviter <code>&lt;u&gt;</code></h4>
+          <p>Remplacez la balise par celle qui convient pour un mot sur lequel on insiste.</p>
+          <pre><code>&lt;p&gt;Rendez le travail &lt;u&gt;avant&lt;/u&gt; vendredi.&lt;/p&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;p&gt;Rendez le travail &lt;em&gt;avant&lt;/em&gt; vendredi.&lt;/p&gt;</code></pre>
+            <p>Un texte souligné ressemble à un lien sur le Web. Pour insister, on utilise <code>&lt;em&gt;</code> (ou <code>&lt;strong&gt;</code> si c'est important).</p>
+          </details>
+        </article>
+
+        <h3 id="s2-citer">Citer et montrer du code</h3>
+
+        <article class="exo" id="s2-blockquote">
+          <h4>2.13 — <code>&lt;blockquote&gt;</code></h4>
+          <p>Faites de ce texte une citation en bloc, avec la source <code>https://exemple.be</code>.</p>
+          <pre><code>&lt;____ ____="https://exemple.be"&gt;
+  &lt;p&gt;Le Web appartient à tout le monde.&lt;/p&gt;
+&lt;/____&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;blockquote cite="https://exemple.be"&gt;
+  &lt;p&gt;Le Web appartient à tout le monde.&lt;/p&gt;
+&lt;/blockquote&gt;</code></pre>
+            <p><code>&lt;blockquote&gt;</code> pour une citation longue, <code>cite</code> pour sa source.</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s2-code">
+          <h4>2.14 — <code>&lt;code&gt;</code></h4>
+          <p>Présentez <code>index.html</code> comme du code dans la phrase.</p>
+          <pre><code>&lt;p&gt;La page d'accueil s'appelle toujours &lt;____&gt;index.html&lt;/____&gt;.&lt;/p&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;p&gt;La page d'accueil s'appelle toujours &lt;code&gt;index.html&lt;/code&gt;.&lt;/p&gt;</code></pre>
+            <p><code>&lt;code&gt;</code> affiche un nom de fichier ou un bout de code avec une police à chasse fixe.</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s2-pre">
+          <h4>2.15 — <code>&lt;pre&gt;</code></h4>
+          <p>Ce bloc doit garder ses retours à la ligne et ses espaces.</p>
+          <pre><code>&lt;____&gt;mon-site/
+├── index.html
+└── images/&lt;/____&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;pre&gt;mon-site/
+├── index.html
+└── images/&lt;/pre&gt;</code></pre>
+            <p><code>&lt;pre&gt;</code> (préformaté) conserve les espaces et les retours à la ligne du code.</p>
+          </details>
+        </article>
+
+        <h3 id="s2-images">Les images</h3>
+
+        <article class="exo" id="s2-alt">
+          <h4>2.16 — Un bon <code>alt</code></h4>
+          <p>Remplacez l'<code>alt</code> par une vraie description de la photo (une tour Eiffel sous la neige).</p>
+          <pre><code>&lt;img src="images/paris.jpg" alt="photo"&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;img src="images/paris.jpg" alt="La tour Eiffel sous la neige"&gt;</code></pre>
+            <p>« photo » ou « image » ne décrit rien. L'<code>alt</code> dit ce que l'image <em>montre</em>.</p>
+          </details>
+        </article>
+
+        <article class="exo" id="s2-dimensions">
+          <h4>2.17 — <code>width</code> et <code>height</code></h4>
+          <p>Affichez l'image en 300 × 200 pixels.</p>
+          <pre><code>&lt;img src="images/paris.jpg" alt="La tour Eiffel sous la neige" ____="300" ____="200"&gt;</code></pre>
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la correction</summary>
+            <pre><code>&lt;img src="images/paris.jpg" alt="La tour Eiffel sous la neige" width="300" height="200"&gt;</code></pre>
+            <p>Les valeurs sont en pixels, sans unité. Le navigateur réserve la place avant même que l'image soit chargée.</p>
+          </details>
+        </article>
+
+        <p class="retour-sommaire"><a href="#sommaire">Retour au sommaire</a></p>
+
+        </section>
+
+      </main>
+
+      <footer>
+        <p>
+          EAFC Evere — UE Web : principes de base — 40 périodes. Ce site est
+          écrit à la main en HTML et CSS : faites <code>F12</code> pour en
+          inspecter le code.
+        </p>
+      </footer>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>

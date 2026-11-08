@@ -1,0 +1,2617 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Séance 1 : écosystème du Web, URL, sites statiques et dynamiques, normes du W3C, sécurité de base, structure d'une page HTML, découverte des outils.">
+  <title>Séance 1 — Le Web et le HTML</title>
+  <!-- Fontawesome (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/site.css">
+  <link rel="icon" type="image/png" href="../logo/favicon.png">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <div class="sidebar">
+      <header class="sidebar-top">
+        <img src="../logo/logo.png" alt="Logo du cours" class="sidebar-logo">
+        <p class="sidebar-titre"><a href="../index.html">Web : principes de base</a></p>
+        <p class="sidebar-sous">BA1 — EAFC Evere</p>
+      </header>
+
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li>
+            <a href="../index.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 11.5 12 5l8 6.5" />
+                <path d="M6 10.5V19h12v-8.5" />
+                <rect x="10" y="13" width="4" height="6" />
+              </svg>
+              Accueil
+              <i class="fa-solid fa-house" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <details class="sous-menu" open>
+              <summary class="actif">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <line x1="5" y1="7" x2="19" y2="7" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <line x1="5" y1="17" x2="12" y2="17" />
+                </svg>
+                Programme
+              </summary>
+              <ul class="sous-liste">
+                <li><a href="../programme.html"><i class="fa-solid fa-map" aria-hidden="true"></i> Vue d'ensemble</a>
+                </li>
+                <li class="avec-sommaire">
+                  <a href="seance-01.html" class="actif"><i class="fa-solid fa-globe" aria-hidden="true"></i> 01 · Le
+                    Web et le HTML</a>
+                  <details class="sommaire-menu" open>
+                    <summary><span class="sr-only">Sommaire de la séance 1</span></summary>
+                    <ol>
+                      <li><a href="#comprendre-le-web">1. Comprendre ce qu'est le Web</a></li>
+                      <li><a href="#page-a-ecran">2. Comment une page arrive à l'écran</a></li>
+                      <li><a href="#le-html">3. Le HTML</a></li>
+                      <li><a href="#lire-page-html">4. Lire et comprendre une page HTML</a></li>
+                      <li><a href="#types-sites">5. Les types de sites web : usages et fonctionnement</a></li>
+                      <li><a href="#normes-validation-securite">6. Normes et validation</a></li>
+                      <li><a href="#securite-de-base">7. La sécurité de base</a></li>
+                      <li><a href="#exercices">8. Exercices</a></li>
+                    </ol>
+                  </details>
+                </li>
+                <li class="avec-sommaire">
+                  <a href="seance-02.html"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i> 02 · Mise en
+                    place</a>
+                  <details class="sommaire-menu">
+                    <summary><span class="sr-only">Sommaire de la séance 2</span></summary>
+                    <ol>
+                      <li><a href="seance-02.html#environnement">1. Installer son environnement</a></li>
+                      <li><a href="seance-02.html#titres-paragraphes">2. Titres et paragraphes</a></li>
+                      <li><a href="seance-02.html#listes">3. Les listes</a></li>
+                      <li><a href="seance-02.html#emphase">4. La mise en emphase</a></li>
+                      <li><a href="seance-02.html#images">5. Les images</a></li>
+                      <li><a href="seance-02.html#exercice">6. Exercice guidé</a></li>
+                      <li><a href="seance-02.html#projet-1">7. Projet 1 — lancement</a></li>
+                      <li><a href="seance-02.html#livrable">8. Le livrable</a></li>
+                      <li><a href="seance-02.html#exercices">9. Exercices</a></li>
+                    </ol>
+                  </details>
+                </li>
+                <li>
+                  <a href="seance-03.html"><i class="fa-solid fa-code" aria-hidden="true"></i> 03 · HTML avancé</a>
+                </li>
+                <li>
+                  <a href="seance-04.html"><i class="fa-solid fa-rotate" aria-hidden="true"></i> 04 · Révision, Projets
+                    1 et 2</a>
+                </li>
+                <li>
+                  <a href="seance-05.html"><i class="fa-solid fa-crosshairs" aria-hidden="true"></i> 05 · CSS,
+                    sélecteurs, habillage</a>
+                </li>
+                <li>
+                  <a href="seance-06.html"><i class="fa-solid fa-palette" aria-hidden="true"></i> 06 · CSS du
+                    portfolio</a>
+                </li>
+                <li>
+                  <a href="seance-07.html"><i class="fa-solid fa-table-columns" aria-hidden="true"></i> 07 · Mise en
+                    page, menus</a>
+                </li>
+                <li>
+                  <a href="seance-08.html"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> 08 · Responsive,
+                    a11y</a>
+                </li>
+                <li>
+                  <a href="seance-09.html"><i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i> 09 · Mise en
+                    ligne</a>
+                </li>
+                <li><a href="seance-10.html"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> 10 ·
+                    Examen</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <a href="../ressources/installation.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 4v11" />
+                <path d="M7.5 11 12 15.5 16.5 11" />
+                <line x1="5" y1="19" x2="19" y2="19" />
+              </svg>
+              Installation
+            </a>
+          </li>
+          <li>
+            <a href="../ressources/aide-memoire.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5.5h5.5a2.5 2.5 0 0 1 2.5 2.5v11a2 2 0 0 0-2-2H4z" />
+                <path d="M20 5.5h-5.5A2.5 2.5 0 0 0 12 8v11a2 2 0 0 1 2-2h6z" />
+              </svg>
+              Aide-mémoire
+            </a>
+          </li>
+          <li>
+            <a href="../ressources/exercices.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 20h4L19 9l-4-4L4 16z" />
+                <path d="M13.5 6.5l4 4" />
+              </svg>
+              Exercices
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <p>10 séances · 40 périodes</p>
+      </div>
+    </div>
+
+    <div class="contenu">
+
+      <main>
+
+        <h1>Séance 1 — Le Web et le HTML</h1>
+        <p class="chapeau">
+          À la fin de cette séance, vous comprendrez ce qui se passe entre le
+          moment où vous tapez une adresse et celui où la page s'affiche, et vous
+          serez prêt à installer votre environnement et à écrire votre première
+          page web dès la séance 2.
+        </p>
+
+        <section>
+          <h2>Faisons connaissance</h2>
+
+          <p>Avant de commencer, un tour de table :</p>
+
+          <ul>
+            <li><b>Quel est votre prénom et nom ?</b></li>
+            <li><b>Pourquoi avez-vous choisi la section informatique de gestion ?</b></li>
+            <li><b>Avez-vous suivi d'autres études ou formations auparavant ?</b></li>
+            <li><b>Qu'attendez-vous de ce cours de web ?</b></li>
+            <li><b>Avez-vous déjà une expérience avec la création ou l'utilisation de
+                sites web (HTML, CSS, etc.) ?</b></li>
+          </ul>
+
+        </section>
+
+        <section>
+          <h2>Qui suis-je ?</h2>
+
+          <h3>Parcours académique</h3>
+
+          <ul>
+            <li><i class="fa-solid fa-calculator" aria-hidden="true"></i> 2015 — Bachelier en sciences mathématiques,
+              ULB</li>
+            <li><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> 2017 — Master en sciences actuarielles,
+              ULB</li>
+            <li><i class="fa-solid fa-laptop" aria-hidden="true"></i> 2023 — Bachelier en informatique de gestion, EAFC
+              Evere</li>
+            <li><i class="fa-solid fa-user-graduate" aria-hidden="true"></i> 2024 — Executive Master in Digital &amp; IT
+              Essentials, VUB/ULB
+            </li>
+          </ul>
+
+          <h3>Parcours professionnel</h3>
+
+          <ul>
+            <li><i class="fa-solid fa-chalkboard-teacher" aria-hidden="true"></i> 2015-2016 — Professeure de
+              mathématiques, enseignement
+              secondaire</li>
+            <li><i class="fa-solid fa-user-tag" aria-hidden="true"></i> 2017 — Stagiaire en assurance vie, AG Insurance
+            </li>
+            <li><i class="fa-solid fa-user-check" aria-hidden="true"></i> 2017-2018 — Consultante, EY</li>
+            <li><i class="fa-solid fa-user-clock" aria-hidden="true"></i> 2018-2020 — Interne actuaire non-vie,
+              Generali, Athora et Bâloise
+            </li>
+            <li><i class="fa-solid fa-user-tie" aria-hidden="true"></i> 2020-2022 — Actuaire pricing, Touring Assurances
+            </li>
+            <li><i class="fa-solid fa-chart-line" aria-hidden="true"></i> 2022-2024 — Actuaire performance monitoring,
+              Belfius Assurances
+            </li>
+            <li><i class="fa-solid fa-users-gear" aria-hidden="true"></i> 2025 – … — Manager Operational Performance
+              &amp; Technical Support
+              Non-Life, Belfius Assurances</li>
+            <li><i class="fa-solid fa-user-graduate" aria-hidden="true"></i> 2025 – … — Professeure, EAFC Evere</li>
+          </ul>
+
+        </section>
+
+        <section>
+          <h2>Plan du cours</h2>
+
+          <p>
+            Le programme complet des 10 séances est disponible sur la page
+            <a href="../programme.html">Vue d'ensemble</a>.
+          </p>
+
+        </section>
+
+        <section>
+          <h2>Grille d'évaluation</h2>
+
+          <p>
+            Pour atteindre le seuil de réussite, vous devrez prouver que vous êtes
+            capable de réaliser des pages conformes, face à une structure
+            informatique opérationnelle connectée à Internet, en utilisant le
+            vocabulaire technique et l'orthographe adéquats, et en respectant les
+            normes en vigueur.
+          </p>
+
+          <img src="../images/grille_evaluation_part1.png" alt="Grille d'évaluation" class="image-centrale">
+          <img src="../images/grille_evaluation_part2.png" alt="Grille d'évaluation" class="image-centrale">
+
+        </section>
+
+        <section>
+          <h2>Sommaire</h2>
+
+          <nav aria-label="Sommaire de la séance">
+            <ol>
+              <li><a href="#comprendre-le-web">1. Comprendre ce qu'est le Web</a></li>
+              <li><a href="#page-a-ecran">2. Comment une page arrive à l'écran</a></li>
+              <li><a href="#le-html">3. Le HTML</a></li>
+              <li><a href="#lire-page-html">4. Lire et comprendre une page HTML</a></li>
+              <li><a href="#types-sites">5. Les types de sites web : usages et fonctionnement</a></li>
+              <li><a href="#normes-validation-securite">6. Normes et validation</a></li>
+              <li><a href="#securite-de-base">7. La sécurité de base</a></li>
+              <li><a href="#exercices">8. Exercices</a></li>
+            </ol>
+          </nav>
+
+        </section>
+
+        <section>
+          <h2 id="comprendre-le-web">1. Comprendre ce qu'est le Web</h2>
+
+          <p>
+            Imaginez le site d'un restaurant : une page d'accueil avec une photo,
+            un menu, les horaires, un formulaire de réservation. Pour comprendre
+            comment ce site existe et comment vous y accédez, il faut distinguer
+            plusieurs notions : Internet, le Web, et le site web lui-même.
+          </p>
+          <a href="https://www.sanzaru.be/menu/" rel="menu restaurant">Exemple de site web d'un restaurant</a>
+
+          <img src="../images/restaurant_1.png" alt="Exemple de site web" class="image-centrale">
+          <img src="../images/restaurant_2.png" alt="Exemple de site web" class="image-centrale">
+
+          <h3>Internet</h3>
+
+          <p>
+            <strong>Internet</strong> est une infrastructure : un immense réseau
+            mondial qui connecte entre eux des millions d'autres réseaux, par
+            l'intermédiaire de <strong>FAI</strong> (Fournisseurs d'Accès à
+            Internet). Chacun de ces réseaux relie toutes sortes d'équipements —
+            ordinateurs personnels, serveurs, objets connectés, routeurs — grâce à
+            une infrastructure physique (câbles, fibre optique, lignes
+            téléphoniques) et à des protocoles standardisés comme TCP/IP, vus en
+            <em>Bases des réseaux</em>.
+          </p>
+
+          <p>
+            Internet est donc le support qui permet à des machines, où qu'elles
+            soient dans le monde, de s'échanger des données. Plusieurs services
+            circulent sur ce support : le courrier électronique, le partage de
+            fichiers, la visioconférence, et bien sûr le Web.
+          </p>
+          <img src="../images/exemple_internet.png" alt="Exemple d'Internet" class="image-centrale">
+
+          <h3>Le Web</h3>
+
+          <p>
+            Le <strong>World Wide Web</strong> (ou simplement « web ») est l'un de
+            ces services qui fonctionnent sur Internet. Créé par
+            <strong>Tim Berners-Lee</strong> en 1989 au CERN, c'est une collection
+            massive de documents et de médias (images, vidéos, fichiers…) connectés
+            entre eux comme une toile, grâce à des liens <em>hypertextes</em>.
+          </p>
+
+          <div class="images">
+            <img src="../images/www.png" alt="World Wide Web" class="image-centrale " style="width: 425px;">
+            <img src="../images/tim_berners_lee.png" alt="Tim Berners-Lee" class="image-centrale" style="width: 200px;">
+          </div>
+
+          <p>
+            Le Web repose sur des technologies précises, que vous allez utiliser
+            tout au long de ce cours :
+          </p>
+
+          <ul>
+            <li><strong>HTTP</strong> : le protocole qui permet de demander et de
+              recevoir des pages web.</li>
+            <li><strong>HTML, CSS, JavaScript</strong> : les langages utilisés pour
+              structurer, styliser et animer ces pages.</li>
+            <li><strong>URL</strong> : l'adresse unique qui permet d'identifier et
+              d'accéder à chaque page.</li>
+          </ul>
+
+          <p>
+            En résumé, le Web est comme un livre gigantesque, dont les pages
+            seraient éparpillées partout sur la planète, et reliées entre elles par
+            des liens.
+          </p>
+
+          <p>
+            Ces 3 notions qui seront vues plus en détail ci-dessous.
+          </p>
+
+          <h3>Quelques repères de l'histoire du Web</h3>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Année</th>
+                <th scope="col">Événement</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1969</th>
+                <td>ARPANET, l'ancêtre d'Internet, relie ses quatre premiers ordinateurs aux États-Unis.</td>
+              </tr>
+              <tr>
+                <th scope="row">1983</th>
+                <td>Le protocole TCP/IP devient le standard d'Internet.</td>
+              </tr>
+              <tr>
+                <th scope="row">1989</th>
+                <td>Tim Berners-Lee propose le World Wide Web au CERN.</td>
+              </tr>
+              <tr>
+                <th scope="row">1990</th>
+                <td>Tim Berners-Lee crée le HTML, le protocole HTTP et le premier navigateur.</td>
+              </tr>
+              <tr>
+                <th scope="row">1991</th>
+                <td>Mise en ligne de la première page web de l'histoire.</td>
+              </tr>
+              <tr>
+                <th scope="row">1993</th>
+                <td>Mosaic, premier navigateur grand public à afficher des images.</td>
+              </tr>
+              <tr>
+                <th scope="row">1994</th>
+                <td>Netscape Navigator démocratise la navigation ; création du W3C.</td>
+              </tr>
+              <tr>
+                <th scope="row">1995</th>
+                <td>HTML 2.0, première version officiellement standardisée du HTML ; naissance de JavaScript.</td>
+              </tr>
+              <tr>
+                <th scope="row">1996</th>
+                <td>Le CSS fait son apparition.</td>
+              </tr>
+              <tr>
+                <th scope="row">1999</th>
+                <td>HTML 4.01, la version de référence pendant plus de dix ans.</td>
+              </tr>
+              <tr>
+                <th scope="row">2014</th>
+                <td>Publication du standard HTML5.</td>
+              </tr>
+              <tr>
+                <th scope="row">2019</th>
+                <td>Le W3C et le WHATWG s'accordent : le HTML devient un «standard vivant», mis à jour en continu.</td>
+              </tr>
+            </tbody>
+          </table>
+          <img src="../images/web_historique.png" alt="Timeline de l'histoire du Web" class="image-centrale">
+
+          <h3>Le site web</h3>
+
+          <p>
+            Un <strong>site web</strong> est un
+            ensemble organisé de pages reliées entre elles et accessibles grâce à
+            une adresse unique appelée URL. Ces pages, conçues pour s'afficher dans
+            des navigateurs comme Chrome, Firefox, ..., peuvent contenir du texte,
+            des images, des vidéos, des liens ou encore des fichiers à télécharger.
+            L'ensemble est hébergé sur un serveur connecté à Internet. Lorsqu'un
+            internaute saisit l'adresse dans son navigateur, celui-ci communique
+            avec le serveur pour afficher les pages demandées.
+          </p>
+          <img src="../images/site_web.png" alt="Exemple de site web" class="image-centrale">
+
+          <p>
+            Attention à ne pas confondre avec une simple <strong>page web</strong> :
+            un document unique, affiché dans le navigateur, avec sa propre URL — la
+            page d'accueil, une page « Contact » ou « À propos » sont chacune une
+            page web. Un site web est l'ensemble de ces pages, reliées entre elles
+            et regroupées sous un même nom de domaine : une page d'accueil, des
+            sous-pages, éventuellement un blog ou une boutique en ligne.
+          </p>
+          <img src="../images/site_web_page_web.png" alt="Différence entre site web et page web" class="image-centrale">
+
+        </section>
+
+        <section>
+          <h2 id="page-a-ecran">2. Comment une page arrive à l'écran</h2>
+
+          <h3>Le modèle client / serveur</h3>
+
+          <p>
+            Votre navigateur est le <strong>client</strong>. Il envoie une
+            <em>requête</em>. Une machine distante, le <strong>serveur</strong>,
+            renvoie une <em>réponse</em> : le plus souvent, un fichier HTML.
+          </p>
+
+          <img src="../images/client_serveur.png" alt="Modèle client / serveur" class="image-centrale">
+          <aside class="encadre">
+            <h3>Rappel du cours de réseaux</h3>
+            <p>
+              Vous avez vu en <em>Bases des réseaux</em> comment les données
+              circulent (TCP/IP, adressage, DNS). Ici, on s'intéresse uniquement à
+              la couche du dessus : ce que le Web ajoute par-dessus le réseau.
+            </p>
+          </aside>
+
+          <h3>L'URL</h3>
+
+          <p>Une adresse web se décompose toujours de la même façon :</p>
+
+          <img src="../images/url.png" alt="Décomposition d'une URL" class="image-centrale">
+
+          <h3> Un nom de domaine et sous-domaines</h3>
+          <p>
+            Un <strong>nom de domaine</strong> est un nom lisible et facile à mémoriser qui permet d'accéder à un site
+            ou
+            à un service sur Internet.
+            Il évite de devoir retenir une adresse IP numérique.
+          </p>
+          <p>
+            Le nom de domaine se compose notamment d'un nom (`mondomaine`) et d'une extension (`.fr`), appelée aussi
+            domaine de premier niveau.
+          </p>
+
+          <p>
+            Un <strong>sous-domaine</strong> sert à créer une partie distincte d'un site web, tout en restant associé au
+            même nom de domaine principal.
+          </p>
+
+          <h4>Exemple</h4>
+
+          Prenons le domaine `exemple.be` :
+          <table>
+            <caption>Exemples d'adresses et d'utilités possibles</caption>
+            <thead>
+              <tr>
+                <th scope="col">Adresse</th>
+                <th scope="col">Utilité possible</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>www.exemple.be</code></td>
+                <td>Site web principal</td>
+              </tr>
+              <tr>
+                <td><code>blog.exemple.be</code></td>
+                <td>Blog de l'entreprise</td>
+              </tr>
+              <tr>
+                <td><code>boutique.exemple.be</code></td>
+                <td>Boutique en ligne</td>
+              </tr>
+              <tr>
+                <td><code>support.exemple.be</code></td>
+                <td>Assistance aux clients</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Dans <code>blog.exemple.be</code> :</p>
+          <ul>
+            <li><code>blog</code> est le sous-domaine</li>
+            <li><code>exemple.be</code> est le nom de domaine</li>
+          </ul>
+
+          <h4>Structure d'une adresse</h4>
+
+          <img src="../images/structure_domaine.png" alt="Structure d'une adresse avec sous-domaine"
+            class="image-centrale">
+
+          <h4> Pourquoi utiliser un sous-domaine ? </h4>
+
+          <ul>
+            <li>Organiser un site en plusieurs parties.</li>
+            <li>Séparer des services : blog, boutique, espace client, etc.</li>
+            <li>Configurer chaque partie différemment, éventuellement sur des serveurs distincts.</li>
+          </ul>
+          <aside class="encadre">
+            <h3>À retenir </h3>
+            <p>
+              Un sous-domaine n'est pas simplement un dossier. Par exemple, <code>exemple.be/blog</code> est un chemin
+              dans le site, tandis que <code>blog.exemple.be</code> est un sous-domaine.
+            </p>
+            <ul>
+              <li>Autrement dit, <code>exemple.be</code> peut être considérer comme bâtiment et <code>/blog</code> comme
+                une pièce à l'intérieur de ce bâtiment.
+                Le blog fait partie du site principal. Il peut correspondre à une page, à une section ou à un ensemble
+                de
+                pages.</li>
+              <li>tandis que <code>blog.exemple.be</code> est un bâtiment distinct. Il peut être un site distinct, avec
+                sa
+                propre structure et ses propres pages.</li>
+
+            </ul>
+
+          </aside>
+
+          <h3>Le DNS : l'annuaire du Web</h3>
+
+          <p>
+            Sur Internet, une machine se trouve grâce à son <strong>adresse
+              IP</strong>, une suite de nombres comme <code>12.34.56.78</code>. Les
+            humains, eux, retiennent plus facilement des noms comme
+            <code>www.example.com</code>.
+          </p>
+
+          <p>
+            Le <strong>DNS</strong> (<em>Domain Name System</em>) fait la
+            traduction entre les deux, comme un annuaire téléphonique : on cherche
+            un nom, on obtient un numéro. C'est la toute première étape de chaque
+            visite d'un site. Nous y reviendrons à la séance 9, au moment de mettre
+            vos pages en ligne sous votre propre adresse.
+          </p>
+
+          <img src="../images/dns.png" alt="Fonctionnement du DNS" class="image-centrale">
+
+          <h3>HTTP et HTTPS</h3>
+
+
+          <p>
+            HTTP est le protocole du Web. HTTPS est sa version chiffrée. Le cadenas
+            dans la barre d'adresse garantit que <strong>la communication est
+              chiffrée (grâce au chiffrement TLS).</strong>.
+          </p>
+          <img src="../images/http_vs_https.png" alt="Différence entre HTTP et HTTPS" class="image-centrale">
+
+
+
+          <aside class="encadre">
+            <h3>À retenir </h3>
+            <p>
+              Il ne garantit <em>pas</em> que le site est honnête :
+              un site de phishing peut parfaitement être en HTTPS.
+            </p>
+          </aside>
+
+          <img src="../images/https_veut_pas_dire_sans_danger.png" alt="HTTPS ne veut pas dire sans danger"
+            class="image-centrale">
+
+
+
+          <p>
+            Quelques exemples de codes de réponse que vous croiserez — inutile de
+            tous les mémoriser dès cette séance :
+          </p>
+
+          <h3>Codes de statut HTTP</h3>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Code</th>
+                <th scope="col">Signification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">200</th>
+                <td>Tout va bien, voici la page</td>
+              </tr>
+              <tr>
+                <th scope="row">301</th>
+                <td>Redirection permanente : la page a déménagé définitivement</td>
+              </tr>
+              <tr>
+                <th scope="row">302</th>
+                <td>Redirection temporaire</td>
+              </tr>
+              <tr>
+                <th scope="row">403</th>
+                <td>Interdit : vous n'avez pas le droit d'accéder à cette page</td>
+              </tr>
+              <tr>
+                <th scope="row">404</th>
+                <td>Introuvable : la page n'existe pas</td>
+              </tr>
+              <tr>
+                <th scope="row">500</th>
+                <td>Erreur du serveur</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Le trajet complet d'une requête</h3>
+
+          <p>
+            Assemblons les pièces. Voici ce qui se passe, en une fraction de
+            seconde, quand vous tapez <code>https://www.example.com/contact.html</code>
+            dans la barre d'adresse :
+          </p>
+
+          <img src="../images/trajet_requete.png" alt="Trajet complet d'une requête web" class="image-centrale">
+
+
+          <ol>
+            <li><strong>Saisie de l'URL</strong> : le navigateur découpe l'adresse
+              (protocole, nom de domaine, chemin).</li>
+            <li><strong>DNS</strong> : le nom <code>www.example.com</code> est
+              traduit en adresse IP.</li>
+            <li><strong>Requête</strong> : le navigateur (client) contacte le serveur à cette adresse et lui demande le
+              fichier
+              <code>contact.html</code> via HTTPS. Cette requête est de type <strong>GET</strong> : « donne-moi ce
+              fichier
+              ».
+              C'est le type de requête le plus courant, celui qu'envoie le navigateur chaque fois que vous ouvrez une
+              page
+              ou cliquez sur un lien.
+              Il en existe d'autres, comme <strong>POST</strong> pour envoyer des données : nous les verrons avec les
+              formulaires.
+              <code>contact.html</code> via HTTPS.
+            </li>
+            <li><strong>Réponse</strong> : le serveur renvoie un code de statut
+              (200 si tout va bien, 404 si le fichier n'existe pas) accompagné du
+              fichier HTML.</li>
+            <li><strong>Lecture du HTML</strong> : le navigateur lit le fichier de
+              haut en bas. Chaque fois qu'il y trouve une référence à un autre
+              fichier — feuille de style, image, favicon —, il envoie
+              <strong>une nouvelle requête</strong> pour l'obtenir.
+            </li>
+            <li><strong>Affichage</strong> : une fois les fichiers reçus, le
+              navigateur assemble le tout et dessine la page à l'écran.</li>
+          </ol>
+
+          <aside class="encadre">
+            <h3>Pourquoi l'étape 5 est importante pour vous</h3>
+            <p>
+              Une page web n'est presque jamais un seul fichier : c'est un fichier
+              HTML qui en appelle d'autres. Si le chemin vers une image est faux,
+              seule cette requête échoue (code 404) : la page s'affiche quand même,
+              avec une image cassée. C'est pour cela que les chemins, vus plus loin
+              dans cette séance, sont si importants.
+            </p>
+            <p>
+              <strong>À essayer :</strong> sur n'importe quel site, ouvrez les
+              outils de développement (<code>F12</code>), onglet
+              <em>Réseau</em>, puis rechargez la page. Vous verrez défiler chaque
+              fichier demandé, avec son code de statut.
+            </p>
+          </aside>
+
+          <h3>Le rôle du navigateur</h3>
+
+          <p>
+            Une page web n'a rien de magique : c'est <strong>un simple fichier
+              texte</strong>, que n'importe qui peut lire. Le navigateur est le
+            programme qui interprète ce texte et le transforme en page affichée.
+            Deux réflexes à prendre dès aujourd'hui :
+          </p>
+
+          <ul>
+            <li><strong><code>Ctrl+U</code></strong> (afficher le code source) :
+              montre le fichier HTML tel qu'il a été reçu du serveur.</li>
+            <li><strong><code>F12</code></strong> (outils de développement, onglet
+              <em>Éléments</em> ou <em>Inspecteur</em>) : montre la page telle que le
+              navigateur l'a construite, et permet de la modifier en direct.
+              Rassurez-vous : ces modifications n'existent que sur votre écran, il
+              suffit de recharger la page pour tout retrouver.
+            </li>
+          </ul>
+
+        </section>
+
+        <section>
+          <h2 id="le-html">3. Le HTML</h2>
+
+          <p>
+            <strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup
+            <strong>L</strong>anguage : un langage de <em>balisage</em>. Il décrit
+            la structure d'un document. Il ne contient ni variables, ni conditions,
+            ni boucles : <strong>ce n'est pas un langage de programmation</strong>.
+          </p>
+
+          <h3>Trois langages, trois rôles</h3>
+
+          <p>
+            Le HTML n'est que l'un des trois langages du navigateur, et chacun a un
+            rôle précis, et un seul. C'est un principe fondamental du Web : on
+            <strong>sépare</strong> le contenu de sa présentation et de son
+            comportement.
+          </p>
+
+          <img src="../images/difference_html_css_javascript.png" alt="Différence entre HTML, CSS et JavaScript"
+            class="image-centrale">
+          <table>
+            <caption>La séparation des rôles, avec l'image d'une maison</caption>
+            <thead>
+              <tr>
+                <th scope="col">Langage</th>
+                <th scope="col">Rôle</th>
+                <th scope="col">Dans une maison</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">HTML</th>
+                <td>La structure et le sens du contenu : ceci est un titre, ceci
+                  est un paragraphe, ceci est un lien</td>
+                <td>Les murs et les pièces</td>
+              </tr>
+              <tr>
+                <th scope="row">CSS</th>
+                <td>La présentation : couleurs, tailles, polices, disposition</td>
+                <td>La peinture et la décoration</td>
+              </tr>
+              <tr>
+                <th scope="row">JavaScript</th>
+                <td>Le comportement : réagir aux clics, modifier la page</td>
+                <td>L'électricité et la domotique</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            Conséquence directe : on ne choisit <strong>jamais</strong> une balise
+            HTML pour son apparence. On la choisit pour ce que le contenu
+            <em>est</em>. On peut repeindre une maison sans abattre ses murs ; de
+            même, on doit pouvoir changer tout le CSS d'un site sans toucher à son
+            HTML. Cette séance se concentre sur les murs : le HTML.
+          </p>
+
+          <aside class="encadre">
+            <h3>Attention</h3>
+            <p>
+              Dans ce cours, nous ne verrons que le <strong>HTML</strong> et le <strong>CSS</strong>. Le
+              <strong>JavaScript</strong> est un langage plus complexe, qui sera abordé dans le cours de Projet de
+              Développement Web en BA2.
+            </p>
+          </aside>
+          <h3 id="les-balises">Les balises</h3>
+
+          <p>Il en existe deux sortes.</p>
+          <p><strong>1. Les balises par paire : </strong>elles encadrent un contenu, avec une balise ouvrante et une
+            balise fermante.</p>
+
+          <img src="../images/balise_classique.png" alt="Description de la balise classique">
+
+          <ul>
+            <li><strong>La balise ouvrante : </strong>il s'agit du nom de l'élément (dans cet exemple, p pour
+              paragraphe),
+              encadré par des
+              chevrons ouvrant et fermant. Cette balise ouvrante indique où l'élément commence ou commence à prendre
+              effet. Dans cet exemple, elle précède le début du texte du paragraphe.
+
+            </li>
+            <li><strong>Le contenu : </strong>il s'agit du contenu de l'élément. Dans cet exemple, c'est le texte du
+              paragraphe : « Mon
+              élément».</li>
+            <li><strong>La balise fermante : </strong>c'est la même que la balise ouvrante, sauf qu'elle comprend une
+              barre oblique avant
+              le nom de l'élément. Elle indique où l'élément se termine. Oublier d'inclure une balise fermante est une
+              erreur fréquente chez les débutants qui peut produire des résultats étranges.</li>
+          </ul>
+
+          <p><strong class="etiquette">Exemple en HTML</strong> :</p>
+          <pre><code>&lt;!-- Balise par paire : elle entoure un contenu --&gt;
+&lt;p&gt;Ceci est un paragraphe.&lt;/p&gt;</code></pre>
+          <p><strong class="etiquette">Exemple en rendu navigateur</strong> :</p>
+          <img src="../images/paragraphe.png" alt="Exemple de la balise paragraphe">
+
+          <p>
+            <strong>2. Les balises orphelines : </strong>elles insèrent quelque chose, sans contenu. Elles n'ont pas de
+            balise fermante.
+          </p>
+
+          <p>
+            <strong class="etiquette">Exemples de balises orphelines :</strong>
+          </p>
+          <ul>
+            <li><code>&lt;br&gt;</code> (saut de ligne)</li>
+            <li><code>&lt;img&gt;</code> (image)</li>
+            <li><code>&lt;hr&gt;</code> (ligne horizontale)</li>
+          </ul>
+          <img src="../images/balise_orpheline.png" alt="Description de la balise orpheline">
+          <p><strong class="etiquette">Exemple en HTML</strong> :</p>
+          <pre><code>&lt;!-- Balise orpheline : elle insère quelque chose, sans contenu --&gt;
+&lt;br&gt; &lt;!-- Saut de ligne --&gt;
+&lt;img src="photo.jpg" alt="Description de la photo"&gt; &lt;!-- Image --&gt;</code></pre>
+          <p><strong class="etiquette">Exemple en rendu navigateur</strong> :</p>
+          <img src="../images/balise_orpheline_exemple_img.png" alt="Exemple de la balise orpheline">
+          <p>
+            Un <strong>attribut</strong> ajoute une information à une balise, sous
+            la forme <code>nom="valeur"</code>, à l'intérieur de la balise
+            ouvrante. Il précise ou configure l'élément : quelle image afficher,
+            quel texte proposer à la place si elle ne charge pas, vers quelle page
+            pointer un lien, etc.
+          </p>
+          <p>Un attribut doit avoir :</p>
+          <ul>
+            <li> Un espace entre lui et le nom de l'élément. Quand un élément possède plusieurs attributs, les attributs
+              doivent aussi être séparés par des espaces.
+            </li>
+            <li> Le nom de l'attribut, suivi d'un signe égal (=).
+            </li>
+            <li> Une valeur d'attribut, entourée par des guillemets d'ouverture et de fermeture.</li>
+          </ul>
+
+
+          <p>L'élément <code>&lt;img&gt;</code> peut recevoir plusieurs attributs, dont :</p>
+          <ul>
+            <li><code>src</code> : un attribut obligatoire qui définit l'URL de l'image. Par exemple :
+              src="https://mdn.github.io/shared-assets/images/examples/fx-nightly-512.png".
+            </li>
+            <li><code>alt</code> : définit une description textuelle pour décrire l'image aux personnes qui ne peuvent
+              pas
+              la voir. Par
+              exemple : <code>alt="Icône Firefox Nightly"</code>. Cet attribut n'est pas techniquement obligatoire, mais
+              vous devez
+              toujours fournir une description textuelle pour toutes les images qui véhiculent un sens (et non pour
+              celles
+              purement décoratives).
+            </li>
+            <li><code>width</code> : définit la largeur de l'image en pixels. Par exemple : width="300".
+            </li>
+            <li><code>height</code> : définit la hauteur de l'image en pixels. Par exemple : height="300".
+            </li>
+          </ul>
+
+
+          <p>
+            Dans <code>&lt;img src="photo.jpg" alt="Description de la photo"&gt;</code>,
+            il y a deux attributs : <code>src</code> (la source — le fichier à
+            afficher) et <code>alt</code> (le texte alternatif — lu par les
+            lecteurs d'écran, et affiché si l'image ne se charge pas).
+          </p>
+
+          <aside class="encadre">
+            <h3>Une note historique</h3>
+            <p>
+              Vous rencontrerez parfois l'écriture <code>&lt;br /&gt;</code> avec une
+              barre oblique. C'est la syntaxe de XHTML, une variante des années 2000.
+              En HTML5, on écrit simplement <code>&lt;br&gt;</code>. Les deux sont
+              acceptées, mais autant prendre tout de suite la bonne habitude.
+            </p>
+          </aside>
+
+          <h3 id="balise-hr"><code>&lt;hr&gt;</code> : une séparation thématique</h3>
+
+          <p>
+            Une autre balise orpheline : <code>&lt;hr&gt;</code>
+            (<em>horizontal rule</em>) marque une rupture thématique dans le
+            contenu, par exemple entre deux sujets différents d'une même page.
+            Le navigateur l'affiche par défaut comme un trait horizontal, mais
+            son rôle est <strong>sémantique</strong>, pas décoratif : ce n'est
+            pas un outil pour « tracer une ligne », c'est le travail du CSS.
+          </p>
+          <p><strong class="etiquette">Exemple en HTML</strong> :</p>
+          <pre><code>&lt;p&gt;Fin du premier chapitre.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Début du second chapitre.&lt;/p&gt;</code></pre>
+          <p><strong class="etiquette">Exemple en rendu navigateur</strong> :</p>
+          <img src="../images/hr.png" alt="Description de la balise hr" class="image-centrale">
+
+          <h3 id="imbrication">L'imbrication</h3>
+
+          <p>
+            Les balises s'emboîtent comme des poupées russes. On ferme toujours dans
+            l'ordre inverse de l'ouverture.
+          </p>
+
+          <p>
+            L'exemple ci-dessous utilise <code>&lt;strong&gt;</code>, qui
+            marque une importance forte (il s'affiche en gras par défaut).
+            Vous le détaillerez, avec son équivalent <code>&lt;em&gt;</code>,
+            à la séance 2.
+          </p>
+          <p><strong class="etiquette">Exemple en HTML</strong> :</p>
+          <pre><code>&lt;!-- Correct --&gt;
+&lt;p&gt;Un texte &lt;strong&gt;important&lt;/strong&gt; ici.&lt;/p&gt;
+
+&lt;!-- Incorrect : les balises se croisent --&gt;
+&lt;p&gt;Un texte &lt;strong&gt;important&lt;/p&gt;&lt;/strong&gt;</code></pre>
+          <p><strong class="etiquette">Exemple en rendu navigateur</strong> :</p>
+          <img src="../images/exemple_imbriquer.png" alt="Exemple d'imbrication de balises" class="image-centrale">
+
+          <h3 id="entites-html">Les entités HTML</h3>
+
+          <p>
+            Certains caractères ont un sens particulier en HTML
+            (<code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>…) : vous
+            ne pouvez pas les taper tels quels dans votre texte, sinon le
+            navigateur croit que vous ouvrez une balise. Pour les afficher, on
+            utilise une <strong>entité</strong> : un code qui commence par
+            <code>&amp;</code> et se termine par <code>;</code>.
+          </p>
+
+          <table>
+            <caption>Entités HTML courantes</caption>
+            <thead>
+              <tr>
+                <th scope="col">On écrit</th>
+                <th scope="col">Le navigateur affiche</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><code>&amp;amp;</code></th>
+                <td>&amp; (esperluette)</td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&amp;lt;</code></th>
+                <td>&lt; (signe inférieur)</td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&amp;gt;</code></th>
+                <td>&gt; (signe supérieur)</td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&amp;copy;</code></th>
+                <td>&copy; (copyright)</td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&amp;nbsp;</code></th>
+                <td>un espace insécable (invisible)</td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&amp;quot;</code></th>
+                <td>&quot; (guillemet)</td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&amp;apos;</code></th>
+                <td>&#39; (apostrophe)</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3 id="squelette">Le squelette d'une page</h3>
+
+          <p>
+            Le contenu visible (vos titres, vos paragraphes) ne suffit pas :
+            le navigateur a besoin d'informations <em>sur</em> la page avant
+            même de l'afficher — quel encodage utiliser pour lire les
+            caractères, quel titre montrer dans l'onglet, à quelle feuille de
+            style se connecter. C'est le rôle du squelette : un emballage
+            fixe, toujours le même, dans lequel vient se loger votre contenu.
+          </p>
+
+          <p>Toute page HTML suit ce squelette. Apprenez-le par cœur.</p>
+          <img src="../images/squelette_page.png" alt="Squelette d'une page web" class="image-centrale">
+
+          <p><strong class="etiquette">Exemple en HTML</strong> :</p>
+          <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;meta name="description" content="Une phrase décrivant la page."&gt;
+  &lt;title&gt;Le titre affiché dans l'onglet&lt;/title&gt;
+  &lt;link rel="icon" href="images/favicon.svg"&gt;
+  &lt;link rel="stylesheet" href="css/base.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;h1&gt;Le titre principal de la page&lt;/h1&gt;
+  &lt;p&gt;Le contenu visible.&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+          <p><strong class="etiquette">Exemple en rendu navigateur</strong> :</p>
+          <img src="../images/squelette_page_exemple.png" alt="Squelette d'une page web rendu" class="image-centrale">
+
+        </section>
+
+        <section>
+          <h2 id="lire-page-html">4. Lire et comprendre une page HTML</h2>
+
+          <p>Reprenons le squelette ligne par ligne :</p>
+
+          <table>
+            <caption>Ce que fait chaque ligne</caption>
+            <thead>
+              <tr>
+                <th scope="col">Élément</th>
+                <th scope="col">Rôle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><code>&lt;!DOCTYPE html&gt;</code></th>
+                <td>Indique au navigateur qu'il s'agit de HTML5. Sans elle, le
+                  navigateur bascule dans un mode de compatibilité ancien et
+                  l'affichage devient imprévisible.</td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&lt;html&gt;</code></th>
+                <td>L'élément &lt;html&gt;. Cet élément englobe tout le contenu de la page. Il est parfois appelé
+                  l'élément racine.</td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&lt;html lang="fr"&gt;</code></th>
+                <td>L'élément racine : il contient toute la page (le
+                  <code>&lt;head&gt;</code> et le <code>&lt;body&gt;</code>).
+                  L'attribut <code>lang</code> donne la langue du document,
+                  utilisée par les lecteurs d'écran pour choisir la bonne
+                  prononciation, et par les moteurs de recherche.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&lt;head&gt;</code></th>
+                <td>Cet élément sert de conteneur pour les informations sur la page <strong>ne font pas partie du
+                    contenu
+                    visible par les utilisateurs</strong>. Cela peut inclure des mots-clés et une description de la page
+                  à
+                  afficher dans les résultats de recherche, du CSS pour la mise en forme du contenu, des déclarations
+                  d'encodage de caractères, et plus encore. Vous en apprendrez davantage sur l'en-tête de la page dans
+                  une
+                  séance à venir.</td>
+              </tr>
+              <tr>
+                <th scope="row"><code>charset="UTF-8"</code></th>
+                <td>Encodage des caractères. Sans cette ligne, les accents
+                  s'affichent en charabia.</td>
+              </tr>
+              <tr>
+                <th scope="row"><code>viewport</code></th>
+                <td>Indispensable pour l'affichage sur téléphone.</td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&lt;meta name="description"&gt;</code></th>
+                <td>Un résumé de la page en une phrase, affiché sous le titre
+                  dans les résultats Google.</td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&lt;title&gt;</code></th>
+                <td>Il définit le titre de la page, c'est-à-dire le titre qui apparaît dans l'onglet du navigateur où la
+                  page est chargée. Le titre de la page est également utilisé pour décrire la page lorsqu'elle est
+                  ajoutée
+                  aux favoris.</td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&lt;link rel="icon"&gt;</code></th>
+                <td>La petite icône affichée dans l'onglet du navigateur (le
+                  favicon).</td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&lt;link rel="stylesheet"&gt;</code></th>
+                <td>Relie la page à sa feuille de style CSS, qui définit son
+                  apparence — vous verrez ça en détail à partir de la séance 5.</td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&lt;body&gt;</code></th>
+                <td>Tout ce qui est visible. Il contient tout le contenu affiché sur la page, y compris le texte, les
+                  images, les vidéos, les jeux, les pistes audio lisibles, etc.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 id="titres-paragraphes">Les titres et les paragraphes</h3>
+
+          <p><strong class="etiquette">Exemple en HTML</strong> :</p>
+          <pre><code>&lt;h1&gt;Titre principal — un seul par page&lt;/h1&gt;
+&lt;h2&gt;Titre de section&lt;/h2&gt;
+&lt;h3&gt;Sous-section&lt;/h3&gt;
+
+&lt;p&gt;Un paragraphe de texte.&lt;/p&gt;
+&lt;p&gt;Ligne 1&lt;br&gt;Ligne 2&lt;/p&gt;
+
+&lt;hr&gt;</code></pre>
+          <p><strong class="etiquette">Exemple en rendu navigateur</strong> :</p>
+          <img src="../images/titre_paragraphe.png" alt="Exemple de titres et paragraphes" class="image-centrale">
+
+
+
+          <p>Il vous revient de décider ce que représentent les éléments utilisés, tant que la hiérarchie a du sens.
+            Gardez simplement à l'esprit quelques bonnes pratiques lors de la création de telles structures :</p>
+
+          <p>
+            De préférence, vous devez utiliser un seul <code> &lt;h1&gt; </code> par page — c'est le titre de niveau
+            supérieur, tous les autres se situent en dessous dans la hiérarchie.
+            Veillez à utiliser les titres dans le bon ordre hiérarchique. N'utilisez pas des éléments
+            <code> &lt;h3&gt; </code> pour représenter des sous-titres, suivis d'éléments <code> &lt;h2&gt; </code> pour
+            représenter des sous-sous-titres — cela n'a pas de sens et produit des résultats étranges.
+            Parmi les six niveaux de titres disponibles, essayez d'en utiliser au maximum trois par page, sauf si cela
+            s'avère nécessaire. Les documents avec de nombreux niveaux (par exemple, une hiérarchie de titres profonde)
+            deviennent difficiles à manipuler et à parcourir. Dans ce cas, il est conseillé de répartir le contenu sur
+            plusieurs pages si possible.
+
+          </p>
+          <aside class="encadre encadre-attention">
+            <h3>Les titres ne sont pas une question de taille</h3>
+            <p>
+              On ne choisit pas <code>&lt;h2&gt;</code> parce qu'on veut du texte un
+              peu plus petit. On le choisit parce que c'est une
+              <strong>section de niveau 2</strong>. La taille, c'est le travail du
+              CSS.
+            </p>
+            <p>
+              Deux règles : un seul <code>&lt;h1&gt;</code> par page, et jamais de
+              saut de niveau — pas de <code>&lt;h3&gt;</code> directement après un
+              <code>&lt;h1&gt;</code>.
+            </p>
+          </aside>
+
+          <h3 id="commentaires">Les commentaires</h3>
+          <p><strong class="etiquette">Exemple en HTML</strong> :</p>
+          <pre><code>&lt;!-- Ceci est un commentaire : le navigateur l'ignore --&gt;</code></pre>
+
+          <p>Ils servent à trois choses :</p>
+
+          <ul>
+            <li>Expliquer une partie du code</li>
+            <li>Désactiver temporairement du code sans le supprimer</li>
+            <li>Se repérer dans un fichier long</li>
+          </ul>
+
+          <p>
+            Commentez ce qui est complexe. Ne commentez pas l'évidence. Et souvenez-vous
+            qu'un commentaire HTML est <strong>visible</strong> par quiconque affiche
+            le code source : n'y écrivez jamais rien de confidentiel.
+          </p>
+
+          <h3>L'organisation des fichiers</h3>
+
+          <pre><code>mon-site/
+├── index.html      ← le fichier d'accueil s'appelle TOUJOURS index.html
+├── css/            ← les feuilles de style
+├── images/         ← les images
+└── medias/         ← les sons et vidéos</code></pre>
+
+          <h3 id="liens-ressources">Les liens hypertextes et les ressources</h3>
+
+          <p>
+            Une page HTML ne vit jamais seule : elle référence d'autres fichiers,
+            et chacune de ces références déclenche sa propre requête vers le
+            serveur (vu plus haut, à l'étape 5 du trajet d'une requête). Trois
+            balises à connaître :
+          </p>
+
+          <ul>
+            <li><code>&lt;a href="..."&gt;</code> : un lien vers une autre page,
+              sur votre site ou ailleurs.</li>
+            <li><code>&lt;img src="..." alt="..."&gt;</code> : une image à
+              afficher.</li>
+            <li><code>&lt;link rel="stylesheet" href="..."&gt;</code> : une
+              feuille de style à appliquer, placée dans le <code>&lt;head&gt;</code>.</li>
+          </ul>
+
+          <p>
+            Dans les trois cas, l'attribut qui pointe vers le fichier
+            (<code>href</code> ou <code>src</code>) suit exactement les mêmes
+            règles de chemin, détaillées ci-dessous.
+          </p>
+
+          <h3>Chemins absolus et chemins relatifs</h3>
+
+          <p>
+            C'est le point le plus important de la séance, et la première cause
+            d'erreur de tout le cours. Imaginons cette arborescence :
+          </p>
+
+          <pre><code>mon-site/
+├── index.html
+├── css/
+│   └── base.css
+├── images/
+│   └── photo.jpg
+└── pages/
+    └── contact.html</code></pre>
+
+          <p>Depuis <code>index.html</code> :</p>
+
+          <table>
+            <caption>Écriture des chemins depuis index.html</caption>
+            <thead>
+              <tr>
+                <th scope="col">Pour atteindre</th>
+                <th scope="col">On écrit</th>
+                <th scope="col">Lecture</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">La feuille de style</th>
+                <td><code>css/base.css</code></td>
+                <td>dans le dossier css, à côté de moi</td>
+              </tr>
+              <tr>
+                <th scope="row">La photo</th>
+                <td><code>images/photo.jpg</code></td>
+                <td>dans le dossier images, à côté de moi</td>
+              </tr>
+              <tr>
+                <th scope="row">La page contact</th>
+                <td><code>pages/contact.html</code></td>
+                <td>dans le dossier pages, à côté de moi</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Mais depuis <code>pages/contact.html</code>, pour revenir à l'accueil :</p>
+
+          <pre><code>&lt;a href="../index.html"&gt;Accueil&lt;/a&gt;</code></pre>
+
+          <p>
+            Les deux points <code>..</code> signifient <strong>remonter d'un
+              dossier</strong>. C'est la notation à retenir.
+          </p>
+
+          <p>
+            Tous les chemins ci-dessus sont <strong>relatifs</strong> : ils partent
+            de l'endroit où se trouve le fichier en cours. Il existe deux autres
+            façons d'écrire une adresse :
+          </p>
+
+          <table>
+            <caption>Les trois types de chemins</caption>
+            <thead>
+              <tr>
+                <th scope="col">Type</th>
+                <th scope="col">Exemple</th>
+                <th scope="col">Quand l'utiliser</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Relatif</th>
+                <td><code>images/photo.jpg</code> ou
+                  <code>../images/photo.jpg</code>
+                </td>
+                <td>Pour tous les fichiers de <strong>votre</strong> site — la
+                  forme exacte dépend de l'endroit où se trouve le fichier qui
+                  écrit le chemin (voir le tableau ci-dessus). C'est la règle
+                  dans ce cours.</td>
+              </tr>
+              <tr>
+                <th scope="row">Absolu (URL complète)</th>
+                <td><code>https://developer.mozilla.org/fr/</code></td>
+                <td>Pour un lien vers <strong>un autre site</strong>.</td>
+              </tr>
+              <tr>
+                <th scope="row">Depuis la racine</th>
+                <td><code>/images/photo.jpg</code></td>
+                <td>À éviter dans ce cours (voir ci-dessous).</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <aside class="encadre encadre-attention">
+            <h3>Pourquoi éviter la barre oblique au début</h3>
+            <p>
+              Un chemin qui commence par <code>/</code> part de la racine du
+              serveur, pas de celle de votre projet. Avec Live Server, tout
+              semble fonctionner. Mais une fois votre site transféré par FTP,
+              si votre hébergement le place dans un sous-dossier plutôt qu'à
+              la racine, la racine du serveur n'est plus celle de votre site,
+              et toutes vos images et feuilles de style disparaissent d'un
+              coup.
+            </p>
+          </aside>
+
+          <aside class="encadre encadre-attention">
+            <h3>Le piège qui vous coûtera une soirée</h3>
+            <p>
+              Sur votre ordinateur Windows, <code>Photo.JPG</code> et
+              <code>photo.jpg</code> sont le même fichier. Sur le serveur qui
+              hébergera votre site — une machine Linux —, ce sont
+              <strong>deux fichiers différents</strong>.
+            </p>
+            <p>
+              D'où la règle : noms de fichiers <strong>en minuscules, sans espaces,
+                sans accents</strong>. Un trait d'union à la place de l'espace.
+            </p>
+          </aside>
+
+          <h3>Accessibilité : les premiers réflexes</h3>
+
+          <p>
+            Vous recroiserez l'accessibilité en détail à la séance 8, mais trois
+            réflexes s'installent dès maintenant, balise par balise :
+          </p>
+
+          <ul>
+            <li><strong>Une hiérarchie de titres logique</strong> : un seul
+              <code>&lt;h1&gt;</code> par page, puis des <code>&lt;h2&gt;</code>,
+              <code>&lt;h3&gt;</code>… sans sauter de niveau (vu ci-dessus).
+            </li>
+            <li><strong>Un <code>alt</code> pertinent</strong> sur chaque image
+              qui porte une information, pas sur une image purement décorative.</li>
+            <li><strong>La langue du document déclarée</strong> avec
+              <code>lang="fr"</code> sur la balise <code>&lt;html&gt;</code> (vue
+              dans le squelette de page).
+            </li>
+          </ul>
+
+        </section>
+
+        <section>
+          <h2 id="types-sites">5. Les types de sites web : usages et fonctionnement</h2>
+
+          <h3>Objectif et usage : Site web ou application web ?</h3>
+          <img src="../images/site_web_application_web.png" alt="Différence entre site web et application web"
+            class="image-centrale">
+          <p>
+            Un <strong>site web</strong> a une vocation avant tout informative :
+            son objectif principal est de présenter des informations aux
+            visiteurs. C'est le cas du site d'un restaurant, qui affiche son
+            menu, ses horaires et son adresse — même s'il peut aussi proposer
+            quelques interactions simples, comme un formulaire de contact.
+          </p>
+
+          <p>
+            Une <strong>application web</strong> a une vocation différente :
+            son objectif principal est de permettre à l'utilisateur
+            d'effectuer des actions et de manipuler des données, le plus
+            souvent après s'être connecté à un compte personnel. C'est le cas
+            d'une application de comptabilité en ligne, qui permet
+            d'enregistrer des factures, de calculer des totaux et de consulter
+            des rapports — ou de services comme un webmail, Spotify ou
+            LinkedIn. Une application web est généralement plus complexe et
+            plus coûteuse à développer qu'un site web.
+          </p>
+
+          <p>
+            Techniquement, <strong>toute application web est un site web</strong>
+            (on y accède via un navigateur et une adresse), mais l'inverse n'est
+            pas vrai. La frontière n'est cependant pas toujours nette : un site
+            peut très bien intégrer des fonctionnalités d'application (une
+            recherche, un compte utilisateur basique) sans devenir pour autant
+            une application complète.
+          </p>
+
+          <p>
+            Attention cependant à ne pas mélanger les deux distinctions. « Site »
+            et « application » parlent de l'<strong>usage</strong>, du point de vue
+            du visiteur : consulter de l'information, ou manipuler des données.
+            « Statique » et « dynamique », vus ci-dessous, parlent de la manière
+            dont le contenu est <strong>produit et servi</strong> par le serveur —
+            une question technique, pas d'usage. Un site statique peut très bien
+            proposer des interactions dans le navigateur (un menu qui se déplie, un
+            formulaire qui se valide) grâce au JavaScript côté client, sans pour
+            autant devenir une application ni dépendre d'un serveur dynamique.
+          </p>
+          <h3>Fonctionnement technique : Site statique ou site dynamique ?</h3>
+          <img src="../images/sites_statiques_vs_dynamiques.png" alt="Différence entre site statique et site dynamique"
+            class="image-centrale">
+          <table>
+            <caption>Les deux grandes familles de sites</caption>
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Site statique</th>
+                <th scope="col">Site dynamique</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Principe</th>
+                <td>Le serveur envoie des fichiers déjà préparés.</td>
+                <td>Le serveur peut exécuter un programme et récupérer des
+                  données pour construire la réponse.</td>
+              </tr>
+              <tr>
+                <th scope="row">Exemple</th>
+                <td>Une page de présentation d'un restaurant.</td>
+                <td>Une page qui affiche les commandes d'un client connecté.</td>
+              </tr>
+              <tr>
+                <th scope="row">Technologies</th>
+                <td>HTML, CSS et éventuellement JavaScript.</td>
+                <td>HTML et CSS, avec éventuellement PHP, Python, Node.js et
+                  une base de données.</td>
+              </tr>
+              <tr>
+                <th scope="row">Mise à jour</th>
+                <td>Le fichier doit généralement être modifié puis redéployé.</td>
+                <td>Le contenu peut changer selon les données, sans modifier
+                  manuellement le fichier HTML pour chaque changement.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <aside class="encadre">
+            <h3>Le point important</h3>
+            <p>
+              Un site dynamique produit <strong>quand même</strong> du HTML et du
+              CSS à l'arrivée dans le navigateur. Le dynamique s'ajoute par-dessous,
+              il ne remplace rien. C'est pourquoi le statique est le socle, et c'est
+              pourquoi il est enseigné en premier.
+            </p>
+          </aside>
+
+          <h3>Quand choisir l'un ou l'autre</h3>
+
+          <p>
+            Le choix dépend du volume de contenu, de la fréquence de mise à jour, du
+            besoin d'interaction avec l'utilisateur, et du budget d'hébergement
+            disponible. Un fil conducteur simple : <strong>si le contenu ne change
+              pas souvent et ne dépend pas d'un compte utilisateur ou d'une base de
+              données, un site statique suffit</strong>.
+          </p>
+
+          <p>Quelques cas d'usage typiques d'un site statique :</p>
+
+          <ul>
+            <li><strong>Site vitrine</strong> : restaurant, salon de coiffure,
+              cabinet médical, dentaire ou d'avocat, artisan (plombier, électricien,
+              menuisier), salle de sport, école de musique, association ou ASBL,
+              ferme ou producteur local.
+              <img src="../images/exemples_sites_vitrines.png" alt="Exemple de site vitrine" class="image-centrale">
+              <p>Prendre rendez-vous :</p>
+              <ul>
+                <li><strong>Statique : Formulaire de contact</strong> : simple formulaire pour
+                  envoyer un message au propriétaire du site.</li>
+                <li><strong>Dynamique : Réservation dans un agenda</strong> : le visiteur choisit
+                  une date et une heure parmi les créneaux disponibles. Le système
+                  vérifie les disponibilités et enregistre le rendez-vous sur le
+                  serveur, afin d'éviter les doubles réservations.</li>
+              </ul>
+            </li>
+
+            <li><strong>Site d'information</strong> : page d'un événement ponctuel
+              (mariage, conférence, festival), documentation technique, page de
+              promotion d'un livre, d'un film ou d'un album, blog à contenu peu
+              fréquent.
+              <img src="../images/exemples_sites_information.png" alt="Exemple de site d'information"
+                class="image-centrale">
+            </li>
+
+            <li><strong>Landing page</strong> : présentation d'un produit ou d'une
+              application avant son lancement, page « coming soon », page de mémoire
+              ou de TFE.
+              <img src="../images/exemples_landing_pages.png" alt="Exemple de landing page" class="image-centrale">
+            </li>
+
+            <li><strong>Portfolio ou CV</strong> : photographe, designer,
+              illustrateur, CV en ligne.
+              <img src="../images/exemples_portfolios.png" alt="Exemple de portfolio" class="image-centrale">
+            </li>
+          </ul>
+
+          <aside class="encadre">
+            <h3>Les projets de ce cours</h3>
+            <p>
+              Les trois projets que vous réaliserez cette année sont des sites
+              <strong>statiques</strong>, en HTML et CSS purs : c'est le socle
+              indispensable avant d'aborder le dynamique dans d'autres UE.
+            </p>
+          </aside>
+
+          <h3>Côté client et côté serveur</h3>
+
+          <img src="../images/front_end_vs_back_end.png" alt="Différence entre front-end et back-end"
+            class="image-centrale">
+          <ul>
+            <li><strong>Front-end</strong> (dans votre navigateur) : HTML pour la
+              structure, CSS pour la présentation, JavaScript pour l'interactivité</li>
+            <li><strong>Back-end</strong> (sur le serveur) : PHP, Python, Node.js,
+              Java, et un système de base de données</li>
+          </ul>
+
+          <img src="../images/front_end_vs_back_end_2.png" alt="Différence entre front-end et back-end"
+            class="image-centrale">
+          <p>
+            Cette UE couvre <strong>HTML et CSS</strong>. JavaScript sera abordé dans
+            <em>Projet de développement web</em>, les bases de données dans
+            <em>Initiation aux bases de données</em>.
+          </p>
+
+        </section>
+
+        <section>
+          <h2 id="normes-validation-securite">6. Normes et validation</h2>
+
+          <h3>Les normes du Web</h3>
+
+          <p>
+            Sans règles communes, chaque navigateur interpréterait le code à sa
+            façon, et un même site s'afficherait différemment partout. Ces règles
+            sont écrites par deux organismes :
+          </p>
+
+          <ul>
+            <li>Le <abbr title="World Wide Web Consortium">W3C</abbr>, fondé en
+              1994 par Tim Berners-Lee, qui écrit notamment les standards du CSS et
+              de l'accessibilité (les recommandations qui aident à rendre les sites utilisables par les personnes en
+              situation de handicap), et qui fournit le validateur que vous utiliserez
+              dans ce cours.</li>
+            <li>Le <abbr title="Web Hypertext Application Technology Working Group">WHATWG</abbr>,
+              qui réunit les éditeurs de navigateurs (Apple, Google, Mozilla,
+              Microsoft) et maintient aujourd'hui le standard du HTML. Depuis 2019,
+              il n'existe plus de « HTML5 » figé : le HTML est un
+              <strong>standard vivant</strong> (<em>HTML Living Standard</em>), mis à
+              jour en continu.
+            </li>
+          </ul>
+
+          <p>
+            Respecter les standards augmente les chances qu'une page reste
+            <strong>compatible</strong> avec les différents navigateurs, qu'elle
+            <strong>continue de fonctionner</strong> dans plusieurs années, et
+            qu'elle soit plus facilement <strong>accessible</strong> aux personnes
+            qui utilisent un lecteur d'écran ou un autre outil d'assistance.
+          </p>
+
+          <h3>Valider son code</h3>
+
+          <p>
+            Le navigateur est très tolérant : il affiche votre page même si elle
+            contient des erreurs. C'est un piège! vous croyez que tout va bien.
+          </p>
+          <img src="../images/validation_code.png" alt="Validation du code HTML" class="image-centrale">
+          <p>
+            L'outil de référence est le
+            <a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">validateur
+              du W3C</a>. Prenez l'habitude d'y passer chaque page : il détecte les
+            erreurs de conformité HTML (balises mal fermées, attributs manquants,
+            structure invalide…). Un code valide <strong>n'est pas pour autant une garantie
+              absolue</strong>, il reste possible qu'une page valide s'affiche mal dans un
+            navigateur particulier, ou pose des problèmes d'accessibilité que le
+            validateur ne détecte pas. C'est un point de départ fiable, pas un
+            contrôle final.
+          </p>
+
+        </section>
+
+        <section>
+          <h2 id="securite-de-base">7. La sécurité de base</h2>
+
+          <p>
+            Le Web nous permet de communiquer, de nous informer et d'effectuer de
+            nombreuses démarches. Cependant, tous les sites et tous les messages
+            ne sont pas fiables. Certains cherchent à voler des informations, à
+            installer des programmes malveillants ou à utiliser du contenu sans
+            autorisation.
+          </p>
+
+          <p>
+            Il est donc important de connaître quelques risques courants et de
+            savoir comment s'en protéger.
+          </p>
+
+          <h3>1. Le phishing (hameçonnage)</h3>
+
+          <p>
+            Le <strong>phishing</strong>, ou hameçonnage, est une technique utilisée
+            pour tromper une personne afin qu'elle communique des informations
+            confidentielles : identifiants, mots de passe, coordonnées bancaires
+            ou données personnelles.
+          </p>
+          <img src="../images/infographie_hameçonnage.png" alt="Exemple de phishing" class="image-centrale">
+          <p>
+            <strong>Exemple :</strong> vous recevez un e-mail qui semble provenir
+            de votre banque. Le message indique qu'un problème a été détecté sur
+            votre compte et vous demande de cliquer sur un lien pour le sécuriser.
+            Le lien mène en réalité vers un faux site qui ressemble à celui de
+            votre banque. Si vous y saisissez votre mot de passe, celui-ci peut
+            être récupéré par les fraudeurs.
+          </p>
+
+          <p><strong>Comment se protéger ?</strong></p>
+
+          <ul>
+            <li>Vérifier attentivement l'adresse de l'expéditeur et l'adresse du site.</li>
+            <li>Se méfier des messages urgents qui menacent de bloquer un compte ou réclament une action immédiate.</li>
+            <li>Éviter de cliquer sur les liens suspects.</li>
+            <li>En cas de doute, ouvrir soi-même le site officiel ou contacter l'organisme par un canal connu.</li>
+            <li>Ne jamais communiquer un mot de passe ou un code de validation à la suite d'une demande inattendue.</li>
+          </ul>
+
+          <h3>2. Le hacking et les cyberattaques</h3>
+
+          <p>
+            Le terme <strong>hacking</strong> désigne différentes pratiques liées
+            à l'accès, à l'analyse ou à la modification de systèmes informatiques.
+            Dans le contexte de la sécurité, il peut désigner l'exploitation
+            d'une vulnérabilité pour accéder à un système sans autorisation.
+          </p>
+          <img src="../images/infographie_cyberhameçonnage.png" alt="Exemple de hacking" class="image-centrale">
+          <p>
+            Une <strong>vulnérabilité</strong> est une faiblesse dans un logiciel,
+            un site Web, une configuration ou un système informatique. Lorsqu'elle
+            n'est pas corrigée, une personne malveillante peut parfois l'exploiter
+            pour consulter des données, modifier du contenu ou perturber le
+            fonctionnement du système.
+          </p>
+
+          <p>
+            <strong>Exemple :</strong> un site Web utilise une ancienne version
+            d'un logiciel qui contient une faille connue. Un attaquant exploite
+            cette faille pour accéder à des informations auxquelles il ne devrait
+            pas avoir accès.
+          </p>
+
+          <p><strong>Comment se protéger ?</strong></p>
+
+          <ul>
+            <li>Installer les mises à jour des logiciels et des systèmes.</li>
+            <li>Utiliser des mots de passe robustes et différents selon les services.</li>
+            <li>Activer l'authentification à deux facteurs lorsque c'est possible.</li>
+            <li>Limiter les accès aux personnes qui en ont réellement besoin.</li>
+            <li>Pour les développeurs, corriger les vulnérabilités et protéger les données traitées par le site.</li>
+          </ul>
+
+          <aside class="encadre">
+            <h3>À retenir</h3>
+            <p>
+              le hacking n'est pas toujours malveillant.
+              Des spécialistes réalisent aussi des tests de sécurité avec une
+              autorisation explicite afin de détecter les failles avant qu'elles
+              ne soient exploitées.</p>
+          </aside>
+
+          <h3>3. Les virus et les autres logiciels malveillants</h3>
+
+          <p>
+            Un <strong>virus informatique</strong> est un type de logiciel
+            malveillant capable de se reproduire en s'insérant dans d'autres
+            fichiers ou programmes. Il peut se propager lorsque ces fichiers
+            sont utilisés ou partagés.
+          </p>
+          <img src="../images/infographie_logiciels_malveillants.png" alt="Exemple de virus informatique"
+            class="image-centrale">
+          <p>
+            Il existe également d'autres logiciels malveillants, regroupés sous
+            le terme <em>malware</em> :
+          </p>
+
+          <ul>
+            <li>
+              <strong>Cheval de Troie (trojan) :</strong> un programme qui semble
+              légitime, mais qui cache une fonction malveillante.
+            </li>
+            <li>
+              <strong>Rançongiciel (ransomware) :</strong> un logiciel qui bloque
+              l'accès à des fichiers ou à un système et réclame une rançon.
+            </li>
+            <li>
+              <strong>Logiciel espion (spyware) :</strong> un programme qui collecte
+              des informations sur l'utilisateur à son insu.
+            </li>
+          </ul>
+
+          <p>
+            Ces logiciels peuvent endommager un système, voler des informations,
+            surveiller une activité ou rendre des fichiers inaccessibles.
+          </p>
+
+          <p>
+            <strong>Exemple :</strong> une personne télécharge un logiciel depuis
+            un site non fiable. Le fichier contient aussi un programme malveillant
+            qui tente de récupérer des informations présentes sur son ordinateur.
+          </p>
+
+          <p><strong>Comment se protéger ?</strong></p>
+
+          <ul>
+            <li>Télécharger les logiciels depuis des sources officielles ou fiables.</li>
+            <li>Ne pas ouvrir les pièces jointes inattendues.</li>
+            <li>Maintenir le système et les logiciels à jour.</li>
+            <li>Utiliser les protections de sécurité disponibles sur son appareil.</li>
+            <li>Effectuer des sauvegardes régulières des fichiers importants.</li>
+          </ul>
+
+          <h3>4. Le grabbing et la copie de contenu</h3>
+
+          <p>
+            Le terme <strong>grabbing</strong> est parfois utilisé pour désigner
+            la récupération ou la copie de contenu depuis un site Web : textes,
+            images, fichiers ou autres éléments. Cette copie peut être automatisée
+            à l'aide de programmes.
+          </p>
+
+          <img src="../images/infographie_grabbing.png" alt="Exemple de grabbing" class="image-centrale">
+          <p>
+            Il faut distinguer la récupération technique d'un contenu de son
+            utilisation. Un contenu accessible sur Internet n'est pas nécessairement
+            libre de droits. Copier et republier des textes, des images ou une mise
+            en page sans autorisation peut porter atteinte aux droits d'auteur
+            ou à d'autres droits applicables.
+          </p>
+
+          <p>
+            <strong>Exemple :</strong> une personne copie les photographies et les
+            textes d'un site commercial pour les publier sur son propre site en
+            faisant croire qu'il s'agit de ses créations.
+          </p>
+
+          <p><strong>Comment agir correctement ?</strong></p>
+
+          <ul>
+            <li>Vérifier les droits associés au contenu avant de le réutiliser.</li>
+            <li>Demander une autorisation lorsque cela est nécessaire.</li>
+            <li>Respecter les conditions des licences, notamment pour les images et les textes.</li>
+            <li>Créer ses propres contenus ou utiliser des ressources dont la licence autorise l'utilisation envisagée.
+            </li>
+            <li>Mentionner la source lorsque cela est requis, en sachant qu'une simple citation de la source ne remplace
+              pas toujours une autorisation.</li>
+          </ul>
+
+          <aside class="encadre">
+            <h3>Attention</h3>
+            <p>
+              La copie de contenu n'est pas automatiquement
+              illégale dans tous les cas. Cela dépend notamment du contenu, des droits
+              applicables, de la licence et de l'utilisation qui en est faite.
+            </p>
+          </aside>
+
+          <h3>5. Les bons réflexes à adopter sur le Web</h3>
+
+          <p>Quelques habitudes simples permettent de réduire les risques :</p>
+
+          <ul>
+            <li><strong>Vérifier les adresses Web</strong> avant de saisir des informations personnelles.</li>
+            <li><strong>Utiliser des mots de passe robustes et uniques</strong>, idéalement gérés avec un gestionnaire
+              de
+              mots de passe.</li>
+            <li><strong>Activer l'authentification à deux facteurs</strong> pour les comptes importants.</li>
+            <li><strong>Installer les mises à jour</strong> du navigateur, du système et des logiciels.</li>
+            <li><strong>Faire attention aux téléchargements</strong> et aux pièces jointes.</li>
+            <li><strong>Limiter les informations personnelles publiées</strong> en ligne.</li>
+            <li><strong>Effectuer des sauvegardes</strong> des fichiers importants.</li>
+          </ul>
+
+          <p>
+            Enfin, la présence de <code>https://</code> dans une adresse indique
+            que la connexion entre le navigateur et le site est chiffrée. C'est
+            important, pour rappel cela ne garantit pas que le site est honnête :
+            un site frauduleux peut lui aussi utiliser HTTPS.
+          </p>
+
+
+          <aside class="encadre">
+            <h3>À retenir</h3>
+            <p>
+              La sécurité sur le Web repose à la fois
+              sur des outils techniques, des logiciels à jour et le comportement
+              prudent des utilisateurs.</p>
+          </aside>
+
+        </section>
+
+        <section>
+          <h2>Testez vos connaissances</h2>
+
+          <p>
+            Un petit tour de la séance, question par question. Essayez de
+            répondre avant de cliquer pour voir la réponse.
+          </p>
+
+          <h3>Comprendre ce qu'est le Web</h3>
+
+          <details class="quiz-question">
+            <summary>Quelle est la différence entre Internet et le Web ?</summary>
+            <p>
+              Internet est l'infrastructure : le réseau mondial qui relie les
+              machines entre elles. Le Web est l'un des services qui circulent
+              sur ce réseau — au même titre que l'e-mail ou la visioconférence
+              — basé sur des pages reliées par des liens hypertextes.
+            </p>
+          </details>
+
+          <details class="quiz-question">
+            <summary>Quelle est la différence entre un site web et une page web ?</summary>
+            <p>
+              Une page web est un document unique, avec sa propre URL. Un site
+              web est un ensemble de pages reliées entre elles, regroupées
+              sous un même nom de domaine.
+            </p>
+          </details>
+
+          <h3>Comment une page arrive à l'écran</h3>
+
+          <details class="quiz-question">
+            <summary>À quoi sert le DNS ?</summary>
+            <p>
+              À traduire un nom de domaine (<code>www.exemple.be</code>) en
+              adresse IP, comme un annuaire téléphonique : on cherche un nom,
+              on obtient un numéro.
+            </p>
+          </details>
+
+          <details class="quiz-question">
+            <summary>Le cadenas HTTPS garantit-il qu'un site est honnête ?</summary>
+            <p>
+              Non. Il garantit seulement que la communication est chiffrée.
+              Un site de phishing peut parfaitement être en HTTPS.
+            </p>
+          </details>
+
+          <h3>Le HTML</h3>
+
+          <details class="quiz-question">
+            <summary>Le HTML est-il un langage de programmation ?</summary>
+            <p>
+              Non. Il ne contient ni variables, ni conditions, ni boucles :
+              c'est un langage de balisage qui décrit la structure d'un
+              document.
+            </p>
+          </details>
+
+          <details class="quiz-question">
+            <summary>Quelle est la différence entre une balise par paire et une balise orpheline ?</summary>
+            <p>
+              Une balise par paire entoure un contenu (<code>&lt;p&gt;...&lt;/p&gt;</code>).
+              Une balise orpheline insère quelque chose sans contenu
+              (<code>&lt;br&gt;</code>, <code>&lt;img&gt;</code>).
+            </p>
+          </details>
+
+          <h3>Lire et comprendre une page HTML</h3>
+
+          <details class="quiz-question">
+            <summary>Pourquoi faut-il éviter les majuscules, espaces et accents dans les noms de fichiers ?</summary>
+            <p>
+              Parce que Windows ne fait pas la différence entre majuscules et
+              minuscules, mais le serveur (une machine Linux), si :
+              <code>Photo.JPG</code> et <code>photo.jpg</code> y sont deux
+              fichiers différents.
+            </p>
+          </details>
+
+          <details class="quiz-question">
+            <summary>Que signifient les deux points <code>..</code> dans un chemin ?</summary>
+            <p>Remonter d'un dossier.</p>
+          </details>
+
+          <h3>Les types de sites web</h3>
+
+          <details class="quiz-question">
+            <summary>Un site statique peut-il proposer des interactions (menu déroulant, formulaire) ?</summary>
+            <p>
+              Oui, grâce au JavaScript côté navigateur. Cela ne le rend pas
+              dynamique pour autant : le serveur envoie toujours le même
+              fichier, écrit à l'avance.
+            </p>
+          </details>
+
+          <details class="quiz-question">
+            <summary>Quelle est la différence entre un site web et une application web ?</summary>
+            <p>
+              Un site web a une vocation avant tout informative. Une
+              application web permet surtout d'effectuer des actions et de
+              manipuler des données, souvent via un compte personnel.
+            </p>
+          </details>
+
+          <h3>Normes et validation</h3>
+
+          <details class="quiz-question">
+            <summary>Un code HTML valide (qui passe le validateur W3C) est-il automatiquement accessible et compatible
+              avec tous les navigateurs ?</summary>
+            <p>
+              Non. Le validateur détecte les erreurs de conformité HTML, mais
+              ce n'est pas une garantie absolue d'accessibilité ni de
+              compatibilité totale.
+            </p>
+          </details>
+
+          <h3>La sécurité de base</h3>
+
+          <details class="quiz-question">
+            <summary>Qu'est-ce que le phishing ?</summary>
+            <p>
+              Une technique qui imite un site ou un message légitime (banque,
+              livreur…) pour pousser la victime à communiquer des informations
+              confidentielles.
+            </p>
+          </details>
+
+          <details class="quiz-question">
+            <summary>Copier le contenu d'un autre site (grabbing) est-il toujours illégal ?</summary>
+            <p>
+              Pas automatiquement : cela dépend du contenu, des droits
+              applicables, de la licence et de l'utilisation qui en est faite.
+              Mais il faut vérifier avant de réutiliser.
+            </p>
+          </details>
+
+        </section>
+
+        <section>
+          <h2 id="exercices">8. Exercices</h2>
+
+          <p>
+            Des exercices <strong>corrigés</strong> pour pratiquer ce que vous avez vu
+            dans cette séance, du plus simple au plus complet. Ils sont
+            <strong>facultatifs et ne sont pas à rendre</strong> : faites-les en
+            autonomie, pendant les séances à distance ou chez vous. Les seuls travaux
+            à déposer dans Teams sont ceux décrits dans les séances 2, 4 et 6.
+            Créez un dossier <code>exercice-01/</code> et un fichier par exercice
+            (<code>ex1.html</code>, <code>ex2.html</code>...).
+          </p>
+
+          <aside class="encadre encadre-attention">
+            <h3>Essayez d'abord, vérifiez ensuite</h3>
+            <p>
+              Chaque exercice propose un <strong>indice</strong> et une
+              <strong>solution</strong>, cachés : cliquez dessus pour les afficher.
+              Écrivez d'abord votre propre code dans VS Code, testez-le dans le
+              navigateur, et n'ouvrez la solution qu'ensuite pour
+              <strong>comparer</strong>. À l'examen écrit, vous devrez écrire du code sans aide : c'est en
+              cherchant par vous-même que vous vous y préparez.
+            </p>
+          </aside>
+
+          <p>
+            <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
+            Envie de vous entraîner encore ? Des exercices courts pour chaque balise
+            vous attendent dans les
+            <a href="../ressources/exercices.html#s1">exercices supplémentaires de la séance 1</a>.
+          </p>
+
+          <!-- ========== Exercice 1 ========== -->
+
+          <h3 id="ex-squelette">Exercice 1 — Le squelette de mémoire</h3>
+
+          <p><em>Partie concernée : <a href="#squelette">le squelette d'une page</a>.</em></p>
+
+          <p>
+            <strong>Sans regarder le cours</strong>, écrivez une page complète dont
+            l'onglet affiche « Ma première page », avec un titre principal « Bonjour »
+            et un paragraphe de présentation. La page est en français et doit
+            afficher correctement les accents.
+          </p>
+
+          <details class="exercice-aide">
+            <summary><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Indice</summary>
+            <p>
+              Dans l'ordre : la déclaration du type de document, la racine avec sa
+              langue, puis les deux grandes parties. Le titre de l'onglet et
+              l'encodage vont dans la partie invisible.
+            </p>
+          </details>
+
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la solution</summary>
+
+            <p><strong class="etiquette">Solution en HTML</strong> :</p>
+
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;Ma première page&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;Bonjour&lt;/h1&gt;
+  &lt;p&gt;Je m'appelle Alex et je découvre le HTML.&lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+
+            <p><strong class="etiquette">Rendu dans le navigateur</strong> :</p>
+
+            <div class="navigateur">
+              <p class="navigateur-barre" aria-hidden="true">exercice-01/ex1.html</p>
+              <iframe sandbox loading="lazy" height="120" title="Aperçu de l&#x27;exemple dans le navigateur" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;fr&quot;&gt;
+
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;Ma première page&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;Bonjour&lt;/h1&gt;
+  &lt;p&gt;Je m&#x27;appelle Alex et je découvre le HTML.&lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;"></iframe>
+            </div>
+
+            <p>
+              <strong>Pourquoi ?</strong> <code>&lt;!DOCTYPE html&gt;</code> annonce
+              du HTML5. <code>lang="fr"</code> indique la langue aux lecteurs d'écran
+              et aux moteurs de recherche. <code>&lt;meta charset="UTF-8"&gt;</code>
+              permet d'afficher les accents. Le <code>&lt;title&gt;</code> ne se voit
+              que dans l'onglet.
+            </p>
+          </details>
+
+          <!-- ========== Exercice 2 ========== -->
+
+          <h3 id="ex-titres">Exercice 2 — Structurer un texte</h3>
+
+          <p><em>Partie concernée : <a href="#titres-paragraphes">titres et paragraphes</a>.</em></p>
+
+          <p>Mettez ce texte en forme avec les bons niveaux de titres et des paragraphes :</p>
+
+          <pre><code>Bruxelles
+La géographie
+Bruxelles est située au centre de la Belgique.
+Les communes
+La région compte dix-neuf communes, dont Evere.
+La culture
+Bruxelles est connue pour sa Grand-Place.</code></pre>
+
+          <details class="exercice-aide">
+            <summary><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Indice</summary>
+            <p>
+              Un seul <code>&lt;h1&gt;</code>. « Les communes » est une sous-partie de
+              « La géographie » : quel niveau, alors ?
+            </p>
+          </details>
+
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la solution</summary>
+
+            <p><strong class="etiquette">Solution en HTML (contenu du body)</strong> :</p>
+
+            <pre><code>&lt;h1&gt;Bruxelles&lt;/h1&gt;
+
+&lt;h2&gt;La géographie&lt;/h2&gt;
+&lt;p&gt;Bruxelles est située au centre de la Belgique.&lt;/p&gt;
+
+&lt;h3&gt;Les communes&lt;/h3&gt;
+&lt;p&gt;La région compte dix-neuf communes, dont Evere.&lt;/p&gt;
+
+&lt;h2&gt;La culture&lt;/h2&gt;
+&lt;p&gt;Bruxelles est connue pour sa Grand-Place.&lt;/p&gt;</code></pre>
+
+            <p><strong class="etiquette">Rendu dans le navigateur</strong> :</p>
+
+            <div class="navigateur">
+              <p class="navigateur-barre" aria-hidden="true">exercice-01/ex2.html</p>
+              <iframe sandbox loading="lazy" height="330" title="Aperçu de l&#x27;exemple dans le navigateur" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;fr&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;Aperçu&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Bruxelles&lt;/h1&gt;
+
+&lt;h2&gt;La géographie&lt;/h2&gt;
+&lt;p&gt;Bruxelles est située au centre de la Belgique.&lt;/p&gt;
+
+&lt;h3&gt;Les communes&lt;/h3&gt;
+&lt;p&gt;La région compte dix-neuf communes, dont Evere.&lt;/p&gt;
+
+&lt;h2&gt;La culture&lt;/h2&gt;
+&lt;p&gt;Bruxelles est connue pour sa Grand-Place.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;"></iframe>
+            </div>
+
+            <p>
+              <strong>Pourquoi ?</strong> Un seul <code>&lt;h1&gt;</code> pour le sujet
+              de la page, des <code>&lt;h2&gt;</code> pour les grandes parties, un
+              <code>&lt;h3&gt;</code> pour une sous-partie. On choisit le niveau pour
+              le <strong>sens</strong>, jamais pour la taille.
+            </p>
+          </details>
+
+          <!-- ========== Exercice 3 ========== -->
+
+          <h3 id="ex-image-lien">Exercice 3 — Une image et des liens</h3>
+
+          <p><em>Partie concernée : <a href="#liens-ressources">liens et ressources</a>.</em></p>
+
+          <p>Dans <code>exercice-01/ex3.html</code> :</p>
+
+          <ol>
+            <li>Affichez l'image <code>images/photo.png</code>, avec une description
+              de ce qu'elle montre.</li>
+            <li>Ajoutez un lien vers la page <code>contact.html</code>, située dans le
+              même dossier.</li>
+            <li>Ajoutez un lien vers le site du W3C : <code>https://www.w3.org</code>.</li>
+          </ol>
+
+          <details class="exercice-aide">
+            <summary><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Indice</summary>
+            <p>
+              L'image utilise <code>src</code> et <code>alt</code>, les liens
+              <code>href</code>. Un lien vers votre site : chemin
+              <strong>relatif</strong>. Vers un autre site : chemin
+              <strong>absolu</strong>.
+            </p>
+          </details>
+
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la solution</summary>
+
+            <p><strong class="etiquette">Solution en HTML (contenu du body)</strong> :</p>
+
+            <pre><code>&lt;img src="images/photo.png" alt="Un bureau avec un ordinateur portable ouvert" width="250"&gt;
+
+&lt;p&gt;&lt;a href="contact.html"&gt;Me contacter&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.w3.org"&gt;Le site du W3C&lt;/a&gt;&lt;/p&gt;</code></pre>
+
+            <p><strong class="etiquette">Rendu dans le navigateur</strong> :</p>
+
+            <div class="navigateur">
+              <p class="navigateur-barre" aria-hidden="true">exercice-01/ex3.html</p>
+              <iframe sandbox loading="lazy" height="300" title="Aperçu de l&#x27;exemple dans le navigateur" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;fr&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;Aperçu&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;img src=&quot;../images/photo.png&quot; alt=&quot;Un bureau avec un ordinateur portable ouvert&quot; width=&quot;250&quot;&gt;
+
+&lt;p&gt;&lt;a href=&quot;#&quot;&gt;Me contacter&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.w3.org&quot;&gt;Le site du W3C&lt;/a&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;"></iframe>
+            </div>
+
+            <p>
+              <strong>Pourquoi ?</strong> <code>alt</code> décrit l'image pour ceux qui
+              ne la voient pas. <code>contact.html</code> est un chemin relatif (même
+              dossier) ; <code>https://www.w3.org</code> est un chemin absolu. Adaptez
+              l'<code>alt</code> à <strong>votre</strong> image.
+            </p>
+          </details>
+
+          <!-- ========== Exercice 4 ========== -->
+
+          <h3 id="ex-erreurs">Exercice 4 — Trouvez les 5 erreurs</h3>
+
+          <p>
+            <em>Parties concernées : <a href="#squelette">le squelette</a>,
+              <a href="#imbrication">l'imbrication</a>,
+              <a href="#titres-paragraphes">les titres</a>.</em>
+          </p>
+
+          <p>Cette page s'affiche, mais elle contient <strong>5 erreurs</strong>. Trouvez-les :</p>
+
+          <pre><code>&lt;html lang="fr"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;title&gt;Mes vacances&lt;/title&gt;
+  &lt;h1&gt;Mes vacances à la mer&lt;/h1&gt;
+  &lt;h3&gt;Le premier jour&lt;/h3&gt;
+  &lt;p&gt;Il faisait &lt;strong&gt;&lt;em&gt;très&lt;/strong&gt;&lt;/em&gt; beau.
+  &lt;img src="plage.jpg"&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+          <details class="exercice-aide">
+            <summary><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Indice</summary>
+            <p>
+              Regardez la toute première ligne, l'endroit où se trouve le titre de
+              l'onglet, le niveau des titres, l'ordre de fermeture des balises, et ce
+              qui manque à l'image et au paragraphe.
+            </p>
+          </details>
+
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la solution</summary>
+
+            <p><strong class="etiquette">Code corrigé</strong> :</p>
+
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Mes vacances&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Mes vacances à la mer&lt;/h1&gt;
+  &lt;h2&gt;Le premier jour&lt;/h2&gt;
+  &lt;p&gt;Il faisait &lt;strong&gt;&lt;em&gt;très&lt;/em&gt;&lt;/strong&gt; beau.&lt;/p&gt;
+  &lt;img src="plage.jpg" alt="Une plage de sable sous un ciel bleu"&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+            <ol>
+              <li><strong><code>&lt;!DOCTYPE html&gt;</code> manquant</strong> en
+                première ligne.</li>
+              <li><strong><code>&lt;title&gt;</code> dans le <code>&lt;body&gt;</code></strong> :
+                il doit être dans le <code>&lt;head&gt;</code>.</li>
+              <li><strong>Saut de niveau</strong> : après un <code>&lt;h1&gt;</code>,
+                on passe à un <code>&lt;h2&gt;</code>, pas à un <code>&lt;h3&gt;</code>.</li>
+              <li><strong>Mauvaise imbrication</strong> : la dernière balise ouverte
+                (<code>&lt;em&gt;</code>) se ferme en premier. Et le
+                <code>&lt;p&gt;</code> n'était pas fermé.
+              </li>
+              <li><strong>Image sans <code>alt</code></strong>.</li>
+            </ol>
+          </details>
+
+          <!-- ========== Exercice 5 ========== -->
+
+          <h3 id="ex-entites">Exercice 5 — Entités et commentaires</h3>
+
+          <p>
+            <em>Parties concernées : <a href="#entites-html">les entités</a>,
+              <a href="#commentaires">les commentaires</a>.</em>
+          </p>
+
+          <p>Écrivez le code qui affiche exactement ces deux lignes dans le navigateur :</p>
+
+          <pre><code>La balise &lt;p&gt; crée un paragraphe.
+Tom &amp; Jerry © 1940</code></pre>
+
+          <p>
+            Ajoutez au-dessus un commentaire avec votre prénom, qui ne doit
+            <strong>pas</strong> s'afficher.
+          </p>
+
+          <details class="exercice-aide">
+            <summary><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Indice</summary>
+            <p>
+              Si vous écrivez <code>&lt;p&gt;</code> tel quel, le navigateur croit à
+              une vraie balise. Il faut les entités de <code>&lt;</code>,
+              <code>&gt;</code>, <code>&amp;</code> et ©.
+            </p>
+          </details>
+
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la solution</summary>
+
+            <p><strong class="etiquette">Solution en HTML (contenu du body)</strong> :</p>
+
+            <pre><code>&lt;!-- Exercice 5 — Alex --&gt;
+&lt;p&gt;La balise &amp;lt;p&amp;gt; crée un paragraphe.&lt;/p&gt;
+&lt;p&gt;Tom &amp;amp; Jerry &amp;copy; 1940&lt;/p&gt;</code></pre>
+
+            <p><strong class="etiquette">Rendu dans le navigateur</strong> :</p>
+
+            <div class="navigateur">
+              <p class="navigateur-barre" aria-hidden="true">exercice-01/ex5.html</p>
+              <iframe sandbox loading="lazy" height="110" title="Aperçu de l&#x27;exemple dans le navigateur" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;fr&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;Aperçu&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;!-- Exercice 5 — Alex --&gt;
+&lt;p&gt;La balise &amp;lt;p&amp;gt; crée un paragraphe.&lt;/p&gt;
+&lt;p&gt;Tom &amp;amp; Jerry &amp;copy; 1940&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;"></iframe>
+            </div>
+
+            <p>
+              <strong>Pourquoi ?</strong> <code>&amp;lt;</code> et
+              <code>&amp;gt;</code> affichent les chevrons sans créer de balise,
+              <code>&amp;amp;</code> affiche le « &amp; » et <code>&amp;copy;</code>
+              le ©. Le commentaire <code>&lt;!-- --&gt;</code> reste visible dans le
+              code (F12), mais pas dans la page.
+            </p>
+          </details>
+
+          <!-- ========== Exercice 6 ========== -->
+
+          <h3 id="ex-chemins">Exercice 6 — Écrire les bons chemins</h3>
+
+          <p><em>Partie concernée : <a href="#liens-ressources">liens et ressources</a>.</em></p>
+
+          <p>Voici l'arborescence d'un site :</p>
+
+          <pre><code>mon-site/
+├── index.html
+├── css/
+│   └── style.css
+├── images/
+│   └── logo.png
+└── pages/
+    └── contact.html</code></pre>
+
+          <p>Complétez les chemins relatifs :</p>
+
+          <ol>
+            <li>Dans <code>index.html</code>, l'image <code>logo.png</code>.</li>
+            <li>Dans <code>index.html</code>, un lien vers <code>contact.html</code>.</li>
+            <li>Dans <code>pages/contact.html</code>, l'image <code>logo.png</code>.</li>
+            <li>Dans <code>pages/contact.html</code>, la feuille de style.</li>
+            <li>Dans <code>pages/contact.html</code>, un lien vers l'accueil.</li>
+          </ol>
+
+          <details class="exercice-aide">
+            <summary><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Indice</summary>
+            <p>
+              On part toujours du fichier dans lequel on écrit. Depuis le dossier
+              <code>pages/</code>, il faut d'abord <strong>remonter</strong> d'un
+              niveau avec <code>../</code>.
+            </p>
+          </details>
+
+          <details class="exercice-aide solution">
+            <summary><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Voir la solution</summary>
+            <table>
+              <caption>Solution de l'exercice 6</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Dans le fichier</th>
+                  <th scope="col">Cible</th>
+                  <th scope="col">Chemin</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><code>index.html</code></th>
+                  <td>logo</td>
+                  <td><code>images/logo.png</code></td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>index.html</code></th>
+                  <td>contact</td>
+                  <td><code>pages/contact.html</code></td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>pages/contact.html</code></th>
+                  <td>logo</td>
+                  <td><code>../images/logo.png</code></td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>pages/contact.html</code></th>
+                  <td>feuille de style</td>
+                  <td><code>../css/style.css</code></td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>pages/contact.html</code></th>
+                  <td>accueil</td>
+                  <td><code>../index.html</code></td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              <strong>Pourquoi ?</strong> Depuis la racine, on descend directement
+              dans un dossier. Depuis <code>pages/</code>, <code>../</code> remonte
+              d'abord à la racine <code>mon-site/</code>, puis on redescend.
+            </p>
+          </details>
+
+        </section>
+
+        <section>
+          <h2>Les balises HTML vues dans cette séance</h2>
+
+          <p>
+            Un récapitulatif pour vous y retrouver en révision. Cliquez sur une
+            balise pour revenir à la section qui l'explique.
+          </p>
+
+          <table>
+            <caption>Glossaire des balises de la séance 1</caption>
+            <thead>
+              <tr>
+                <th scope="col">Balise</th>
+                <th scope="col">Rôle en une ligne</th>
+                <th scope="col">Vue dans</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><code>&lt;!DOCTYPE html&gt;</code></th>
+                <td>Déclare qu'il s'agit d'une page HTML5.</td>
+                <td><a href="#squelette">Le squelette</a></td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&lt;html&gt;</code></th>
+                <td>L'élément racine, qui contient toute la page.</td>
+                <td><a href="#squelette">Le squelette</a></td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&lt;head&gt;</code></th>
+                <td>Les informations sur la page, invisibles à l'écran.</td>
+                <td><a href="#squelette">Le squelette</a></td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&lt;meta&gt;</code></th>
+                <td>Encodage, viewport, description : des métadonnées.</td>
+                <td><a href="#squelette">Le squelette</a></td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&lt;title&gt;</code></th>
+                <td>Le titre affiché dans l'onglet du navigateur.</td>
+                <td><a href="#squelette">Le squelette</a></td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&lt;link&gt;</code></th>
+                <td>Relie la page à une ressource externe (favicon, CSS).</td>
+                <td><a href="#squelette">Le squelette</a></td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&lt;body&gt;</code></th>
+                <td>Tout le contenu visible de la page.</td>
+                <td><a href="#squelette">Le squelette</a></td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&lt;p&gt;</code></th>
+                <td>Un paragraphe de texte.</td>
+                <td><a href="#les-balises">Les balises</a></td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&lt;br&gt;</code></th>
+                <td>Un retour à la ligne à l'intérieur d'un paragraphe.</td>
+                <td><a href="#les-balises">Les balises</a></td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&lt;img&gt;</code></th>
+                <td>Insère une image (<code>src</code>, <code>alt</code>).</td>
+                <td><a href="#les-balises">Les balises</a></td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&lt;hr&gt;</code></th>
+                <td>Marque une rupture thématique dans le contenu.</td>
+                <td><a href="#balise-hr">&lt;hr&gt;</a></td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&lt;strong&gt;</code> / <code>&lt;em&gt;</code></th>
+                <td>Importance forte / accent d'insistance (détaillées en séance 2).</td>
+                <td><a href="#imbrication">L'imbrication</a></td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&lt;!-- --&gt;</code></th>
+                <td>Un commentaire, ignoré par le navigateur.</td>
+                <td><a href="#commentaires">Les commentaires</a></td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&lt;h1&gt;</code> à <code>&lt;h6&gt;</code></th>
+                <td>Les six niveaux de titres, pour le sens, pas la taille.</td>
+                <td><a href="#titres-paragraphes">Titres et paragraphes</a></td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&lt;a&gt;</code></th>
+                <td>Un lien hypertexte (<code>href</code>) détaillé dans séance ultérieure.</td>
+                <td><a href="#liens-ressources">Liens et ressources</a></td>
+              </tr>
+              <tr>
+                <th scope="row"><code>&amp;amp;</code>, <code>&amp;lt;</code>…</th>
+                <td>Les entités, pour afficher des caractères réservés.</td>
+                <td><a href="#entites-html">Les entités HTML</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </section>
+
+        <section>
+          <h2>Découverte des outils</h2>
+
+          <p>
+            Avant de nous lancer, un rapide tour des outils que vous utiliserez tout
+            au long du cours :
+          </p>
+
+          <ul>
+            <li><strong>Le navigateur</strong> : Chrome, Firefox et Edge sont les
+              plus utilisés. Installez-en au moins deux pour pouvoir tester vos pages
+              dans plusieurs navigateurs.</li>
+            <li><strong>VS Code</strong> : l'éditeur de code que nous utiliserons,
+              avec l'extension <strong>Live Server</strong> pour prévisualiser une
+              page HTML directement dans le navigateur, avec rafraîchissement
+              automatique.</li>
+            <li><strong>Teams</strong> : la plateforme où les fichiers du cours
+              sont déposés chaque semaine, et où vous déposerez vos propres
+              travaux.</li>
+          </ul>
+
+          <p>
+            L'installation détaillée de ces outils se fait à la séance 2 : voir le
+            <a href="../ressources/installation.html">guide d'installation</a>.
+          </p>
+
+        </section>
+
+        <section>
+          <h2>Le travail pour la séance 2</h2>
+
+          <p>
+            La séance 2 se fait <strong>à distance</strong>. Vous y installerez votre
+            environnement de travail et vous écrirez votre première page complète.
+          </p>
+
+          <p>
+            Le détail est sur la <a href="seance-02.html">page de la séance 2</a>.
+            Commencez par le <a href="../ressources/installation.html">guide
+              d'installation</a>.
+          </p>
+
+        </section>
+
+        <section>
+          <h2>Sources et ressources</h2>
+
+          <ul>
+            <li><a
+                href="https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax"
+                target="_blank" rel="noopener noreferrer">Syntaxe de base du HTML — MDN</a></li>
+            <li><a
+                href="https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/Webpage_metadata"
+                target="_blank" rel="noopener noreferrer">Métadonnées des pages web — MDN</a></li>
+            <li><a
+                href="https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/Headings_and_paragraphs"
+                target="_blank" rel="noopener noreferrer">Titres et paragraphes — MDN</a></li>
+            <li><a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">Validateur HTML du W3C</a>
+            </li>
+          </ul>
+          <p>Les images utilisées dans ce cours proviennent de diverses sources, notamment :
+          </p>
+          <ul>
+            <li> <a href="https://www.sanzaru.be/menu/" target="_blank"
+                rel="noopener noreferrer">https://www.sanzaru.be/menu/</a></li>
+            <li><a href="https://code-garage.com/blog/quelle-est-la-difference-entre-internet-et-le-web" target="_blank"
+                rel="noopener noreferrer">https://code-garage.com/blog/quelle-est-la-difference-entre-internet-et-le-web</a>
+            </li>
+            <li><a href="https://disenowebakus.net/en/world-wide-web" target="_blank"
+                rel="noopener noreferrer">https://disenowebakus.net/en/world-wide-web</a></li>
+            <li><a href="https://www.britannica.com/biography/Tim-Berners-Lee" target="_blank"
+                rel="noopener noreferrer">https://www.britannica.com/biography/Tim-Berners-Lee</a></li>
+            <li><a href="https://www.w3.org/Consortium/mission" target="_blank"
+                rel="noopener noreferrer">https://www.w3.org/Consortium/mission</a></li>
+            <li> <a href="https://techdifferences.com/difference-between-web-page-and-website.html" target="_blank"
+                rel="noopener noreferrer">https://techdifferences.com/difference-between-web-page-and-website.html</a>
+            </li>
+            <li><a href="https://www.malekal.com/le-modele-ou-architecture-client-serveur/" target="_blank"
+                rel="noopener noreferrer">https://www.malekal.com/le-modele-ou-architecture-client-serveur/</a>
+            </li>
+            <li>
+              <a href="http://nsinfo.yo.fr/nsi_prem_url.html" target="_blank"
+                rel="noopener noreferrer">http://nsinfo.yo.fr/nsi_prem_url.html</a>
+            </li>
+            <li>
+              <a href="https://openclassrooms.com/en/courses/1603881-creez-votre-site-web-avec-html5-et-css3/8061261-creez-votre-premiere-page-web-en-html"
+                target="_blank"
+                rel="noopener noreferrer">https://openclassrooms.com/en/courses/1603881-creez-votre-site-web-avec-html5-et-css3/8061261-creez-votre-premiere-page-web-en-html</a>
+            </li>
+            <li> <a href="https://www.idcalg.com/?normes-W3C-conception-site-web#r11" target="_blank"
+                rel="noopener noreferrer">https://www.idcalg.com/?normes-W3C-conception-site-web#r11</a>
+            </li>
+            <li><a href="https://www.magnific.com/fr/photos-vecteurs-libre/vacances" target="_blank"
+                rel="noopener noreferrer">https://www.magnific.com/fr/photos-vecteurs-libre/vacances</a>
+            </li>
+          </ul>
+
+        </section>
+        <!-- TELECHARGER-SEANCE -->
+        <section class="encadre telecharger-seance">
+          <h2><i class="fa-solid fa-download" aria-hidden="true"></i> Télécharger cette séance</h2>
+          <p>
+            Pour lire le cours hors ligne, ou pour étudier son code : le zip contient
+            cette page (<code>index.html</code>), sa feuille de style et ses images.
+            Ouvrez <code>index.html</code> dans VS Code pour voir les balises et le CSS.
+          </p>
+          <ul>
+            <li><a href="../telechargements/seances/seance-01.zip" download><i class="fa-solid fa-file-zipper" aria-hidden="true"></i> Séance 1 : page et fichiers (.zip)</a></li>
+            <li><a href="../telechargements/seances/seance-01.pdf" download><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Séance 1 : version à imprimer (.pdf)</a></li>
+          </ul>
+        </section>
+        <!-- /TELECHARGER-SEANCE -->
+      </main>
+
+      <footer>
+        <p>
+          EAFC Evere — UE Web : principes de base — 40 périodes. Ce site est
+          écrit à la main en HTML et CSS : faites <code>F12</code> pour en
+          inspecter le code.
+        </p>
+        <p>
+          Certains contenus s'appuient sur la documentation de
+          <a href="https://developer.mozilla.org/fr/docs/Learn_web_development/Core" target="_blank"
+            rel="noopener noreferrer">MDN
+            Web Docs</a> et d'autres ressources trouvées en ligne (textes,
+          images), ainsi que sur une assistance de l'IA (Claude, Anthropic)
+          pour la reformulation de certains passages.Certaines images ont été
+          générées par l'IA (ChatGPT, OpenAI).
+        </p>
+      </footer>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>

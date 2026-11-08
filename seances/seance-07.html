@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Séance 7 — Mise en page et menus : contenu en construction.">
+  <title>Séance 7 — Mise en page et menus</title>
+  <!-- Fontawesome (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/site.css">
+  <link rel="icon" type="image/png" href="../logo/favicon.png">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <div class="sidebar">
+      <header class="sidebar-top">
+        <img src="../logo/logo.png" alt="Logo du cours" class="sidebar-logo">
+        <p class="sidebar-titre"><a href="../index.html">Web : principes de base</a></p>
+        <p class="sidebar-sous">BA1 — EAFC Evere</p>
+      </header>
+
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li>
+            <a href="../index.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 11.5 12 5l8 6.5" />
+                <path d="M6 10.5V19h12v-8.5" />
+                <rect x="10" y="13" width="4" height="6" />
+              </svg>
+              Accueil
+              <i class="fa-solid fa-house" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <details class="sous-menu" open>
+              <summary class="actif">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <line x1="5" y1="7" x2="19" y2="7" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <line x1="5" y1="17" x2="12" y2="17" />
+                </svg>
+                Programme
+              </summary>
+              <ul class="sous-liste">
+                <li><a href="../programme.html"><i class="fa-solid fa-map" aria-hidden="true"></i> Vue d'ensemble</a>
+                </li>
+                <li class="avec-sommaire">
+                  <a href="seance-01.html"><i class="fa-solid fa-globe" aria-hidden="true"></i> 01 · Le
+                    Web et le HTML</a>
+                  <details class="sommaire-menu" open>
+                    <summary><span class="sr-only">Sommaire de la séance 1</span></summary>
+                    <ol>
+                      <li><a href="#comprendre-le-web">1. Comprendre ce qu'est le Web</a></li>
+                      <li><a href="#page-a-ecran">2. Comment une page arrive à l'écran</a></li>
+                      <li><a href="#le-html">3. Le HTML</a></li>
+                      <li><a href="#lire-page-html">4. Lire et comprendre une page HTML</a></li>
+                      <li><a href="#types-sites">5. Les types de sites web : usages et fonctionnement</a></li>
+                      <li><a href="#normes-validation-securite">6. Normes et validation</a></li>
+                      <li><a href="#securite-de-base">7. La sécurité de base</a></li>
+                      <li><a href="#exercices">8. Exercices</a></li>
+                    </ol>
+                  </details>
+                </li>
+                <li class="avec-sommaire">
+                  <a href="seance-02.html"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i> 02 · Mise en
+                    place</a>
+                  <details class="sommaire-menu">
+                    <summary><span class="sr-only">Sommaire de la séance 2</span></summary>
+                    <ol>
+                      <li><a href="seance-02.html#environnement">1. Installer son environnement</a></li>
+                      <li><a href="seance-02.html#titres-paragraphes">2. Titres et paragraphes</a></li>
+                      <li><a href="seance-02.html#listes">3. Les listes</a></li>
+                      <li><a href="seance-02.html#emphase">4. La mise en emphase</a></li>
+                      <li><a href="seance-02.html#images">5. Les images</a></li>
+                      <li><a href="seance-02.html#exercice">6. Exercice guidé</a></li>
+                      <li><a href="seance-02.html#projet-1">7. Projet 1 — lancement</a></li>
+                      <li><a href="seance-02.html#livrable">8. Le livrable</a></li>
+                      <li><a href="seance-02.html#exercices">9. Exercices</a></li>
+                    </ol>
+                  </details>
+                </li>
+                <li>
+                  <a href="seance-03.html"><i class="fa-solid fa-code" aria-hidden="true"></i> 03 · HTML avancé</a>
+                </li>
+                <li>
+                  <a href="seance-04.html"><i class="fa-solid fa-rotate" aria-hidden="true"></i> 04 · Révision, Projets
+                    1 et 2</a>
+                </li>
+                <li>
+                  <a href="seance-05.html"><i class="fa-solid fa-crosshairs" aria-hidden="true"></i> 05 · CSS,
+                    sélecteurs, habillage</a>
+                </li>
+                <li>
+                  <a href="seance-06.html"><i class="fa-solid fa-palette" aria-hidden="true"></i> 06 · CSS du
+                    portfolio</a>
+                </li>
+                <li>
+                  <a href="seance-07.html" class="actif"><i class="fa-solid fa-table-columns" aria-hidden="true"></i> 07 · Mise en
+                    page, menus</a>
+                </li>
+                <li>
+                  <a href="seance-08.html"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> 08 · Responsive,
+                    a11y</a>
+                </li>
+                <li>
+                  <a href="seance-09.html"><i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i> 09 · Mise en
+                    ligne</a>
+                </li>
+                <li><a href="seance-10.html"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> 10 ·
+                    Examen</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <a href="../ressources/installation.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 4v11" />
+                <path d="M7.5 11 12 15.5 16.5 11" />
+                <line x1="5" y1="19" x2="19" y2="19" />
+              </svg>
+              Installation
+            </a>
+          </li>
+          <li>
+            <a href="../ressources/aide-memoire.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5.5h5.5a2.5 2.5 0 0 1 2.5 2.5v11a2 2 0 0 0-2-2H4z" />
+                <path d="M20 5.5h-5.5A2.5 2.5 0 0 0 12 8v11a2 2 0 0 1 2-2h6z" />
+              </svg>
+              Aide-mémoire
+            </a>
+          </li>
+          <li>
+            <a href="../ressources/exercices.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 20h4L19 9l-4-4L4 16z" />
+                <path d="M13.5 6.5l4 4" />
+              </svg>
+              Exercices
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <p>10 séances · 40 périodes</p>
+      </div>
+    </div>
+
+    <div class="contenu">
+
+      <main>
+
+                <h1>Séance 7 — Mise en page et menus</h1>
+
+                <aside class="encadre">
+                    <h2><i class="fa-solid fa-person-digging" aria-hidden="true"></i> En construction</h2>
+                    <p>Le contenu de cette séance sera mis en ligne au moment de la séance.</p>
+                    <p>En attendant, revoyez le <a href="../programme.html">programme</a> ou les séances déjà disponibles dans le menu.</p>
+                </aside>
+
+            </main>
+
+      <footer>
+        <p>
+          EAFC Evere — UE Web : principes de base — 40 périodes. Ce site est
+          écrit à la main en HTML et CSS : faites <code>F12</code> pour en
+          inspecter le code.
+        </p>
+        <p>
+          Certains contenus s'appuient sur la documentation de
+          <a href="https://developer.mozilla.org/fr/docs/Learn_web_development/Core" target="_blank"
+            rel="noopener noreferrer">MDN
+            Web Docs</a> et d'autres ressources trouvées en ligne (textes,
+          images), ainsi que sur une assistance de l'IA (Claude, Anthropic)
+          pour la reformulation de certains passages.Certaines images ont été
+          générées par l'IA (ChatGPT, OpenAI).
+        </p>
+      </footer>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
