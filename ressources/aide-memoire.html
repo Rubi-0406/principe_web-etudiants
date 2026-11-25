@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Aide-mémoire : les balises HTML des séances 1 à 4 et le CSS des séances 5, 7 et 8 (sélecteurs, cascade, boîte, habillage, Flexbox, Grid, menus, responsive), avec leur rôle, la séance où elles sont expliquées et un lien vers MDN.">
+  <title>Aide-mémoire — Web : principes de base</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/site.css">
+  <link rel="icon" type="image/png" href="../logo/favicon.png">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <div class="sidebar">
+      <div class="sidebar-top">
+        <img src="../logo/logo.png" alt="Logo du cours" class="sidebar-logo">
+        <p class="sidebar-titre"><a href="../index.html">Web : principes de base</a></p>
+        <p class="sidebar-sous">BA1 — EAFC Evere</p>
+      </div>
+
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li>
+            <a href="../index.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 11.5 12 5l8 6.5" />
+                <path d="M6 10.5V19h12v-8.5" />
+                <rect x="10" y="13" width="4" height="6" />
+              </svg>
+              Accueil
+            </a>
+          </li>
+          <li>
+            <details class="sous-menu">
+              <summary>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <line x1="5" y1="7" x2="19" y2="7" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <line x1="5" y1="17" x2="12" y2="17" />
+                </svg>
+                Programme
+              </summary>
+              <ul class="sous-liste">
+                <li><a href="../programme.html"><i class="fa-solid fa-map" aria-hidden="true"></i> Vue d'ensemble</a></li>
+                <li class="avec-sommaire">
+                  <a href="../seances/seance-01.html"><i class="fa-solid fa-globe" aria-hidden="true"></i> 01 · Le Web et le HTML</a>
+                  <details class="sommaire-menu">
+                    <summary><span class="sr-only">Sommaire de la séance 1</span></summary>
+                    <ol>
+                      <li><a href="../seances/seance-01.html#comprendre-le-web">1. Comprendre ce qu'est le Web</a></li>
+                      <li><a href="../seances/seance-01.html#page-a-ecran">2. Comment une page arrive à l'écran</a></li>
+                      <li><a href="../seances/seance-01.html#le-html">3. Le HTML</a></li>
+                      <li><a href="../seances/seance-01.html#lire-page-html">4. Lire et comprendre une page HTML</a></li>
+                      <li><a href="../seances/seance-01.html#types-sites">5. Les types de sites web : usages et fonctionnement</a></li>
+                      <li><a href="../seances/seance-01.html#normes-validation-securite">6. Normes et validation</a></li>
+                      <li><a href="../seances/seance-01.html#securite-de-base">7. La sécurité de base</a></li>
+                      <li><a href="../seances/seance-01.html#exercices">8. Exercices</a></li>
+                    </ol>
+                  </details>
+                </li>
+                <li class="avec-sommaire">
+                  <a href="../seances/seance-02.html"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i> 02 · Mise en place</a>
+                  <details class="sommaire-menu">
+                    <summary><span class="sr-only">Sommaire de la séance 2</span></summary>
+                    <ol>
+                      <li><a href="../seances/seance-02.html#environnement">1. Installer son environnement</a></li>
+                      <li><a href="../seances/seance-02.html#titres-paragraphes">2. Titres et paragraphes</a></li>
+                      <li><a href="../seances/seance-02.html#listes">3. Les listes</a></li>
+                      <li><a href="../seances/seance-02.html#emphase">4. La mise en emphase</a></li>
+                      <li><a href="../seances/seance-02.html#images">5. Les images</a></li>
+                      <li><a href="../seances/seance-02.html#exercice">6. Exercice guidé</a></li>
+                      <li><a href="../seances/seance-02.html#projet-1">7. Projet 1 — lancement</a></li>
+                      <li><a href="../seances/seance-02.html#livrable">8. Le livrable</a></li>
+                      <li><a href="../seances/seance-02.html#exercices">9. Exercices</a></li>
+                    </ol>
+                  </details>
+                </li>
+                <li class="avec-sommaire">
+                  <a href="../seances/seance-03.html"><i class="fa-solid fa-code" aria-hidden="true"></i> 03 · HTML avancé</a>
+                  <details class="sommaire-menu">
+                    <summary><span class="sr-only">Sommaire de la séance 3</span></summary>
+                    <ol>
+                      <li><a href="../seances/seance-03.html#squelette">1. Rappel : le squelette d'une page</a></li>
+                      <li><a href="../seances/seance-03.html#head">2. Le &lt;head&gt; : ce qui ne se voit pas</a></li>
+                      <li><a href="../seances/seance-03.html#semantique">3. Le &lt;body&gt; : les balises sémantiques</a></li>
+                      <li><a href="../seances/seance-03.html#medias">4. Les médias : images, vidéo, audio, documents</a></li>
+                      <li><a href="../seances/seance-03.html#organisation">5. Approfondir l'organisation d'un site</a></li>
+                      <li><a href="../seances/seance-03.html#tableaux">6. Les tableaux de données</a></li>
+                      <li><a href="../seances/seance-03.html#formulaires">7. Les formulaires</a></li>
+                      <li><a href="../seances/seance-03.html#ia">8. L'intelligence artificielle</a></li>
+                      <li><a href="../seances/seance-03.html#exercices">9. Exercices</a></li>
+                    </ol>
+                  </details>
+                </li>
+                <li class="avec-sommaire">
+                  <a href="../seances/seance-04.html"><i class="fa-solid fa-rotate" aria-hidden="true"></i> 04 · Révision, Projets 1 et 2</a>
+                  <details class="sommaire-menu">
+                    <summary><span class="sr-only">Sommaire de la séance 4</span></summary>
+                    <ol>
+                      <li><a href="../seances/seance-04.html#revision">1. Révision des séances 1 à 3</a></li>
+                      <li><a href="../seances/seance-04.html#projet-1">2. Projet 1 — l'énoncé final</a></li>
+                      <li><a href="../seances/seance-04.html#projet-2">3. Projet 2 — lancement</a></li>
+                      <li><a href="../seances/seance-04.html#check-list">4. Avant de déposer : la check-list</a></li>
+                      <li><a href="../seances/seance-04.html#livrable">5. Le livrable</a></li>
+                    </ol>
+                  </details>
+                </li>
+                <li>
+                  <a href="../seances/seance-05.html"><i class="fa-solid fa-crosshairs" aria-hidden="true"></i> 05 · CSS, sélecteurs, habillage</a>
+                </li>
+                <li>
+                  <a href="../seances/seance-06.html"><i class="fa-solid fa-palette" aria-hidden="true"></i> 06 · CSS du portfolio</a>
+                </li>
+                <li>
+                  <a href="../seances/seance-07.html"><i class="fa-solid fa-table-columns" aria-hidden="true"></i> 07 · Mise en page, menus</a>
+                </li>
+                <li>
+                  <a href="../seances/seance-08.html"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> 08 · Responsive, a11y</a>
+                </li>
+                <li>
+                  <a href="../seances/seance-09.html"><i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i> 09 · Mise en ligne</a>
+                </li>
+                <li><a href="../seances/seance-10.html"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> 10 · Examen</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <a href="installation.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 4v11" />
+                <path d="M7.5 11 12 15.5 16.5 11" />
+                <line x1="5" y1="19" x2="19" y2="19" />
+              </svg>
+              Installation
+            </a>
+          </li>
+          <li>
+            <a href="aide-memoire.html" class="actif">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5.5h5.5a2.5 2.5 0 0 1 2.5 2.5v11a2 2 0 0 0-2-2H4z" />
+                <path d="M20 5.5h-5.5A2.5 2.5 0 0 0 12 8v11a2 2 0 0 1 2-2h6z" />
+              </svg>
+              Aide-mémoire
+            </a>
+          </li>
+          <li>
+            <a href="exercices.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 20h4L19 9l-4-4L4 16z" />
+                <path d="M13.5 6.5l4 4" />
+              </svg>
+              Exercices
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <p>10 séances · 40 périodes</p>
+      </div>
+    </div>
+
+    <div class="contenu">
+
+      <main>
+
+        <h1>Aide-mémoire HTML et CSS</h1>
+        <p class="chapeau">
+          Toutes les balises HTML vues dans les séances 1 à 4, puis le CSS des
+          séances 5, 7 et 8 (sélecteurs, habillage, mise en page, responsive), rangés par thème. Pour chacun : son
+          rôle en une ligne, la séance où il est expliqué, et un lien vers sa
+          documentation complète sur MDN.
+        </p>
+
+        <aside class="encadre">
+          <h2>Comment l'utiliser</h2>
+          <ul>
+            <li>Cherchez une balise avec <code>Ctrl</code> + <code>F</code>.</li>
+            <li>La colonne <strong>Vu dans</strong> vous ramène directement à la
+              section du cours qui l'explique (S1 = séance 1, etc.).</li>
+            <li>Le lien <strong>MDN</strong> ouvre la documentation de référence,
+              en français, dans un nouvel onglet : exemples, attributs, compatibilité.</li>
+          </ul>
+        </aside>
+
+        <section>
+        <h2>Sommaire</h2>
+
+        <nav aria-label="Sommaire de l'aide-mémoire">
+          <ol>
+            <li><a href="#squelette">1. Le squelette et le <code>&lt;head&gt;</code></a></li>
+            <li><a href="#texte">2. Le texte</a></li>
+            <li><a href="#listes">3. Les listes</a></li>
+            <li><a href="#structure">4. La structure sémantique</a></li>
+            <li><a href="#liens">5. Les liens</a></li>
+            <li><a href="#medias">6. Les images et les médias</a></li>
+            <li><a href="#tableaux">7. Les tableaux</a></li>
+            <li><a href="#formulaires">8. Les formulaires</a></li>
+          </ol>
+        </nav>
+
+        </section>
+
+        <section>
+        <h2 id="squelette">1. Le squelette et le <code>&lt;head&gt;</code></h2>
+
+        <table class="aide-memoire">
+          <caption>Le squelette et le <code>&lt;head&gt;</code></caption>
+          <thead>
+            <tr>
+              <th scope="col">Balise / code</th>
+              <th scope="col">Rôle en une ligne</th>
+              <th scope="col">Vu dans</th>
+              <th scope="col">Doc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><code>&lt;!DOCTYPE html&gt;</code></th>
+              <td>Déclare qu'il s'agit d'une page HTML5. Toujours en première ligne.</td>
+              <td><a href="../seances/seance-01.html#squelette">S1 · Le squelette</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Glossary/Doctype" target="_blank" rel="noopener noreferrer"
+                  aria-label="DOCTYPE sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;html lang="fr"&gt;</code></th>
+              <td>La racine qui contient toute la page ; <code>lang</code> indique la langue.</td>
+              <td><a href="../seances/seance-01.html#squelette">S1 · Le squelette</a><br><a href="../seances/seance-03.html#squelette">S3 · Rappel</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/html" target="_blank" rel="noopener noreferrer"
+                  aria-label="html sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;head&gt;</code></th>
+              <td>Les informations sur la page, invisibles dans la page.</td>
+              <td><a href="../seances/seance-01.html#squelette">S1 · Le squelette</a><br><a href="../seances/seance-03.html#head">S3 · Le head</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/head" target="_blank" rel="noopener noreferrer"
+                  aria-label="head sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;meta&gt;</code></th>
+              <td>Métadonnées : encodage (<code>charset</code>), <code>viewport</code>, <code>description</code>.</td>
+              <td><a href="../seances/seance-01.html#squelette">S1 · Le squelette</a><br><a href="../seances/seance-03.html#head">S3 · Le head</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/meta" target="_blank" rel="noopener noreferrer"
+                  aria-label="meta sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;title&gt;</code></th>
+              <td>Le titre affiché dans l'onglet, les favoris et les résultats de recherche.</td>
+              <td><a href="../seances/seance-01.html#squelette">S1 · Le squelette</a><br><a href="../seances/seance-03.html#head">S3 · Le head</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/title" target="_blank" rel="noopener noreferrer"
+                  aria-label="title sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;link rel="stylesheet"&gt;</code></th>
+              <td>Relie la page à une feuille de style CSS (la vôtre ou une bibliothèque).</td>
+              <td><a href="../seances/seance-01.html#squelette">S1 · Le squelette</a><br><a href="../seances/seance-03.html#link">S3 · La balise link</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/link" target="_blank" rel="noopener noreferrer"
+                  aria-label="link sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;link rel="icon"&gt;</code></th>
+              <td>Le favicon : la petite icône affichée dans l'onglet.</td>
+              <td><a href="../seances/seance-03.html#favicon">S3 · Le favicon</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/link" target="_blank" rel="noopener noreferrer"
+                  aria-label="link (favicon) sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;body&gt;</code></th>
+              <td>Tout le contenu visible de la page.</td>
+              <td><a href="../seances/seance-01.html#squelette">S1 · Le squelette</a><br><a href="../seances/seance-03.html#squelette">S3 · Rappel</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/body" target="_blank" rel="noopener noreferrer"
+                  aria-label="body sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;!-- ... --&gt;</code></th>
+              <td>Un commentaire : une note dans le code, ignorée par le navigateur.</td>
+              <td><a href="../seances/seance-01.html#commentaires">S1 · Les commentaires</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/API/Comment" target="_blank" rel="noopener noreferrer"
+                  aria-label="commentaire sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+          </tbody>
+        </table>
+        </section>
+
+        <section>
+        <h2 id="texte">2. Le texte</h2>
+
+        <table class="aide-memoire">
+          <caption>Le texte</caption>
+          <thead>
+            <tr>
+              <th scope="col">Balise / code</th>
+              <th scope="col">Rôle en une ligne</th>
+              <th scope="col">Vu dans</th>
+              <th scope="col">Doc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><code>&lt;h1&gt; à &lt;h6&gt;</code></th>
+              <td>Les six niveaux de titres : un seul <code>&lt;h1&gt;</code>, pas de saut de niveau.</td>
+              <td><a href="../seances/seance-01.html#titres-paragraphes">S1 · Titres et paragraphes</a><br><a href="../seances/seance-02.html#titres-paragraphes">S2 · Titres</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/Heading_Elements" target="_blank" rel="noopener noreferrer"
+                  aria-label="h1 à h6 sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;p&gt;</code></th>
+              <td>Un paragraphe de texte.</td>
+              <td><a href="../seances/seance-01.html#les-balises">S1 · Les balises</a><br><a href="../seances/seance-02.html#titres-paragraphes">S2 · Paragraphes</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/p" target="_blank" rel="noopener noreferrer"
+                  aria-label="p sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;br&gt;</code></th>
+              <td>Un retour à la ligne à l'intérieur d'un paragraphe (adresse, poème).</td>
+              <td><a href="../seances/seance-01.html#les-balises">S1 · Les balises</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/br" target="_blank" rel="noopener noreferrer"
+                  aria-label="br sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;hr&gt;</code></th>
+              <td>Une rupture thématique entre deux parties du contenu.</td>
+              <td><a href="../seances/seance-01.html#balise-hr">S1 · &lt;hr&gt;</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/hr" target="_blank" rel="noopener noreferrer"
+                  aria-label="hr sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;strong&gt;</code></th>
+              <td>Importance forte : un avertissement, une information à ne pas manquer.</td>
+              <td><a href="../seances/seance-02.html#emphase">S2 · L'emphase</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/strong" target="_blank" rel="noopener noreferrer"
+                  aria-label="strong sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;em&gt;</code></th>
+              <td>Accent d'insistance : le mot sur lequel on appuierait à l'oral.</td>
+              <td><a href="../seances/seance-02.html#emphase">S2 · L'emphase</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/em" target="_blank" rel="noopener noreferrer"
+                  aria-label="em sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;b&gt;</code></th>
+              <td>Attire l'attention, sans notion d'importance (mot-clé).</td>
+              <td><a href="../seances/seance-02.html#autres-emphases">S2 · Autres balises</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/b" target="_blank" rel="noopener noreferrer"
+                  aria-label="b sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;i&gt;</code></th>
+              <td>Un ton différent : mot étranger, terme technique, titre d'œuvre.</td>
+              <td><a href="../seances/seance-02.html#autres-emphases">S2 · Autres balises</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/i" target="_blank" rel="noopener noreferrer"
+                  aria-label="i sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;u&gt;</code></th>
+              <td>Une annotation (faute d'orthographe signalée). À éviter : on le confond avec un lien.</td>
+              <td><a href="../seances/seance-02.html#autres-emphases">S2 · Autres balises</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/u" target="_blank" rel="noopener noreferrer"
+                  aria-label="u sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;s&gt;</code></th>
+              <td>Un texte barré, qui n'est plus exact (ancien prix).</td>
+              <td><a href="../seances/seance-02.html#texte-barre">S2 · Texte barré</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/s" target="_blank" rel="noopener noreferrer"
+                  aria-label="s sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;blockquote&gt;</code></th>
+              <td>Une citation longue, en bloc (attribut <code>cite</code> pour la source).</td>
+              <td><a href="../seances/seance-02.html#citer-code">S2 · Citer et montrer du code</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/blockquote" target="_blank" rel="noopener noreferrer"
+                  aria-label="blockquote sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;code&gt;</code></th>
+              <td>Un morceau de code dans le texte.</td>
+              <td><a href="../seances/seance-02.html#citer-code">S2 · Citer et montrer du code</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/code" target="_blank" rel="noopener noreferrer"
+                  aria-label="code sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;pre&gt;</code></th>
+              <td>Un texte préformaté : garde les espaces et retours à la ligne (blocs de code).</td>
+              <td><a href="../seances/seance-02.html#citer-code">S2 · Citer et montrer du code</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/pre" target="_blank" rel="noopener noreferrer"
+                  aria-label="pre sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&amp;lt; &amp;gt; &amp;amp; &amp;copy;</code></th>
+              <td>Les entités, pour afficher les caractères réservés : &lt; &gt; &amp; &copy;.</td>
+              <td><a href="../seances/seance-01.html#entites-html">S1 · Les entités HTML</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Glossary/Entity" target="_blank" rel="noopener noreferrer"
+                  aria-label="entités sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+          </tbody>
+        </table>
+        </section>
+
+        <section>
+        <h2 id="listes">3. Les listes</h2>
+
+        <table class="aide-memoire">
+          <caption>Les listes</caption>
+          <thead>
+            <tr>
+              <th scope="col">Balise / code</th>
+              <th scope="col">Rôle en une ligne</th>
+              <th scope="col">Vu dans</th>
+              <th scope="col">Doc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><code>&lt;ul&gt;</code></th>
+              <td>Une liste à puces : l'ordre n'a pas d'importance.</td>
+              <td><a href="../seances/seance-02.html#liste-ul">S2 · Liste à puces</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/ul" target="_blank" rel="noopener noreferrer"
+                  aria-label="ul sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;ol&gt;</code></th>
+              <td>Une liste numérotée : l'ordre compte (étapes, classement).</td>
+              <td><a href="../seances/seance-02.html#liste-ol">S2 · Liste numérotée</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/ol" target="_blank" rel="noopener noreferrer"
+                  aria-label="ol sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;li&gt;</code></th>
+              <td>Un élément de liste, dans un <code>&lt;ul&gt;</code> ou un <code>&lt;ol&gt;</code>.</td>
+              <td><a href="../seances/seance-02.html#listes">S2 · Les listes</a><br><a href="../seances/seance-02.html#listes-imbriquees">S2 · Listes imbriquées</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/li" target="_blank" rel="noopener noreferrer"
+                  aria-label="li sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;dl&gt; &lt;dt&gt; &lt;dd&gt;</code></th>
+              <td>Une liste de description : un terme (<code>dt</code>) et sa définition (<code>dd</code>).</td>
+              <td><a href="../seances/seance-02.html#liste-description">S2 · Liste de description</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/dl" target="_blank" rel="noopener noreferrer"
+                  aria-label="dl sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+          </tbody>
+        </table>
+        </section>
+
+        <section>
+        <h2 id="structure">4. La structure sémantique</h2>
+
+        <table class="aide-memoire">
+          <caption>La structure sémantique</caption>
+          <thead>
+            <tr>
+              <th scope="col">Balise / code</th>
+              <th scope="col">Rôle en une ligne</th>
+              <th scope="col">Vu dans</th>
+              <th scope="col">Doc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><code>&lt;header&gt;</code></th>
+              <td>L'en-tête d'une page ou d'un article : logo, titre, menu.</td>
+              <td><a href="../seances/seance-03.html#header">S3 · header</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/header" target="_blank" rel="noopener noreferrer"
+                  aria-label="header sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;nav&gt;</code></th>
+              <td>Le bloc de navigation principal : menu du site, sommaire.</td>
+              <td><a href="../seances/seance-03.html#nav">S3 · nav</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/nav" target="_blank" rel="noopener noreferrer"
+                  aria-label="nav sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;main&gt;</code></th>
+              <td>Le contenu principal, propre à la page. Un seul par page.</td>
+              <td><a href="../seances/seance-03.html#main">S3 · main</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/main" target="_blank" rel="noopener noreferrer"
+                  aria-label="main sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;section&gt;</code></th>
+              <td>Un regroupement thématique, avec son propre titre.</td>
+              <td><a href="../seances/seance-03.html#section">S3 · section</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/section" target="_blank" rel="noopener noreferrer"
+                  aria-label="section sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;article&gt;</code></th>
+              <td>Un contenu autonome : actualité, article de blog, avis, fiche produit.</td>
+              <td><a href="../seances/seance-03.html#article">S3 · article</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/article" target="_blank" rel="noopener noreferrer"
+                  aria-label="article sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;aside&gt;</code></th>
+              <td>Un contenu lié mais secondaire : encadré, « Le saviez-vous ? ».</td>
+              <td><a href="../seances/seance-03.html#aside">S3 · aside</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/aside" target="_blank" rel="noopener noreferrer"
+                  aria-label="aside sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;footer&gt;</code></th>
+              <td>Le pied d'une page ou d'un article : contact, mentions légales.</td>
+              <td><a href="../seances/seance-03.html#footer">S3 · footer</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/footer" target="_blank" rel="noopener noreferrer"
+                  aria-label="footer sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;div&gt;</code></th>
+              <td>Un conteneur générique, sans signification, pour la mise en page CSS.</td>
+              <td><a href="../seances/seance-03.html#article">S3 · article</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/div" target="_blank" rel="noopener noreferrer"
+                  aria-label="div sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+          </tbody>
+        </table>
+        </section>
+
+        <section>
+        <h2 id="liens">5. Les liens</h2>
+
+        <table class="aide-memoire">
+          <caption>Les liens</caption>
+          <thead>
+            <tr>
+              <th scope="col">Balise / code</th>
+              <th scope="col">Rôle en une ligne</th>
+              <th scope="col">Vu dans</th>
+              <th scope="col">Doc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><code>&lt;a href="..."&gt;</code></th>
+              <td>Un lien vers une autre page (chemin relatif, <code>../</code> pour remonter d'un dossier) ou un autre site (chemin absolu).</td>
+              <td><a href="../seances/seance-01.html#liens-ressources">S1 · Liens et ressources</a><br><a href="../seances/seance-03.html#liens">S3 · Les hyperliens</a><br><a href="../seances/seance-04.html#projet-2">S4 · Les chemins du Projet 2</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/a" target="_blank" rel="noopener noreferrer"
+                  aria-label="a sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>href="#id"</code></th>
+              <td>Une ancre : lien vers un élément de la même page qui porte cet <code>id</code>.</td>
+              <td><a href="../seances/seance-03.html#liens">S3 · Les hyperliens</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Global_attributes/id" target="_blank" rel="noopener noreferrer"
+                  aria-label="id sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>href="page.html#id"</code></th>
+              <td>Un lien vers une section précise d'une autre page.</td>
+              <td><a href="../seances/seance-03.html#liens">S3 · Les hyperliens</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/a" target="_blank" rel="noopener noreferrer"
+                  aria-label="a (fragment) sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>href="mailto:..." / "tel:..."</code></th>
+              <td>Ouvre la messagerie / lance un appel avec l'adresse ou le numéro rempli.</td>
+              <td><a href="../seances/seance-03.html#liens">S3 · Les hyperliens</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/a" target="_blank" rel="noopener noreferrer"
+                  aria-label="a (mailto) sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>download</code></th>
+              <td>Attribut de <code>&lt;a&gt;</code> : propose d'enregistrer le fichier au lieu de l'ouvrir.</td>
+              <td><a href="../seances/seance-03.html#liens">S3 · Les hyperliens</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/a" target="_blank" rel="noopener noreferrer"
+                  aria-label="a (download) sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>target="_blank" rel="noopener noreferrer"</code></th>
+              <td>Ouvre le lien dans un nouvel onglet, de façon sécurisée.</td>
+              <td><a href="../seances/seance-03.html#liens">S3 · Les hyperliens</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/a" target="_blank" rel="noopener noreferrer"
+                  aria-label="a (target) sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+          </tbody>
+        </table>
+        </section>
+
+        <section>
+        <h2 id="medias">6. Les images et les médias</h2>
+
+        <table class="aide-memoire">
+          <caption>Les images et les médias</caption>
+          <thead>
+            <tr>
+              <th scope="col">Balise / code</th>
+              <th scope="col">Rôle en une ligne</th>
+              <th scope="col">Vu dans</th>
+              <th scope="col">Doc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><code>&lt;img src="..." alt="..."&gt;</code></th>
+              <td>Insère une image ; <code>alt</code> décrit l'image (obligatoire), <code>width</code>/<code>height</code> la taille.</td>
+              <td><a href="../seances/seance-01.html#les-balises">S1 · Les balises</a><br><a href="../seances/seance-02.html#images">S2 · Les images</a><br><a href="../seances/seance-03.html#medias">S3 · Les médias</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/img" target="_blank" rel="noopener noreferrer"
+                  aria-label="img sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;figure&gt; / &lt;figcaption&gt;</code></th>
+              <td>Regroupe une image (ou un média) et sa légende ; <code>&lt;figcaption&gt;</code> se place à l'intérieur, en premier ou en dernier.</td>
+              <td><a href="../seances/seance-04.html#figure">S4 · Légender une image</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/figure" target="_blank" rel="noopener noreferrer"
+                  aria-label="figure sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;i class="fa-..."&gt;</code></th>
+              <td>Une icône Font Awesome (bibliothèque reliée par <code>&lt;link&gt;</code>).</td>
+              <td><a href="../seances/seance-03.html#font-awesome">S3 · Font Awesome</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/i" target="_blank" rel="noopener noreferrer"
+                  aria-label="i (icône) sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>class="..."</code></th>
+              <td>Attribut : une ou plusieurs étiquettes sur un élément, utilisées par le CSS (la même classe peut se répéter, contrairement à <code>id</code>).</td>
+              <td><a href="../seances/seance-03.html#class">S3 · L'attribut class</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Global_attributes/class" target="_blank" rel="noopener noreferrer"
+                  aria-label="class sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;video&gt;</code></th>
+              <td>Insère une vidéo (<code>controls</code>, <code>width</code>, <code>poster</code>, <code>muted</code>, <code>loop</code>).</td>
+              <td><a href="../seances/seance-03.html#video">S3 · La vidéo</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/video" target="_blank" rel="noopener noreferrer"
+                  aria-label="video sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;audio&gt;</code></th>
+              <td>Insère un fichier son (<code>controls</code>).</td>
+              <td><a href="../seances/seance-03.html#audio">S3 · L'audio</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/audio" target="_blank" rel="noopener noreferrer"
+                  aria-label="audio sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;source&gt;</code></th>
+              <td>Un fichier vidéo ou audio et son format (<code>src</code>, <code>type</code>).</td>
+              <td><a href="../seances/seance-03.html#video">S3 · La vidéo</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/source" target="_blank" rel="noopener noreferrer"
+                  aria-label="source sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;track&gt;</code></th>
+              <td>Des sous-titres pour une vidéo (fichier <code>.vtt</code>).</td>
+              <td><a href="../seances/seance-03.html#video">S3 · La vidéo</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/track" target="_blank" rel="noopener noreferrer"
+                  aria-label="track sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;iframe&gt;</code></th>
+              <td>Affiche une autre page, un PDF ou une vidéo YouTube dans la page.</td>
+              <td><a href="../seances/seance-03.html#iframe">S3 · La balise iframe</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/iframe" target="_blank" rel="noopener noreferrer"
+                  aria-label="iframe sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+          </tbody>
+        </table>
+        </section>
+
+        <section>
+        <h2 id="tableaux">7. Les tableaux</h2>
+
+        <table class="aide-memoire">
+          <caption>Les tableaux</caption>
+          <thead>
+            <tr>
+              <th scope="col">Balise / code</th>
+              <th scope="col">Rôle en une ligne</th>
+              <th scope="col">Vu dans</th>
+              <th scope="col">Doc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><code>&lt;table&gt;</code></th>
+              <td>Un tableau de données (jamais pour la mise en page).</td>
+              <td><a href="../seances/seance-03.html#tableaux">S3 · Les tableaux</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/table" target="_blank" rel="noopener noreferrer"
+                  aria-label="table sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;caption&gt;</code></th>
+              <td>Le titre du tableau.</td>
+              <td><a href="../seances/seance-03.html#tableaux">S3 · Les tableaux</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/caption" target="_blank" rel="noopener noreferrer"
+                  aria-label="caption sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;thead&gt; / &lt;tbody&gt;</code></th>
+              <td>Regroupent la ligne d'en-tête / les lignes de données.</td>
+              <td><a href="../seances/seance-03.html#tableaux">S3 · Les tableaux</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/thead" target="_blank" rel="noopener noreferrer"
+                  aria-label="thead sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;tr&gt;</code></th>
+              <td>Une ligne du tableau (<em>table row</em>).</td>
+              <td><a href="../seances/seance-03.html#tableaux">S3 · Les tableaux</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/tr" target="_blank" rel="noopener noreferrer"
+                  aria-label="tr sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;th scope="..."&gt;</code></th>
+              <td>Une cellule d'en-tête ; <code>scope</code> = <code>col</code> ou <code>row</code>.</td>
+              <td><a href="../seances/seance-03.html#tableaux">S3 · Les tableaux</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/th" target="_blank" rel="noopener noreferrer"
+                  aria-label="th sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;td&gt;</code></th>
+              <td>Une cellule de donnée (<em>table data</em>).</td>
+              <td><a href="../seances/seance-03.html#tableaux">S3 · Les tableaux</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/td" target="_blank" rel="noopener noreferrer"
+                  aria-label="td sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>colspan / rowspan</code></th>
+              <td>Une cellule s'étend sur plusieurs colonnes / plusieurs lignes.</td>
+              <td><a href="../seances/seance-03.html#fusion">S3 · Fusionner des cellules</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/td" target="_blank" rel="noopener noreferrer"
+                  aria-label="td (colspan) sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+          </tbody>
+        </table>
+        </section>
+
+        <section>
+        <h2 id="formulaires">8. Les formulaires</h2>
+
+        <table class="aide-memoire">
+          <caption>Les formulaires</caption>
+          <thead>
+            <tr>
+              <th scope="col">Balise / code</th>
+              <th scope="col">Rôle en une ligne</th>
+              <th scope="col">Vu dans</th>
+              <th scope="col">Doc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><code>&lt;form action method&gt;</code></th>
+              <td>Le formulaire : <code>action</code> = où envoyer, <code>method</code> = <code>get</code> ou <code>post</code>.</td>
+              <td><a href="../seances/seance-03.html#form">S3 · La balise form</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/form" target="_blank" rel="noopener noreferrer"
+                  aria-label="form sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;label for="..."&gt;</code></th>
+              <td>L'étiquette d'un champ, reliée par <code>for</code> à l'<code>id</code> du champ.</td>
+              <td><a href="../seances/seance-03.html#label">S3 · La balise label</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/label" target="_blank" rel="noopener noreferrer"
+                  aria-label="label sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;input type="..."&gt;</code></th>
+              <td>Un champ de saisie : <code>text</code>, <code>email</code>, <code>password</code>, <code>tel</code>, <code>number</code>, <code>date</code>...</td>
+              <td><a href="../seances/seance-03.html#input">S3 · La balise input</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/input" target="_blank" rel="noopener noreferrer"
+                  aria-label="input sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>type="checkbox" / "radio"</code></th>
+              <td>Cases à cocher (plusieurs choix) / boutons radio (un seul choix, même <code>name</code>).</td>
+              <td><a href="../seances/seance-03.html#checkbox">S3 · Cases à cocher</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/input/checkbox" target="_blank" rel="noopener noreferrer"
+                  aria-label="checkbox sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>name / required / placeholder</code></th>
+              <td>Nom de la donnée envoyée / champ obligatoire / exemple grisé.</td>
+              <td><a href="../seances/seance-03.html#input">S3 · La balise input</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/input" target="_blank" rel="noopener noreferrer"
+                  aria-label="input (attributs) sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;fieldset&gt; / &lt;legend&gt;</code></th>
+              <td>Regroupe des champs liés / donne un titre au groupe.</td>
+              <td><a href="../seances/seance-03.html#checkbox">S3 · Cases à cocher</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/fieldset" target="_blank" rel="noopener noreferrer"
+                  aria-label="fieldset sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;textarea&gt;</code></th>
+              <td>Un champ de texte sur plusieurs lignes (balise par paire).</td>
+              <td><a href="../seances/seance-03.html#textarea">S3 · La balise textarea</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/textarea" target="_blank" rel="noopener noreferrer"
+                  aria-label="textarea sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;select&gt; / &lt;option&gt;</code></th>
+              <td>Une liste déroulante / un de ses choix (<code>value</code>, <code>selected</code>).</td>
+              <td><a href="../seances/seance-03.html#select">S3 · La liste déroulante</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/select" target="_blank" rel="noopener noreferrer"
+                  aria-label="select sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;button type="..."&gt;</code></th>
+              <td>Un bouton : <code>submit</code> envoie, <code>reset</code> vide les champs.</td>
+              <td><a href="../seances/seance-03.html#button">S3 · La balise button</a></td>
+              <td><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/button" target="_blank" rel="noopener noreferrer"
+                  aria-label="button sur MDN (nouvel onglet)">MDN</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        </section>
+
+      </main>
+
+      <footer>
+        <p>
+          EAFC Evere — UE Web : principes de base — 40 périodes. Ce site est
+          écrit à la main en HTML et CSS : faites <code>F12</code> pour en
+          inspecter le code.
+        </p>
+        <p>
+          Les liens « MDN » renvoient vers la documentation de
+          <a href="https://developer.mozilla.org/fr/docs/Web/HTML" target="_blank"
+            rel="noopener noreferrer">MDN Web Docs</a>.
+        </p>
+      </footer>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>

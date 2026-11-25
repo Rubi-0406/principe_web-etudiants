@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Séance 4, à distance : révision des séances 1 à 3, énoncé final du projet 1, lancement du projet 2 (site vitrine de 4 pages), check-list et livrable.">
+  <title>Séance 4 — Révision et projets 1 et 2</title>
+  <!-- Fontawesome (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/site.css">
+  <link rel="icon" type="image/png" href="../logo/favicon.png">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <div class="sidebar">
+      <header class="sidebar-top">
+        <img src="../logo/logo.png" alt="Logo du cours" class="sidebar-logo">
+        <p class="sidebar-titre"><a href="../index.html">Web : principes de base</a></p>
+        <p class="sidebar-sous">BA1 — EAFC Evere</p>
+      </header>
+
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li>
+            <a href="../index.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 11.5 12 5l8 6.5" />
+                <path d="M6 10.5V19h12v-8.5" />
+                <rect x="10" y="13" width="4" height="6" />
+              </svg>
+              Accueil
+              <i class="fa-solid fa-house" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <details class="sous-menu" open>
+              <summary class="actif">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <line x1="5" y1="7" x2="19" y2="7" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <line x1="5" y1="17" x2="12" y2="17" />
+                </svg>
+                Programme
+              </summary>
+              <ul class="sous-liste">
+                <li><a href="../programme.html"><i class="fa-solid fa-map" aria-hidden="true"></i> Vue d'ensemble</a></li>
+                <li class="avec-sommaire">
+                  <a href="seance-01.html"><i class="fa-solid fa-globe" aria-hidden="true"></i> 01 · Le Web et le HTML</a>
+                  <details class="sommaire-menu">
+                    <summary><span class="sr-only">Sommaire de la séance 1</span></summary>
+                    <ol>
+                      <li><a href="seance-01.html#comprendre-le-web">1. Comprendre ce qu'est le Web</a></li>
+                      <li><a href="seance-01.html#page-a-ecran">2. Comment une page arrive à l'écran</a></li>
+                      <li><a href="seance-01.html#le-html">3. Le HTML</a></li>
+                      <li><a href="seance-01.html#lire-page-html">4. Lire et comprendre une page HTML</a></li>
+                      <li><a href="seance-01.html#types-sites">5. Les types de sites web : usages et fonctionnement</a></li>
+                      <li><a href="seance-01.html#normes-validation-securite">6. Normes et validation</a></li>
+                      <li><a href="seance-01.html#securite-de-base">7. La sécurité de base</a></li>
+                      <li><a href="seance-01.html#exercices">8. Exercices</a></li>
+                    </ol>
+                  </details>
+                </li>
+                <li class="avec-sommaire">
+                  <a href="seance-02.html"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i> 02 · Mise en place</a>
+                  <details class="sommaire-menu">
+                    <summary><span class="sr-only">Sommaire de la séance 2</span></summary>
+                    <ol>
+                      <li><a href="seance-02.html#environnement">1. Installer son environnement</a></li>
+                      <li><a href="seance-02.html#titres-paragraphes">2. Titres et paragraphes</a></li>
+                      <li><a href="seance-02.html#listes">3. Les listes</a></li>
+                      <li><a href="seance-02.html#emphase">4. La mise en emphase</a></li>
+                      <li><a href="seance-02.html#images">5. Les images</a></li>
+                      <li><a href="seance-02.html#exercice">6. Exercice guidé</a></li>
+                      <li><a href="seance-02.html#projet-1">7. Projet 1 — lancement</a></li>
+                      <li><a href="seance-02.html#livrable">8. Le livrable</a></li>
+                      <li><a href="seance-02.html#exercices">9. Exercices</a></li>
+                    </ol>
+                  </details>
+                </li>
+                <li class="avec-sommaire">
+                  <a href="seance-03.html"><i class="fa-solid fa-code" aria-hidden="true"></i> 03 · HTML avancé</a>
+                  <details class="sommaire-menu">
+                    <summary><span class="sr-only">Sommaire de la séance 3</span></summary>
+                    <ol>
+                      <li><a href="seance-03.html#squelette">1. Rappel : le squelette d'une page</a></li>
+                      <li><a href="seance-03.html#head">2. Le &lt;head&gt; : ce qui ne se voit pas</a></li>
+                      <li><a href="seance-03.html#semantique">3. Le &lt;body&gt; : les balises sémantiques</a></li>
+                      <li><a href="seance-03.html#medias">4. Les médias : images, vidéo, audio, documents</a></li>
+                      <li><a href="seance-03.html#organisation">5. Approfondir l'organisation d'un site</a></li>
+                      <li><a href="seance-03.html#tableaux">6. Les tableaux de données</a></li>
+                      <li><a href="seance-03.html#formulaires">7. Les formulaires</a></li>
+                      <li><a href="seance-03.html#ia">8. L'intelligence artificielle</a></li>
+                      <li><a href="seance-03.html#exercices">9. Exercices</a></li>
+                    </ol>
+                  </details>
+                </li>
+                <li class="avec-sommaire">
+                  <a href="seance-04.html" class="actif"><i class="fa-solid fa-rotate" aria-hidden="true"></i> 04 · Révision, Projets 1 et 2</a>
+                  <details class="sommaire-menu" open>
+                    <summary><span class="sr-only">Sommaire de la séance 4</span></summary>
+                    <ol>
+                      <li><a href="#revision">1. Révision des séances 1 à 3</a></li>
+                      <li><a href="#projet-1">2. Projet 1 — l'énoncé final</a></li>
+                      <li><a href="#projet-2">3. Projet 2 — lancement</a></li>
+                      <li><a href="#check-list">4. Avant de déposer : la check-list</a></li>
+                      <li><a href="#livrable">5. Le livrable</a></li>
+                    </ol>
+                  </details>
+                </li>
+                <li>
+                  <a href="seance-05.html"><i class="fa-solid fa-crosshairs" aria-hidden="true"></i> 05 · CSS, sélecteurs, habillage</a>
+                </li>
+                <li>
+                  <a href="seance-06.html"><i class="fa-solid fa-palette" aria-hidden="true"></i> 06 · CSS du portfolio</a>
+                </li>
+                <li>
+                  <a href="seance-07.html"><i class="fa-solid fa-table-columns" aria-hidden="true"></i> 07 · Mise en page, menus</a>
+                </li>
+                <li>
+                  <a href="seance-08.html"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> 08 · Responsive, a11y</a>
+                </li>
+                <li>
+                  <a href="seance-09.html"><i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i> 09 · Mise en ligne</a>
+                </li>
+                <li><a href="seance-10.html"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> 10 · Examen</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <a href="../ressources/installation.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 4v11" />
+                <path d="M7.5 11 12 15.5 16.5 11" />
+                <line x1="5" y1="19" x2="19" y2="19" />
+              </svg>
+              Installation
+            </a>
+          </li>
+          <li>
+            <a href="../ressources/aide-memoire.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5.5h5.5a2.5 2.5 0 0 1 2.5 2.5v11a2 2 0 0 0-2-2H4z" />
+                <path d="M20 5.5h-5.5A2.5 2.5 0 0 0 12 8v11a2 2 0 0 1 2-2h6z" />
+              </svg>
+              Aide-mémoire
+            </a>
+          </li>
+          <li>
+            <a href="../ressources/exercices.html">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 20h4L19 9l-4-4L4 16z" />
+                <path d="M13.5 6.5l4 4" />
+              </svg>
+              Exercices
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <p>10 séances · 40 périodes</p>
+      </div>
+    </div>
+
+    <div class="contenu">
+
+      <main>
+
+        <h1>Séance 4 — Révision et projets 1 et 2</h1>
+        <p class="chapeau">
+          Cette séance se fait <strong>à distance</strong>, comme la séance 2. Au
+          programme : faire le point sur tout le HTML vu depuis la séance 1,
+          terminer le projet 1 en utilisant <strong>tout</strong> ce que vous avez
+          appris, et poser la structure HTML du projet 2, un site vitrine de 4 pages.
+        </p>
+
+        <aside class="encadre">
+          <h2>Déroulement conseillé</h2>
+          <ol>
+            <li>Réviser les séances 1 à 3 avec l'<a href="../ressources/aide-memoire.html">aide-mémoire</a>.</li>
+            <li>Faire les exercices corrigés qui vous font encore hésiter (facultatif).</li>
+            <li>Terminer le <a href="#projet-1">projet 1</a>.</li>
+            <li>Lancer le <a href="#projet-2">projet 2</a> : la structure HTML des 4 pages.</li>
+            <li>Vérifier la <a href="#check-list">check-list</a> et passer le validateur du W3C.</li>
+            <li>Déposer le <a href="#livrable">livrable</a> dans Teams avant la séance 5.</li>
+          </ol>
+          <p>
+            Bloqué ? Notez votre question précise (avec une capture d'écran) et
+            postez-la dans le canal Teams du cours : quelqu'un a sans doute le
+            même problème que vous.
+          </p>
+        </aside>
+
+        <aside class="encadre encadre-attention">
+          <h2>Ce qu'il faut rendre, et ce qui est libre</h2>
+          <p>
+            Les séances à distance (2, 4 et 6) servent à réaliser un
+            <strong>travail à déposer dans Teams</strong>. Ce sont les
+            <strong>seuls travaux à rendre</strong> du cours.
+          </p>
+          <table>
+            <caption>Obligatoire ou facultatif ?</caption>
+            <thead>
+              <tr>
+                <th scope="col">Quoi</th>
+                <th scope="col">Où</th>
+                <th scope="col">À rendre ?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Le livrable de la séance</th>
+                <td>Séances 2, 4 et 6</td>
+                <td><strong>Oui</strong>, dans Teams, avant la séance suivante.</td>
+              </tr>
+              <tr>
+                <th scope="row">Les exercices corrigés</th>
+                <td>Partie « Exercices » en fin de séance</td>
+                <td>Non : facultatifs, à faire en autonomie, la correction est
+                  fournie.</td>
+              </tr>
+              <tr>
+                <th scope="row">Les exercices supplémentaires</th>
+                <td><a href="../ressources/exercices.html">Page Exercices</a></td>
+                <td>Non : entièrement libres, pour s'entraîner davantage.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Les exercices ne sont pas notés, mais ils sont la meilleure préparation
+            à l'<strong>examen écrit</strong> : ce créneau à distance est aussi le
+            bon moment pour les faire.
+          </p>
+        </aside>
+
+        <section>
+        <h2>Sommaire</h2>
+
+        <nav aria-label="Sommaire de la séance">
+          <ol>
+            <li><a href="#revision">1. Révision des séances 1 à 3</a></li>
+            <li><a href="#projet-1">2. Projet 1 — l'énoncé final</a></li>
+            <li><a href="#projet-2">3. Projet 2 — lancement</a></li>
+            <li><a href="#check-list">4. Avant de déposer : la check-list</a></li>
+            <li><a href="#livrable">5. Le livrable</a></li>
+          </ol>
+        </nav>
+
+        </section>
+
+        <!-- ============================================================
+             1. RÉVISION
+             ============================================================ -->
+
+        <section>
+        <h2 id="revision">1. Révision des séances 1 à 3</h2>
+
+        <p>
+          Avant de toucher au projet, faites le tour de ce que vous savez. Pour
+          chaque ligne, demandez-vous : « Est-ce que je saurais l'écrire sans
+          regarder ? ». Si la réponse est non, relisez la partie du cours, puis
+          faites un exercice dessus.
+        </p>
+
+        <table>
+          <caption>Ce que vous devez savoir faire</caption>
+          <thead>
+            <tr>
+              <th scope="col">Séance</th>
+              <th scope="col">Notions</th>
+              <th scope="col">Pour revoir</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Le squelette d'une page (<code>&lt;!DOCTYPE&gt;</code>,
+                <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>), titres,
+                paragraphes, <code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code>,
+                images, commentaires, entités, chemins relatifs et absolus.</td>
+              <td><a href="seance-01.html#le-html">Cours</a> ·
+                <a href="seance-01.html#exercices">Exercices</a> ·
+                <a href="../ressources/exercices.html#s1">Exercices +</a></td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Hiérarchie des titres, listes (<code>ul</code>, <code>ol</code>,
+                imbriquées, <code>dl</code>), emphase (<code>strong</code>,
+                <code>em</code>, <code>b</code>, <code>i</code>, <code>s</code>),
+                <code>blockquote</code>, <code>code</code>, <code>pre</code>, le
+                bon <code>alt</code>.</td>
+              <td><a href="seance-02.html#titres-paragraphes">Cours</a> ·
+                <a href="seance-02.html#exercices">Exercices</a> ·
+                <a href="../ressources/exercices.html#s2">Exercices +</a></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Le <code>&lt;head&gt;</code> (favicon, Font Awesome,
+                <code>class</code>), les balises sémantiques, les liens (ancres,
+                <code>mailto:</code>, <code>download</code>, nouvel onglet), vidéo,
+                audio, <code>&lt;iframe&gt;</code>, tableaux, formulaires.</td>
+              <td><a href="seance-03.html#head">Cours</a> ·
+                <a href="seance-03.html#exercices">Exercices</a> ·
+                <a href="../ressources/exercices.html#s3">Exercices +</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          L'<a href="../ressources/aide-memoire.html">aide-mémoire</a> rassemble
+          toutes ces balises sur une seule page, avec leur rôle en une ligne.
+        </p>
+
+        </section>
+
+        <section>
+        <h2 id="projet-1">2. Projet 1 — l'énoncé final</h2>
+
+        <p>
+          Reprenez votre dossier <code>projet-1</code> de la séance 2. Le thème est celui
+          que vous avez choisi en séance 2 : <strong>un seul thème</strong>. Tout ce
+          que vous aviez déjà fait reste valable (titres, paragraphes, listes, emphase,
+          image). Votre page doit maintenant devenir une <strong>vraie page
+            complète</strong>, qui utilise chaque famille de balises vue en
+          séance 3.
+        </p>
+
+        <h3>Ce qui est attendu</h3>
+
+        <table>
+          <caption>Contenu minimum du Projet 1 final</caption>
+          <thead>
+            <tr>
+              <th scope="col">Élément</th>
+              <th scope="col">Balises</th>
+              <th scope="col">Contenu attendu</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Le <code>&lt;head&gt;</code></th>
+              <td><code>&lt;meta&gt;</code>, <code>&lt;title&gt;</code>,
+                <code>&lt;link&gt;</code></td>
+              <td>Squelette complet avec une <code>description</code>, un favicon et la
+                bibliothèque Font Awesome.</td>
+            </tr>
+            <tr>
+              <th scope="row">L'en-tête</th>
+              <td><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code></td>
+              <td>Le <code>&lt;h1&gt;</code> et un menu qui mène, par des
+                <strong>ancres</strong>, à au moins 3 parties de la page.</td>
+            </tr>
+            <tr>
+              <th scope="row">Le contenu principal</th>
+              <td><code>&lt;main&gt;</code>, <code>&lt;section&gt;</code></td>
+              <td>Tout le contenu de la séance 2, réparti en sections, chacune avec son
+                titre et un <code>id</code>.</td>
+            </tr>
+            <tr>
+              <th scope="row">Un contenu autonome</th>
+              <td><code>&lt;article&gt;</code></td>
+              <td>Un avis, une anecdote ou une actualité liée au sujet.</td>
+            </tr>
+            <tr>
+              <th scope="row">Un encadré</th>
+              <td><code>&lt;aside&gt;</code></td>
+              <td>Un « Le saviez-vous ? » ou une information secondaire.</td>
+            </tr>
+            <tr>
+              <th scope="row">Images</th>
+              <td><code>&lt;img&gt;</code></td>
+              <td>Au moins 2 images, chacune avec un <code>alt</code> qui décrit
+                vraiment ce qu'elle montre, rangées dans <code>projet-1/images/</code>.</td>
+            </tr>
+            <tr>
+              <th scope="row">Icônes</th>
+              <td><code>&lt;i class="fa-..."&gt;</code></td>
+              <td>Au moins 2 icônes Font Awesome, accompagnées d'un texte, avec
+                <code>aria-hidden="true"</code>.</td>
+            </tr>
+            <tr>
+              <th scope="row">Un tableau</th>
+              <td><code>&lt;table&gt;</code>, <code>&lt;caption&gt;</code>,
+                <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>,
+                <code>&lt;th scope&gt;</code></td>
+              <td>De vraies données liées au sujet : au moins 3 lignes et 2
+                colonnes.</td>
+            </tr>
+            <tr>
+              <th scope="row">Un média</th>
+              <td><code>&lt;video&gt;</code>, <code>&lt;audio&gt;</code> ou
+                <code>&lt;iframe&gt;</code></td>
+              <td>Une vidéo ou un son (fichier dans votre dossier, avec
+                <code>controls</code>), ou une vidéo YouTube / une carte intégrée avec
+                un <code>title</code>.</td>
+            </tr>
+            <tr>
+              <th scope="row">Un formulaire</th>
+              <td><code>&lt;form&gt;</code>, <code>&lt;label&gt;</code>,
+                <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code> ou
+                <code>&lt;select&gt;</code>, <code>&lt;button&gt;</code></td>
+              <td>Un petit formulaire « Donnez votre avis » : au moins 3 champs de
+                types différents, chacun avec son <code>&lt;label&gt;</code>, et un
+                bouton d'envoi.</td>
+            </tr>
+            <tr>
+              <th scope="row">Le pied de page</th>
+              <td><code>&lt;footer&gt;</code>, <code>&lt;a&gt;</code></td>
+              <td>Un lien externe pertinent (nouvel onglet, avec <code>rel</code>), un
+                lien <code>mailto:</code>, et la <strong>source</strong> de vos images
+                si vous ne les avez pas créées vous-même.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <aside class="encadre">
+          <h3>Des idées pour le tableau, le média et le formulaire</h3>
+          <ul>
+            <li><strong>Animal</strong> — Tableau : sa fiche d'identité (taille, poids,
+              espérance de vie...). Média : une vidéo de l'animal. Formulaire :
+              « Avez-vous un animal ? » avec une liste déroulante.</li>
+            <li><strong>Lieu</strong> — Tableau : les températures par saison. Média :
+              une carte OpenStreetMap intégrée. Formulaire : « Y êtes-vous déjà
+              allé ? » avec des boutons radio.</li>
+            <li><strong>Plat</strong> — Tableau : les quantités pour 2, 4 et 6
+              personnes. Média : une vidéo de la recette. Formulaire : une note de 1 à
+              5 et un commentaire.</li>
+            <li><strong>Livre ou film</strong> — Tableau : la fiche technique (année,
+              durée, réalisateur...). Média : la bande-annonce YouTube. Formulaire :
+              « Votre personnage préféré ? ».</li>
+            <li><strong>Passe-temps</strong> — Tableau : le matériel et son prix.
+              Média : un extrait sonore ou une vidéo. Formulaire : « Depuis combien de
+              temps pratiquez-vous ? » avec un champ nombre.</li>
+          </ul>
+        </aside>
+
+        <aside class="encadre encadre-attention">
+          <h3>Et quand on clique sur « Envoyer » ?</h3>
+          <p>
+            Comme vu en <a href="seance-03.html#formulaires">séance 3</a>, votre page
+            est statique : il n'y a pas de serveur pour recevoir les données. L'envoi
+            affichera une erreur, et c'est normal. Ce qui compte, c'est la
+            <strong>construction</strong> du formulaire : labels reliés, bons types,
+            attributs <code>name</code>.
+          </p>
+        </aside>
+
+        <h3>La structure attendue</h3>
+
+        <pre><code>&lt;body&gt;
+
+  &lt;!-- Projet 1 — Prénom Nom — thème : ... --&gt;
+
+  &lt;header&gt;
+    &lt;h1&gt;&lt;!-- Le nom de votre sujet --&gt;&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#presentation"&gt;Présentation&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#caracteristiques"&gt;Caractéristiques&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#avis"&gt;Votre avis&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;section id="presentation"&gt;
+      &lt;h2&gt;Présentation&lt;/h2&gt;
+      &lt;img src="images/..." alt="..."&gt;
+      &lt;p&gt;&lt;!-- Vos paragraphes de la séance 2 --&gt;&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;section id="caracteristiques"&gt;
+      &lt;h2&gt;Caractéristiques&lt;/h2&gt;
+      &lt;!-- Vos listes de la séance 2, le tableau, le média --&gt;
+    &lt;/section&gt;
+
+    &lt;article&gt;
+      &lt;h2&gt;&lt;!-- Une anecdote, un avis... --&gt;&lt;/h2&gt;
+      &lt;p&gt;...&lt;/p&gt;
+    &lt;/article&gt;
+
+    &lt;aside&gt;
+      &lt;h2&gt;Le saviez-vous ?&lt;/h2&gt;
+      &lt;p&gt;...&lt;/p&gt;
+    &lt;/aside&gt;
+
+    &lt;section id="avis"&gt;
+      &lt;h2&gt;Votre avis&lt;/h2&gt;
+      &lt;form action="/avis" method="post"&gt;
+        &lt;!-- Au moins 3 champs avec leur label, et un bouton --&gt;
+      &lt;/form&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+    &lt;!-- Lien externe, lien mailto:, source des images --&gt;
+  &lt;/footer&gt;
+
+&lt;/body&gt;</code></pre>
+
+        <aside class="encadre encadre-attention">
+          <h3>Votre texte, vos mots, vos sources</h3>
+          <p>
+            Les textes doivent être <strong>rédigés par vous</strong>. Pour les images,
+            la vidéo ou le son que vous n'avez pas créés vous-même, vérifiez la
+            <a href="seance-03.html#licences">licence</a> et indiquez la source dans le
+            pied de page.
+          </p>
+        </aside>
+
+
+        </section>
+
+        <section>
+        <h2 id="projet-2">3. Projet 2 — lancement</h2>
+
+        <p>
+          Le Projet 1 vous a fait travailler sur <strong>une page</strong>. Le
+          Projet 2 change d'échelle : un <strong>site vitrine de 4 pages reliées entre
+            elles</strong>, pour un lieu ou une activité réelle, construit dans
+          un nouveau dossier <code>projet-2/</code>, à côté de <code>projet-1/</code>. Aujourd'hui, vous posez la
+          <strong>structure HTML</strong>. Le CSS arrive aux séances 5 et 6.
+        </p>
+
+        <h3>Choisir son sujet</h3>
+
+        <p>
+          Choisissez <strong>un lieu ou une activité réels</strong> que vous connaissez
+          (restaurant, salon de coiffure, club sportif, association, artisan, cabinet,
+          école de musique, librairie, ferme, atelier). Le sujet doit être
+          <strong>différent de celui du Projet 1</strong> et fournir de la matière :
+        </p>
+
+        <ul>
+          <li>des <strong>photos</strong> (les vôtres, ou libres de droits) ;</li>
+          <li>des <strong>horaires ou des tarifs</strong> à présenter ;</li>
+          <li>des <strong>services ou des produits</strong> à décrire ;</li>
+          <li>une <strong>raison pour un visiteur de prendre contact</strong>.</li>
+        </ul>
+
+        <aside class="encadre encadre-attention">
+          <h3>Ce sujet va vous suivre jusqu'à l'examen</h3>
+          <p>
+            En séance 7, ce projet rejoindra votre portfolio, et le Projet 3 le fera
+            évoluer jusqu'à la mise en ligne. Choisissez un sujet
+            dont vous aurez encore envie de parler dans six semaines. Si vous n'avez pas
+            de sujet réel, inventez-en un, avec un contenu crédible.
+          </p>
+        </aside>
+
+        <h3>Ce qui est attendu dans chaque page</h3>
+
+        <table>
+          <caption>Contenu minimum du Projet 2 (HTML)</caption>
+          <thead>
+            <tr>
+              <th scope="col">Page</th>
+              <th scope="col">Contenu attendu</th>
+              <th scope="col">Balises à utiliser</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><code>projet-2/index.html</code></th>
+              <td>Accueil : le nom du lieu, une phrase d'accroche, une image
+                principale, une courte présentation et un <strong>appel à
+                  l'action</strong> (un lien vers le contact ou la réservation).</td>
+              <td><code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>,
+                <code>&lt;img&gt;</code>, <code>&lt;a&gt;</code></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>pages/galerie.html</code></th>
+              <td>Au moins 4 photos <strong>légendées</strong>, et une vidéo ou un son
+                de présentation.</td>
+              <td><a href="#figure"><code>&lt;figure&gt;</code>, <code>&lt;figcaption&gt;</code></a>
+              (nouveau, voir ci-dessous),
+                <code>&lt;img&gt;</code>, <code>&lt;video&gt;</code> ou
+                <code>&lt;audio&gt;</code></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>pages/infos.html</code></th>
+              <td>Les <strong>horaires</strong> ou les <strong>tarifs</strong> dans un
+                tableau (au moins 4 lignes), l'adresse, et un plan d'accès
+                intégré.</td>
+              <td><code>&lt;table&gt;</code>, <code>&lt;caption&gt;</code>,
+                <code>&lt;th scope&gt;</code>, <code>&lt;iframe&gt;</code> avec
+                <code>title</code></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>pages/contact.html</code></th>
+              <td>Un formulaire de contact ou de réservation : au moins 4 champs de
+                types différents (dont un <code>email</code>), un
+                <code>&lt;fieldset&gt;</code> avec ses boutons radio ou cases à
+                cocher, et un bouton d'envoi.</td>
+              <td><code>&lt;form&gt;</code>, <code>&lt;label&gt;</code>,
+                <code>&lt;input&gt;</code>, <code>&lt;select&gt;</code>,
+                <code>&lt;textarea&gt;</code>, <code>&lt;fieldset&gt;</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 id="figure">Nouveau : légender une image avec <code>&lt;figure&gt;</code></h3>
+
+        <p>
+          La galerie demande des photos <strong>légendées</strong>. C'est la seule
+          balise de ce projet que vous n'avez pas encore vue. Une légende placée
+          dans un simple <code>&lt;p&gt;</code> sous l'image n'est reliée à rien :
+          le navigateur ne sait pas qu'elle parle de cette image.
+          <code>&lt;figure&gt;</code> regroupe l'image et sa légende, et
+          <code>&lt;figcaption&gt;</code> contient la légende.
+        </p>
+
+        <table>
+          <caption>Les deux balises de la figure</caption>
+          <thead>
+            <tr>
+              <th scope="col">Balise</th>
+              <th scope="col">Rôle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><code>&lt;figure&gt;</code></th>
+              <td>Le conteneur : il regroupe l'image (ou une vidéo, un tableau...)
+                et sa légende.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>&lt;figcaption&gt;</code></th>
+              <td>La légende, placée <strong>à l'intérieur</strong> du
+                <code>&lt;figure&gt;</code>, en premier ou en dernier. Une seule
+                par figure.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><strong class="etiquette">Exemple en HTML</strong> :</p>
+
+        <pre><code>&lt;h2&gt;Nos crêpes&lt;/h2&gt;
+
+&lt;figure&gt;
+  &lt;img src="../images/crepes.jpg" alt="Une pile de crêpes dorées pliées en quatre, avec de la confiture"&gt;
+  &lt;figcaption&gt;La crêpe nature, notre classique depuis 1998.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+
+        <p><strong class="etiquette">Exemple en rendu navigateur</strong> :</p>
+
+        <div class="navigateur">
+            <p class="navigateur-barre" aria-hidden="true">projet-2/pages/galerie.html</p>
+            <iframe sandbox loading="lazy" height="390"
+                title="Aperçu de l&#x27;exemple dans le navigateur"
+                srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;fr&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;Aperçu&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h2&gt;Nos crêpes&lt;/h2&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;../images/crepes.png&quot; alt=&quot;Une pile de crêpes dorées pliées en quatre, avec de la confiture&quot; width=&quot;200&quot;&gt;
+  &lt;figcaption&gt;La crêpe nature, notre classique depuis 1998.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/body&gt;
+&lt;/html&gt;"></iframe>
+        </div>
+
+        <p>
+          Sans CSS, le navigateur décale la figure vers la droite et affiche la
+          légende sous l'image, en texte normal. La mise en forme viendra en
+          séance 5.
+        </p>
+
+        <aside class="encadre">
+          <h3>La légende ne remplace pas le <code>alt</code></h3>
+          <p>
+            Les deux sont utiles et ne disent pas la même chose. Le
+            <code>alt</code> <strong>décrit</strong> l'image pour qui ne la voit
+            pas (« Une pile de crêpes dorées pliées en quatre »). La légende
+            <strong>ajoute une information</strong>, visible par tout le monde
+            (« notre classique depuis 1998 »). Ne répétez pas le même texte dans
+            les deux.
+          </p>
+        </aside>
+
+        <p class="liens-mdn">
+          Sur MDN :
+          <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/figure" target="_blank"
+            rel="noopener noreferrer"><code>&lt;figure&gt;</code></a> ·
+          <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/figcaption" target="_blank"
+            rel="noopener noreferrer"><code>&lt;figcaption&gt;</code></a>
+        </p>
+
+        <p>
+          <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
+          Pour vous entraîner sur <code>&lt;figure&gt;</code> et sur les chemins entre
+          les pages, faites les
+          <a href="../ressources/exercices.html#s4">exercices supplémentaires de la séance 4</a>.
+        </p>
+
+        <h3>Ce qui est commun aux 4 pages</h3>
+
+        <ul>
+          <li>Le <strong>squelette complet</strong> : <code>DOCTYPE</code>,
+            <code>lang="fr"</code>, <code>charset</code>, <code>viewport</code>, un
+            <code>&lt;title&gt;</code> <strong>différent</strong> sur chaque page, une
+            <code>description</code> et un favicon. Pas encore de feuille de style :
+            elle arrive en séance 5.</li>
+          <li>Le même <code>&lt;header&gt;</code> (nom du lieu) et le même
+            <code>&lt;footer&gt;</code> (adresse, e-mail, source des images) : à
+            <strong>copier d'une page à l'autre</strong>.</li>
+          <li>Un <code>&lt;nav&gt;</code> avec les <strong>4 liens du site</strong>,
+            qui fonctionne depuis chaque page
+            (attention : <code>pages/galerie.html</code> n'est pas au même niveau que
+            <code>index.html</code>).</li>
+          <li>Sur le lien de la page en cours dans le menu, la classe
+            <code>class="actif"</code> : le CSS s'en servira.</li>
+          <li>Un seul <code>&lt;h1&gt;</code> par page, sans saut de niveau.</li>
+          <li>Un <code>alt</code> pertinent sur chaque image.</li>
+        </ul>
+
+        <h3>Les chemins dans le Projet 2</h3>
+
+        <p>
+          Les pages <code>galerie.html</code>, <code>infos.html</code> et
+          <code>contact.html</code> sont rangées un dossier plus bas, dans
+          <code>pages/</code>. Depuis elles, il faut d'abord <strong>remonter</strong>
+          d'un niveau avec <code>../</code> (<a href="seance-01.html#lire-page-html">séance 1</a>).
+        </p>
+
+        <table>
+          <caption>Les chemins selon l'endroit où se trouve la page</caption>
+          <thead>
+            <tr>
+              <th scope="col">Depuis</th>
+              <th scope="col">Une image</th>
+              <th scope="col">L'accueil</th>
+              <th scope="col">Une autre page</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><code>projet-2/index.html</code></th>
+              <td><code>images/photo.jpg</code></td>
+              <td><code>index.html</code></td>
+              <td><code>pages/infos.html</code></td>
+            </tr>
+            <tr>
+              <th scope="row"><code>projet-2/pages/galerie.html</code></th>
+              <td><code>../images/photo.jpg</code></td>
+              <td><code>../index.html</code></td>
+              <td><code>infos.html</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Gardez vos images <strong>dans le dossier du projet</strong>
+          (<code>projet-2/images/</code>) : en séance 7, vous rangerez tout le
+          dossier <code>projet-2/</code> dans votre portfolio, et ces chemins
+          resteront justes.
+        </p>
+
+        <h3>Par où commencer ?</h3>
+
+        <ol>
+          <li>Notez, pour chaque page, ce que vous allez y mettre.</li>
+          <li>Créez <code>projet-2/</code> avec ses sous-dossiers.</li>
+          <li>Écrivez <code>projet-2/index.html</code> en entier : en-tête, menu,
+            contenu, pied de page.</li>
+          <li>Copiez-le trois fois dans <code>pages/</code>, renommez les fichiers,
+            puis <strong>corrigez les chemins</strong> (<code>../</code>) et le
+            contenu de chacun.</li>
+          <li>Cliquez sur tous les liens, depuis chaque page.</li>
+          <li>Passez chaque page au validateur du W3C.</li>
+        </ol>
+
+
+        </section>
+
+        <section>
+        <h2 id="check-list">4. Avant de déposer : la check-list</h2>
+
+        <h3>Projet 1</h3>
+
+        <ul>
+          <li>Le squelette est complet : <code>DOCTYPE</code>, <code>lang="fr"</code>,
+            <code>charset</code>, <code>viewport</code>, <code>title</code>,
+            <code>description</code>, favicon, Font Awesome.</li>
+          <li>Un seul <code>&lt;h1&gt;</code>, pas de saut de niveau.</li>
+          <li><code>&lt;header&gt;</code>, <code>&lt;main&gt;</code> et
+            <code>&lt;footer&gt;</code> sont directement dans le
+            <code>&lt;body&gt;</code>, avec un seul <code>&lt;main&gt;</code>.</li>
+          <li>Chaque lien du menu mène à sa section, et chaque <code>id</code> n'apparaît qu'une fois.</li>
+          <li>Le lien externe a <code>target="_blank"</code> et
+            <code>rel="noopener noreferrer"</code>.</li>
+          <li>Chaque image a un <code>alt</code> qui décrit son contenu.</li>
+          <li>Le tableau a un <code>&lt;caption&gt;</code> et des <code>&lt;th&gt;</code>
+            avec <code>scope</code>.</li>
+          <li>Le média se lance, ou l'<code>&lt;iframe&gt;</code> s'affiche et a un
+            <code>title</code>.</li>
+          <li>Chaque champ du formulaire a un <code>&lt;label&gt;</code> relié et un
+            <code>name</code>.</li>
+        </ul>
+
+        <h3>Projet 2 (point d'étape)</h3>
+
+        <ul>
+          <li>Les 4 pages existent, aux bons endroits de l'arborescence.</li>
+          <li>Chaque page a son propre <code>&lt;title&gt;</code>.</li>
+          <li>Le menu a les 4 liens et fonctionne depuis
+            chaque page (testé en cliquant).</li>
+          <li>Les images, la vidéo ou le son s'affichent depuis <code>pages/</code>
+            comme depuis <code>projet-2/index.html</code>.</li>
+          <li>Le tableau, le plan d'accès et le formulaire sont présents et corrects.</li>
+        </ul>
+
+        <h3>Pour tout le site</h3>
+
+        <ul>
+          <li>Le code est indenté proprement (VS Code : clic droit → <em>Formater le
+              document</em>).</li>
+          <li>Le <a href="https://validator.w3.org/#validate_by_input" target="_blank"
+              rel="noopener noreferrer">validateur du W3C</a> n'affiche
+            <strong>aucune erreur</strong> sur le Projet 1 et les 4 pages
+            du Projet 2.</li>
+        </ul>
+
+
+        </section>
+
+        <section>
+        <h2 id="livrable">5. Le livrable</h2>
+
+        <p>À déposer dans le devoir Teams de la séance 4, <strong>avant la séance 5</strong> :</p>
+
+        <ol>
+          <li><strong>Vos dossiers <code>projet-1</code> et <code>projet-2</code>,
+              compressés ensemble en un seul <code>.zip</code></strong>, avec tous
+            leurs sous-dossiers (images, vidéo ou son, favicon). Sans eux, les pages
+            s'afficheront sans images chez la personne qui les corrige.</li>
+          <li><strong>Une capture d'écran du validateur du W3C</strong> sans erreur, pour
+            <code>projet-1/index.html</code>.</li>
+        </ol>
+
+        <p>
+          Ce dépôt <strong>n'est pas noté</strong> : il valide votre présence. Ce
+          qui est vérifié : le <strong>Projet 1</strong>, et la
+          <strong>présence et la structure</strong> du Projet 2. Le
+          Projet 2 sera noté sur son livrable final de la séance 6, avec le CSS
+          (10 % de la note finale).
+        </p>
+
+        <aside class="encadre">
+          <h3>Compresser un dossier en <code>.zip</code></h3>
+          <p>
+            Dans l'Explorateur Windows : sélectionnez les dossiers <code>projet-1</code>
+            et <code>projet-2</code> (<code>Ctrl</code> + clic), puis clic droit →
+            <em>Compresser vers</em> → <em>Fichier ZIP</em>. Sur Mac : sélectionnez-les,
+            puis clic droit → <em>Compresser 2 éléments</em>.
+          </p>
+        </aside>
+
+        <aside class="encadre">
+          <h3>Et ensuite ?</h3>
+          <p>
+            À partir de la <a href="seance-05.html">séance 5</a>, place au CSS :
+            chacun de vos sites (portfolio, projet 1, projet 2) recevra sa propre
+            feuille de style.
+          </p>
+        </aside>
+        </section>
+
+        <!-- TELECHARGER-SEANCE -->
+        <section class="encadre telecharger-seance">
+          <h2><i class="fa-solid fa-download" aria-hidden="true"></i> Télécharger cette séance</h2>
+          <p>
+            Pour lire le cours hors ligne, ou pour étudier son code : le zip contient
+            cette page (<code>index.html</code>), sa feuille de style et ses images.
+            Ouvrez <code>index.html</code> dans VS Code pour voir les balises et le CSS.
+          </p>
+          <ul>
+            <li><a href="../telechargements/seances/seance-04.zip" download><i class="fa-solid fa-file-zipper" aria-hidden="true"></i> Séance 4 : page et fichiers (.zip)</a></li>
+            <li><a href="../telechargements/seances/seance-04.pdf" download><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Séance 4 : version à imprimer (.pdf)</a></li>
+          </ul>
+        </section>
+        <!-- /TELECHARGER-SEANCE -->
+      </main>
+
+      <footer>
+        <p>
+          EAFC Evere — UE Web : principes de base — 40 périodes. Ce site est
+          écrit à la main en HTML et CSS : faites <code>F12</code> pour en
+          inspecter le code.
+        </p>
+        <p>
+          Certains contenus s'appuient sur la documentation de
+          <a href="https://developer.mozilla.org/fr/docs/Learn_web_development/Core" target="_blank"
+            rel="noopener noreferrer">MDN
+            Web Docs</a> et d'autres ressources trouvées en ligne (textes,
+          images), ainsi que sur une assistance de l'IA (Claude, Anthropic)
+          pour la reformulation de certains passages. Certaines images ont été
+          générées par l'IA (ChatGPT, OpenAI).
+        </p>
+      </footer>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
